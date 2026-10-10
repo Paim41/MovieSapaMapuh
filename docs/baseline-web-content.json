@@ -1,0 +1,1668 @@
+{
+  "scope": "Static index.html content and controls only; dynamic JS, translations, API data and native UI require separate verification. Exact whitespace retained.",
+  "records": [
+    {
+      "line": 11,
+      "text": "PencariMovie — Stream & Download"
+    },
+    {
+      "line": 110,
+      "text": "⚠️"
+    },
+    {
+      "line": 111,
+      "text": "Update Required"
+    },
+    {
+      "line": 112,
+      "text": "\n          Your app version is outdated. Please update to continue using\n          PencariMovie Downloader.\n        "
+    },
+    {
+      "line": 118,
+      "text": "Current:\n            "
+    },
+    {
+      "line": 120,
+      "text": "0.0.0"
+    },
+    {
+      "line": 124,
+      "text": "Minimum:\n            "
+    },
+    {
+      "line": 126,
+      "text": "0.0.0"
+    },
+    {
+      "line": 130,
+      "tag": "a",
+      "attributes": {
+        "class": "update-required__link",
+        "href": "#",
+        "target": "_blank",
+        "rel": "noopener"
+      }
+    },
+    {
+      "line": 131,
+      "text": "Download Update"
+    },
+    {
+      "line": 139,
+      "text": "⚠️"
+    },
+    {
+      "line": 140,
+      "text": "PencariMovie Server cannot start"
+    },
+    {
+      "line": 141,
+      "text": "\n          The server is missing a required component or is running on an\n          unsupported platform. Entering a bot token will not fix this.\n        "
+    },
+    {
+      "line": 147,
+      "tag": "button",
+      "attributes": {
+        "id": "fatalErrorRetry",
+        "class": "fatal-error__btn"
+      }
+    },
+    {
+      "line": 147,
+      "text": "Retry"
+    },
+    {
+      "line": 154,
+      "text": "🔒 PencariMovie Server"
+    },
+    {
+      "line": 155,
+      "text": "\n          Enter server password to continue. (Default: "
+    },
+    {
+      "line": 156,
+      "text": "123456"
+    },
+    {
+      "line": 156,
+      "text": ")\n        "
+    },
+    {
+      "line": 160,
+      "text": "Server Password"
+    },
+    {
+      "line": 162,
+      "tag": "input",
+      "attributes": {
+        "type": "password",
+        "id": "authPasswordInput",
+        "class": "settings-gate__input",
+        "placeholder": "Password",
+        "autocomplete": "current-password"
+      }
+    },
+    {
+      "line": 170,
+      "tag": "button",
+      "attributes": {
+        "id": "authConnectBtn",
+        "class": "settings-gate__btn"
+      }
+    },
+    {
+      "line": 170,
+      "text": "Connect"
+    },
+    {
+      "line": 185,
+      "text": "\n          PencariMovie Server is completely free — we never sell access or\n          subscriptions. If this is not your personal server, you can easily run\n          your own for free on your phone, PC, or TV — get the installer\n          at\n          "
+    },
+    {
+      "line": 190,
+      "tag": "a",
+      "attributes": {
+        "href": "https://telegra.my",
+        "target": "_blank",
+        "rel": "noopener",
+        "style": "color: var(--accent, #ff6b35); text-decoration: underline"
+      }
+    },
+    {
+      "line": 195,
+      "text": "telegra.my"
+    },
+    {
+      "line": 196,
+      "text": ".\n        "
+    },
+    {
+      "line": 204,
+      "tag": "button",
+      "attributes": {
+        "id": "settingsClose",
+        "class": "settings-gate__close",
+        "aria-label": "Close settings"
+      }
+    },
+    {
+      "line": 208,
+      "text": "\n          ✕\n        "
+    },
+    {
+      "line": 214,
+      "text": "⚙️ Settings"
+    },
+    {
+      "line": 220,
+      "text": "\n            Enter your Telegram Bot Token to connect.\n            "
+    },
+    {
+      "line": 223,
+      "text": "Get one from\n              "
+    },
+    {
+      "line": 224,
+      "tag": "a",
+      "attributes": {
+        "href": "https://t.me/CreateNewTelegramBot?start=localserver",
+        "target": "_blank",
+        "rel": "noopener"
+      }
+    },
+    {
+      "line": 228,
+      "text": "@CreateNewTelegramBot"
+    },
+    {
+      "line": 234,
+      "text": "Bot Token(s)"
+    },
+    {
+      "line": 236,
+      "tag": "textarea",
+      "attributes": {
+        "id": "botTokenInput",
+        "class": "settings-gate__input",
+        "style": "\n                height: 72px;\n                font-size: 0.85rem;\n                font-family: monospace;\n                resize: vertical;\n                box-sizing: border-box;\n                padding: 8px 10px;\n                line-height: 1.4;\n              ",
+        "placeholder": "Enter 1 or more bot tokens (one per line)...",
+        "autocomplete": "off"
+      }
+    },
+    {
+      "line": 254,
+      "tag": "button",
+      "attributes": {
+        "id": "connectBtn",
+        "class": "settings-gate__btn"
+      }
+    },
+    {
+      "line": 254,
+      "text": "Connect"
+    },
+    {
+      "line": 256,
+      "text": "\n            Already connected?\n            "
+    },
+    {
+      "line": 258,
+      "tag": "button",
+      "attributes": {
+        "id": "logoutBtn",
+        "class": "settings-gate__link"
+      }
+    },
+    {
+      "line": 258,
+      "text": "\n              Disconnect\n            "
+    },
+    {
+      "line": 269,
+      "text": "\n              ⚙️ Settings\n            "
+    },
+    {
+      "line": 285,
+      "tag": "button",
+      "attributes": {
+        "type": "button",
+        "id": "settingsSwitchToAddonBtn",
+        "class": "settings-gate__btn",
+        "style": "\n                width: 100%;\n                padding: 10px 14px;\n                font-size: 0.88rem;\n                background: #252525;\n                border: 1px solid #3a3a3a;\n                display: flex;\n                align-items: center;\n                justify-content: center;\n                gap: 6px;\n                cursor: pointer;\n              "
+      }
+    },
+    {
+      "line": 301,
+      "text": "\n              📡 Open Stremio & Nuvio Addon Setup\n            "
+    },
+    {
+      "line": 309,
+      "text": "🤖 Bot Pool ("
+    },
+    {
+      "line": 309,
+      "text": "1"
+    },
+    {
+      "line": 309,
+      "text": ")"
+    },
+    {
+      "line": 311,
+      "tag": "button",
+      "attributes": {
+        "type": "button",
+        "id": "toggleAddBotsBtn",
+        "class": "settings-gate__link",
+        "style": "\n                  font-size: 0.8rem;\n                  color: var(--accent);\n                  cursor: pointer;\n                  white-space: nowrap;\n                "
+      }
+    },
+    {
+      "line": 321,
+      "text": "\n                + Add More Bots\n              "
+    },
+    {
+      "line": 331,
+      "tag": "textarea",
+      "attributes": {
+        "id": "bulkBotTokensInput",
+        "class": "settings-gate__input",
+        "style": "\n                  height: 65px;\n                  font-size: 0.78rem;\n                  font-family: monospace;\n                  resize: vertical;\n                  box-sizing: border-box;\n                ",
+        "placeholder": "Paste 1 or more bot tokens (one per line)..."
+      }
+    },
+    {
+      "line": 352,
+      "tag": "button",
+      "attributes": {
+        "type": "button",
+        "id": "submitAddBotsBtn",
+        "class": "settings-gate__btn",
+        "style": "padding: 6px 12px; font-size: 0.8rem; flex: 1"
+      }
+    },
+    {
+      "line": 357,
+      "text": "\n                  Connect Bots\n                "
+    },
+    {
+      "line": 360,
+      "tag": "button",
+      "attributes": {
+        "type": "button",
+        "id": "cancelAddBotsBtn",
+        "class": "settings-gate__btn",
+        "style": "\n                    padding: 6px 12px;\n                    font-size: 0.8rem;\n                    background: rgba(255, 255, 255, 0.1);\n                    color: #ccc;\n                  "
+      }
+    },
+    {
+      "line": 370,
+      "text": "\n                  Cancel\n                "
+    },
+    {
+      "line": 389,
+      "tag": "button",
+      "attributes": {
+        "id": "settingsDisconnectBtn",
+        "class": "settings-gate__btn settings-gate__btn--danger",
+        "style": "flex: 1"
+      }
+    },
+    {
+      "line": 393,
+      "text": "\n              Disconnect All\n            "
+    },
+    {
+      "line": 401,
+      "text": "🔑 Change Password"
+    },
+    {
+      "line": 410,
+      "tag": "input",
+      "attributes": {
+        "type": "password",
+        "id": "changePwCurrent",
+        "class": "settings-gate__input",
+        "placeholder": "Current Password",
+        "autocomplete": "current-password",
+        "style": "padding: 8px 12px; font-size: 0.85rem"
+      }
+    },
+    {
+      "line": 418,
+      "tag": "input",
+      "attributes": {
+        "type": "password",
+        "id": "changePwNew",
+        "class": "settings-gate__input",
+        "placeholder": "New Password (min. 4 characters)",
+        "autocomplete": "new-password",
+        "style": "padding: 8px 12px; font-size: 0.85rem"
+      }
+    },
+    {
+      "line": 426,
+      "tag": "button",
+      "attributes": {
+        "type": "button",
+        "id": "changePwBtn",
+        "class": "settings-gate__btn",
+        "style": "padding: 8px 14px; font-size: 0.85rem"
+      }
+    },
+    {
+      "line": 431,
+      "text": "\n                Update Password\n              "
+    },
+    {
+      "line": 443,
+      "text": "☁️ Cloudflare Tunnel"
+    },
+    {
+      "line": 444,
+      "text": "\n              Expose this server publicly for remote streaming. Leave blank for\n              a free automatic Quick Tunnel ("
+    },
+    {
+      "line": 446,
+      "text": "*.trycloudflare.com"
+    },
+    {
+      "line": 446,
+      "text": "),\n              or paste your Cloudflare Zero Trust Tunnel Token to use your own\n              custom domain.\n            "
+    },
+    {
+      "line": 452,
+      "tag": "input",
+      "attributes": {
+        "type": "password",
+        "id": "tunnelTokenInput",
+        "class": "settings-gate__input",
+        "placeholder": "Cloudflare Tunnel Token (optional, leave blank for auto Quick Tunnel)",
+        "autocomplete": "off",
+        "spellcheck": "false"
+      }
+    },
+    {
+      "line": 462,
+      "text": "\n              Tunnel is off.\n            "
+    },
+    {
+      "line": 466,
+      "tag": "input",
+      "attributes": {
+        "type": "text",
+        "id": "tunnelUrlInput",
+        "class": "settings-gate__input",
+        "readonly": null,
+        "value": ""
+      }
+    },
+    {
+      "line": 473,
+      "tag": "button",
+      "attributes": {
+        "type": "button",
+        "id": "copyTunnelUrlBtn",
+        "class": "settings-gate__btn"
+      }
+    },
+    {
+      "line": 477,
+      "text": "\n                📋 Copy\n              "
+    },
+    {
+      "line": 487,
+      "tag": "button",
+      "attributes": {
+        "type": "button",
+        "id": "enableTunnelBtn",
+        "class": "settings-gate__btn"
+      }
+    },
+    {
+      "line": 491,
+      "text": "\n                Enable Tunnel\n              "
+    },
+    {
+      "line": 494,
+      "tag": "button",
+      "attributes": {
+        "type": "button",
+        "id": "disableTunnelBtn",
+        "class": "settings-gate__btn settings-gate__btn--danger hidden"
+      }
+    },
+    {
+      "line": 498,
+      "text": "\n                Disable\n              "
+    },
+    {
+      "line": 510,
+      "tag": "button",
+      "attributes": {
+        "id": "addonModalClose",
+        "class": "settings-gate__close",
+        "aria-label": "Close"
+      }
+    },
+    {
+      "line": 514,
+      "text": "\n          ✕\n        "
+    },
+    {
+      "line": 518,
+      "text": "\n          🧩 PencariMovie Addon Configuration\n        "
+    },
+    {
+      "line": 521,
+      "text": "\n          Install this addon in Stremio / Nuvio or copy the manifest URL.\n        "
+    },
+    {
+      "line": 526,
+      "tag": "button",
+      "attributes": {
+        "type": "button",
+        "id": "addonSwitchToSettingsBtn",
+        "class": "settings-gate__btn",
+        "style": "\n              width: 100%;\n              padding: 10px 14px;\n              font-size: 0.88rem;\n              background: #252525;\n              border: 1px solid #3a3a3a;\n              display: flex;\n              align-items: center;\n              justify-content: center;\n              gap: 6px;\n              cursor: pointer;\n            "
+      }
+    },
+    {
+      "line": 542,
+      "text": "\n            🤖 Bot Pool & Server Settings\n          "
+    },
+    {
+      "line": 559,
+      "text": "🗂️ Catalog Configuration"
+    },
+    {
+      "line": 563,
+      "text": "🌍 Region:"
+    },
+    {
+      "line": 565,
+      "tag": "select",
+      "attributes": {
+        "id": "addonCountrySelect",
+        "class": "addon-country-select"
+      }
+    },
+    {
+      "line": 566,
+      "tag": "option",
+      "attributes": {
+        "value": ""
+      }
+    },
+    {
+      "line": 566,
+      "text": "Auto (Detecting...)"
+    },
+    {
+      "line": 571,
+      "text": "Enabled"
+    },
+    {
+      "line": 575,
+      "tag": "div",
+      "attributes": {
+        "class": "addon-catalog-card__modes",
+        "role": "radiogroup",
+        "aria-label": "Catalog mode"
+      }
+    },
+    {
+      "line": 581,
+      "tag": "input",
+      "attributes": {
+        "type": "radio",
+        "name": "catalogModeRadio",
+        "id": "catalogModeEnabled",
+        "value": "enabled",
+        "checked": null
+      }
+    },
+    {
+      "line": 589,
+      "text": "PencariMovie Catalogs: Enabled"
+    },
+    {
+      "line": 591,
+      "text": "Local home rows + Country/Genre catalogs (Movies, Series,\n                  Telegram Files)"
+    },
+    {
+      "line": 597,
+      "tag": "input",
+      "attributes": {
+        "type": "radio",
+        "name": "catalogModeRadio",
+        "id": "catalogModeDisabled",
+        "value": "disabled"
+      }
+    },
+    {
+      "line": 604,
+      "text": "PencariMovie Catalogs: Disabled"
+    },
+    {
+      "line": 606,
+      "text": "Hide local home rows (Upstream bridged addons and Streams\n                  remain active)"
+    },
+    {
+      "line": 615,
+      "text": "Media Types:"
+    },
+    {
+      "line": 618,
+      "tag": "input",
+      "attributes": {
+        "type": "checkbox",
+        "id": "catTypeMovies",
+        "checked": null
+      }
+    },
+    {
+      "line": 619,
+      "text": "🎬 Movies"
+    },
+    {
+      "line": 622,
+      "tag": "input",
+      "attributes": {
+        "type": "checkbox",
+        "id": "catTypeSeries",
+        "checked": null
+      }
+    },
+    {
+      "line": 623,
+      "text": "📺 Series"
+    },
+    {
+      "line": 626,
+      "tag": "input",
+      "attributes": {
+        "type": "checkbox",
+        "id": "catTypeOther",
+        "checked": null
+      }
+    },
+    {
+      "line": 627,
+      "text": "⚡ Telegram Files (Other)"
+    },
+    {
+      "line": 634,
+      "text": "Core & Telegram Catalogs:"
+    },
+    {
+      "line": 636,
+      "tag": "button",
+      "attributes": {
+        "type": "button",
+        "class": "addon-catalog-link-btn",
+        "id": "catSelectAllSpecialBtn"
+      }
+    },
+    {
+      "line": 640,
+      "text": "\n                    All\n                  "
+    },
+    {
+      "line": 643,
+      "text": "·"
+    },
+    {
+      "line": 644,
+      "tag": "button",
+      "attributes": {
+        "type": "button",
+        "class": "addon-catalog-link-btn",
+        "id": "catDeselectAllSpecialBtn"
+      }
+    },
+    {
+      "line": 648,
+      "text": "\n                    None\n                  "
+    },
+    {
+      "line": 658,
+      "text": "Categories & Countries:"
+    },
+    {
+      "line": 660,
+      "tag": "button",
+      "attributes": {
+        "type": "button",
+        "class": "addon-catalog-link-btn",
+        "id": "catSelectAllBtn"
+      }
+    },
+    {
+      "line": 664,
+      "text": "\n                    All\n                  "
+    },
+    {
+      "line": 667,
+      "text": "·"
+    },
+    {
+      "line": 668,
+      "tag": "button",
+      "attributes": {
+        "type": "button",
+        "class": "addon-catalog-link-btn",
+        "id": "catDeselectAllBtn"
+      }
+    },
+    {
+      "line": 672,
+      "text": "\n                    None\n                  "
+    },
+    {
+      "line": 698,
+      "text": "🔗 Upstream Stremio Addons:"
+    },
+    {
+      "line": 711,
+      "tag": "input",
+      "attributes": {
+        "type": "checkbox",
+        "id": "upstreamEnabledToggle",
+        "style": "width: 16px; height: 16px; cursor: pointer"
+      }
+    },
+    {
+      "line": 717,
+      "text": "Enable upstream addons\n                "
+    },
+    {
+      "line": 719,
+      "text": "(turn off to hide all bridged catalogs)"
+    },
+    {
+      "line": 733,
+      "tag": "input",
+      "attributes": {
+        "type": "text",
+        "id": "upstreamAddonInput",
+        "class": "settings-gate__input",
+        "style": "\n                  flex: 1 1 0%;\n                  min-width: 0;\n                  font-size: 0.78rem;\n                  font-family: monospace;\n                  padding: 6px 10px;\n                  box-sizing: border-box;\n                ",
+        "placeholder": "https://.../manifest.json"
+      }
+    },
+    {
+      "line": 747,
+      "tag": "button",
+      "attributes": {
+        "type": "button",
+        "id": "upstreamAddonAddBtn",
+        "class": "settings-gate__btn",
+        "style": "\n                  flex: 0 0 auto;\n                  padding: 6px 10px;\n                  font-size: 0.78rem;\n                  white-space: nowrap;\n                  display: inline-flex;\n                  align-items: center;\n                  justify-content: center;\n                "
+      }
+    },
+    {
+      "line": 760,
+      "text": "\n                + Add & Validate\n              "
+    },
+    {
+      "line": 788,
+      "text": "📺 Streams Configuration:"
+    },
+    {
+      "line": 797,
+      "text": "\n              Filter, rank, and limit video streams delivered to Nuvio/Stremio\n              (Resolutions, Qualities, Codecs, HDR, File Sizes & Keywords).\n            "
+    },
+    {
+      "line": 804,
+      "text": "\n                Resolutions:\n              "
+    },
+    {
+      "line": 809,
+      "tag": "input",
+      "attributes": {
+        "type": "checkbox",
+        "id": "streamRes4k",
+        "checked": null
+      }
+    },
+    {
+      "line": 810,
+      "text": "✨ 4K / UHD (2160p)"
+    },
+    {
+      "line": 813,
+      "tag": "input",
+      "attributes": {
+        "type": "checkbox",
+        "id": "streamRes1080p",
+        "checked": null
+      }
+    },
+    {
+      "line": 814,
+      "text": "🧿 1080p (FHD)"
+    },
+    {
+      "line": 817,
+      "tag": "input",
+      "attributes": {
+        "type": "checkbox",
+        "id": "streamRes720p",
+        "checked": null
+      }
+    },
+    {
+      "line": 818,
+      "text": "💿 720p (HD)"
+    },
+    {
+      "line": 821,
+      "tag": "input",
+      "attributes": {
+        "type": "checkbox",
+        "id": "streamResSd",
+        "checked": null
+      }
+    },
+    {
+      "line": 822,
+      "text": "📁 SD (480p / 360p)"
+    },
+    {
+      "line": 825,
+      "tag": "input",
+      "attributes": {
+        "type": "checkbox",
+        "id": "streamResUnknown",
+        "checked": null
+      }
+    },
+    {
+      "line": 826,
+      "text": "❓ Unknown"
+    },
+    {
+      "line": 833,
+      "text": "\n                Source Qualities:\n              "
+    },
+    {
+      "line": 838,
+      "tag": "input",
+      "attributes": {
+        "type": "checkbox",
+        "id": "streamQualRemux",
+        "checked": null
+      }
+    },
+    {
+      "line": 839,
+      "text": "🏆 BluRay REMUX"
+    },
+    {
+      "line": 842,
+      "tag": "input",
+      "attributes": {
+        "type": "checkbox",
+        "id": "streamQualBluray",
+        "checked": null
+      }
+    },
+    {
+      "line": 843,
+      "text": "💿 BluRay"
+    },
+    {
+      "line": 846,
+      "tag": "input",
+      "attributes": {
+        "type": "checkbox",
+        "id": "streamQualWebdl",
+        "checked": null
+      }
+    },
+    {
+      "line": 847,
+      "text": "🌐 WEB-DL"
+    },
+    {
+      "line": 850,
+      "tag": "input",
+      "attributes": {
+        "type": "checkbox",
+        "id": "streamQualWebrip",
+        "checked": null
+      }
+    },
+    {
+      "line": 851,
+      "text": "⚡ WEBRip"
+    },
+    {
+      "line": 854,
+      "tag": "input",
+      "attributes": {
+        "type": "checkbox",
+        "id": "streamQualHdtv",
+        "checked": null
+      }
+    },
+    {
+      "line": 855,
+      "text": "📺 HDTV"
+    },
+    {
+      "line": 858,
+      "tag": "input",
+      "attributes": {
+        "type": "checkbox",
+        "id": "streamQualCam",
+        "checked": null
+      }
+    },
+    {
+      "line": 859,
+      "text": "🎥 CAM / Telesync"
+    },
+    {
+      "line": 862,
+      "tag": "input",
+      "attributes": {
+        "type": "checkbox",
+        "id": "streamExcludeCam"
+      }
+    },
+    {
+      "line": 863,
+      "text": "🚫 Block All CAM"
+    },
+    {
+      "line": 866,
+      "tag": "input",
+      "attributes": {
+        "type": "checkbox",
+        "id": "streamExcludeUnplayable",
+        "checked": null
+      }
+    },
+    {
+      "line": 867,
+      "text": "🚫 Exclude Unplayable"
+    },
+    {
+      "line": 874,
+      "text": "\n                Encodes & Formats:\n              "
+    },
+    {
+      "line": 879,
+      "tag": "input",
+      "attributes": {
+        "type": "checkbox",
+        "id": "streamEncHevc",
+        "checked": null
+      }
+    },
+    {
+      "line": 880,
+      "text": "🎞️ HEVC (H.265)"
+    },
+    {
+      "line": 883,
+      "tag": "input",
+      "attributes": {
+        "type": "checkbox",
+        "id": "streamEncAvc",
+        "checked": null
+      }
+    },
+    {
+      "line": 884,
+      "text": "🎞️ AVC (H.264)"
+    },
+    {
+      "line": 887,
+      "tag": "input",
+      "attributes": {
+        "type": "checkbox",
+        "id": "streamEncAv1",
+        "checked": null
+      }
+    },
+    {
+      "line": 888,
+      "text": "🎞️ AV1"
+    },
+    {
+      "line": 891,
+      "tag": "input",
+      "attributes": {
+        "type": "checkbox",
+        "id": "streamVisHdr",
+        "checked": null
+      }
+    },
+    {
+      "line": 892,
+      "text": "🌈 HDR / HDR10+"
+    },
+    {
+      "line": 895,
+      "tag": "input",
+      "attributes": {
+        "type": "checkbox",
+        "id": "streamVisDv",
+        "checked": null
+      }
+    },
+    {
+      "line": 896,
+      "text": "👓 Dolby Vision"
+    },
+    {
+      "line": 915,
+      "text": "Priority:"
+    },
+    {
+      "line": 917,
+      "tag": "select",
+      "attributes": {
+        "id": "streamPreferredRes",
+        "class": "settings-gate__input",
+        "style": "\n                    padding: 4px 6px;\n                    font-size: 0.76rem;\n                    width: auto;\n                    background: rgba(0, 0, 0, 0.4);\n                    border: 1px solid rgba(255, 255, 255, 0.15);\n                    border-radius: 4px;\n                    color: #fff;\n                  "
+      }
+    },
+    {
+      "line": 930,
+      "tag": "option",
+      "attributes": {
+        "value": "auto"
+      }
+    },
+    {
+      "line": 930,
+      "text": "Auto (Highest First)"
+    },
+    {
+      "line": 931,
+      "tag": "option",
+      "attributes": {
+        "value": "4k"
+      }
+    },
+    {
+      "line": 931,
+      "text": "4K (2160p)"
+    },
+    {
+      "line": 932,
+      "tag": "option",
+      "attributes": {
+        "value": "1080p"
+      }
+    },
+    {
+      "line": 932,
+      "text": "1080p (FHD)"
+    },
+    {
+      "line": 933,
+      "tag": "option",
+      "attributes": {
+        "value": "720p"
+      }
+    },
+    {
+      "line": 933,
+      "text": "720p (HD)"
+    },
+    {
+      "line": 934,
+      "tag": "option",
+      "attributes": {
+        "value": "sd"
+      }
+    },
+    {
+      "line": 934,
+      "text": "SD (480p/360p)"
+    },
+    {
+      "line": 942,
+      "text": "Max / Resolution:"
+    },
+    {
+      "line": 944,
+      "tag": "select",
+      "attributes": {
+        "id": "streamMaxPerRes",
+        "class": "settings-gate__input",
+        "style": "\n                    padding: 4px 6px;\n                    font-size: 0.76rem;\n                    width: auto;\n                    background: rgba(0, 0, 0, 0.4);\n                    border: 1px solid rgba(255, 255, 255, 0.15);\n                    border-radius: 4px;\n                    color: #fff;\n                  "
+      }
+    },
+    {
+      "line": 957,
+      "tag": "option",
+      "attributes": {
+        "value": "0"
+      }
+    },
+    {
+      "line": 957,
+      "text": "All Available"
+    },
+    {
+      "line": 958,
+      "tag": "option",
+      "attributes": {
+        "value": "1"
+      }
+    },
+    {
+      "line": 958,
+      "text": "1"
+    },
+    {
+      "line": 959,
+      "tag": "option",
+      "attributes": {
+        "value": "2"
+      }
+    },
+    {
+      "line": 959,
+      "text": "2"
+    },
+    {
+      "line": 960,
+      "tag": "option",
+      "attributes": {
+        "value": "3"
+      }
+    },
+    {
+      "line": 960,
+      "text": "3"
+    },
+    {
+      "line": 961,
+      "tag": "option",
+      "attributes": {
+        "value": "5"
+      }
+    },
+    {
+      "line": 961,
+      "text": "5"
+    },
+    {
+      "line": 962,
+      "tag": "option",
+      "attributes": {
+        "value": "10"
+      }
+    },
+    {
+      "line": 962,
+      "text": "10"
+    },
+    {
+      "line": 970,
+      "text": "Max Total:"
+    },
+    {
+      "line": 972,
+      "tag": "select",
+      "attributes": {
+        "id": "streamMaxTotal",
+        "class": "settings-gate__input",
+        "style": "\n                    padding: 4px 6px;\n                    font-size: 0.76rem;\n                    width: auto;\n                    background: rgba(0, 0, 0, 0.4);\n                    border: 1px solid rgba(255, 255, 255, 0.15);\n                    border-radius: 4px;\n                    color: #fff;\n                  "
+      }
+    },
+    {
+      "line": 985,
+      "tag": "option",
+      "attributes": {
+        "value": "0"
+      }
+    },
+    {
+      "line": 985,
+      "text": "Default (100)"
+    },
+    {
+      "line": 986,
+      "tag": "option",
+      "attributes": {
+        "value": "10"
+      }
+    },
+    {
+      "line": 986,
+      "text": "10"
+    },
+    {
+      "line": 987,
+      "tag": "option",
+      "attributes": {
+        "value": "20"
+      }
+    },
+    {
+      "line": 987,
+      "text": "20"
+    },
+    {
+      "line": 988,
+      "tag": "option",
+      "attributes": {
+        "value": "30"
+      }
+    },
+    {
+      "line": 988,
+      "text": "30"
+    },
+    {
+      "line": 989,
+      "tag": "option",
+      "attributes": {
+        "value": "50"
+      }
+    },
+    {
+      "line": 989,
+      "text": "50"
+    },
+    {
+      "line": 997,
+      "text": "Min Size:"
+    },
+    {
+      "line": 999,
+      "tag": "input",
+      "attributes": {
+        "type": "number",
+        "id": "streamMinSizeMb",
+        "min": "0",
+        "max": "10000",
+        "placeholder": "MB",
+        "class": "settings-gate__input",
+        "style": "\n                    padding: 4px 6px;\n                    font-size: 0.76rem;\n                    width: 68px;\n                    background: rgba(0, 0, 0, 0.4);\n                    border: 1px solid rgba(255, 255, 255, 0.15);\n                    border-radius: 4px;\n                    color: #fff;\n                  "
+      }
+    },
+    {
+      "line": 1022,
+      "text": "Max Size:"
+    },
+    {
+      "line": 1024,
+      "tag": "input",
+      "attributes": {
+        "type": "number",
+        "id": "streamMaxSizeGb",
+        "min": "0",
+        "max": "100",
+        "placeholder": "GB",
+        "class": "settings-gate__input",
+        "style": "\n                    padding: 4px 6px;\n                    font-size: 0.76rem;\n                    width: 68px;\n                    background: rgba(0, 0, 0, 0.4);\n                    border: 1px solid rgba(255, 255, 255, 0.15);\n                    border-radius: 4px;\n                    color: #fff;\n                  "
+      }
+    },
+    {
+      "line": 1057,
+      "text": "Exclude Keywords:"
+    },
+    {
+      "line": 1059,
+      "tag": "input",
+      "attributes": {
+        "type": "text",
+        "id": "streamExcludedKeywords",
+        "placeholder": "e.g. cam, sample, trailer, dub",
+        "class": "settings-gate__input",
+        "style": "\n                    padding: 4px 8px;\n                    font-size: 0.74rem;\n                    flex: 1;\n                    background: rgba(0, 0, 0, 0.4);\n                    border: 1px solid rgba(255, 255, 255, 0.15);\n                    border-radius: 4px;\n                    color: #fff;\n                  "
+      }
+    },
+    {
+      "line": 1079,
+      "text": "Require Keywords:"
+    },
+    {
+      "line": 1081,
+      "tag": "input",
+      "attributes": {
+        "type": "text",
+        "id": "streamRequiredKeywords",
+        "placeholder": "e.g. malaysub, 10bit (optional)",
+        "class": "settings-gate__input",
+        "style": "\n                    padding: 4px 8px;\n                    font-size: 0.74rem;\n                    flex: 1;\n                    background: rgba(0, 0, 0, 0.4);\n                    border: 1px solid rgba(255, 255, 255, 0.15);\n                    border-radius: 4px;\n                    color: #fff;\n                  "
+      }
+    },
+    {
+      "line": 1101,
+      "tag": "button",
+      "attributes": {
+        "type": "button",
+        "id": "catSaveSettingsBtn",
+        "class": "settings-gate__btn addon-catalog-save-btn",
+        "style": "\n                width: 100%;\n                padding: 10px 16px;\n                font-size: 0.9rem;\n                display: flex;\n                align-items: center;\n                justify-content: center;\n                gap: 6px;\n                white-space: normal;\n                text-align: center;\n              "
+      }
+    },
+    {
+      "line": 1116,
+      "text": "\n              💾 Save Addon Configuration\n            "
+    },
+    {
+      "line": 1120,
+      "text": "Saved!"
+    },
+    {
+      "line": 1128,
+      "text": "🔑 Access Token"
+    },
+    {
+      "line": 1130,
+      "text": "Active"
+    },
+    {
+      "line": 1134,
+      "tag": "input",
+      "attributes": {
+        "type": "text",
+        "id": "addonTokenInput",
+        "class": "settings-gate__input",
+        "style": "font-family: monospace; font-size: 0.82rem; flex: 1 1 0%; min-width: 0; box-sizing: border-box;",
+        "readonly": null,
+        "value": ""
+      }
+    },
+    {
+      "line": 1142,
+      "tag": "button",
+      "attributes": {
+        "type": "button",
+        "id": "addonTokenCopyBtn",
+        "class": "settings-gate__btn",
+        "style": "\n                flex: 0 0 auto;\n                white-space: nowrap;\n                padding: 8px 12px;\n                font-size: 0.82rem;\n                display: inline-flex;\n                align-items: center;\n                justify-content: center;\n              "
+      }
+    },
+    {
+      "line": 1155,
+      "text": "\n              📋\n            "
+    },
+    {
+      "line": 1158,
+      "tag": "button",
+      "attributes": {
+        "type": "button",
+        "id": "addonTokenRotateBtn",
+        "class": "settings-gate__btn",
+        "style": "\n                flex: 0 0 auto;\n                white-space: nowrap;\n                padding: 8px 12px;\n                font-size: 0.82rem;\n                display: inline-flex;\n                align-items: center;\n                justify-content: center;\n                gap: 4px;\n              "
+      }
+    },
+    {
+      "line": 1172,
+      "text": "\n              🔄 Regenerate\n            "
+    },
+    {
+      "line": 1196,
+      "text": "\n              📡 Wi-Fi / LAN Manifest (TV, Phone, Tablet)\n            "
+    },
+    {
+      "line": 1208,
+      "text": "Remote"
+    },
+    {
+      "line": 1212,
+      "tag": "input",
+      "attributes": {
+        "type": "text",
+        "id": "addonManifestLanInput",
+        "class": "settings-gate__input",
+        "style": "color: #00d26a; font-family: monospace; font-size: 0.88rem; flex: 1 1 0%; min-width: 0; box-sizing: border-box;",
+        "readonly": null,
+        "value": ""
+      }
+    },
+    {
+      "line": 1220,
+      "tag": "button",
+      "attributes": {
+        "id": "copyAddonManifestLanBtn",
+        "class": "settings-gate__btn",
+        "style": "\n                flex: 0 0 auto;\n                white-space: nowrap;\n                padding: 8px 16px;\n                font-size: 0.85rem;\n                display: inline-flex;\n                align-items: center;\n                justify-content: center;\n                gap: 4px;\n              "
+      }
+    },
+    {
+      "line": 1233,
+      "text": "\n              📋 Copy\n            "
+    },
+    {
+      "line": 1254,
+      "text": "\n              💻 Localhost Manifest (This Device Only)\n            "
+    },
+    {
+      "line": 1267,
+      "text": "Local"
+    },
+    {
+      "line": 1271,
+      "tag": "input",
+      "attributes": {
+        "type": "text",
+        "id": "addonManifestInput",
+        "class": "settings-gate__input",
+        "style": "color: #bbb; font-family: monospace; font-size: 0.88rem; flex: 1 1 0%; min-width: 0; box-sizing: border-box;",
+        "readonly": null,
+        "value": ""
+      }
+    },
+    {
+      "line": 1279,
+      "tag": "button",
+      "attributes": {
+        "id": "copyAddonManifestBtn",
+        "class": "settings-gate__btn",
+        "style": "\n                background: rgba(255, 255, 255, 0.1);\n                color: #ddd;\n                flex: 0 0 auto;\n                white-space: nowrap;\n                padding: 8px 16px;\n                font-size: 0.85rem;\n                display: inline-flex;\n                align-items: center;\n                justify-content: center;\n                gap: 4px;\n              "
+      }
+    },
+    {
+      "line": 1294,
+      "text": "\n              📋 Copy\n            "
+    },
+    {
+      "line": 1313,
+      "text": "\n              ☁️ Cloudflare Tunnel Manifest\n            "
+    },
+    {
+      "line": 1325,
+      "text": "Public"
+    },
+    {
+      "line": 1329,
+      "tag": "input",
+      "attributes": {
+        "type": "text",
+        "id": "addonManifestTunnelInput",
+        "class": "settings-gate__input",
+        "style": "color: #ff8a5b; font-family: monospace; font-size: 0.88rem; flex: 1 1 0%; min-width: 0; box-sizing: border-box;",
+        "readonly": null,
+        "value": ""
+      }
+    },
+    {
+      "line": 1337,
+      "tag": "button",
+      "attributes": {
+        "id": "copyAddonManifestTunnelBtn",
+        "class": "settings-gate__btn",
+        "style": "\n                flex: 0 0 auto;\n                white-space: nowrap;\n                padding: 8px 16px;\n                font-size: 0.85rem;\n                display: inline-flex;\n                align-items: center;\n                justify-content: center;\n                gap: 4px;\n              "
+      }
+    },
+    {
+      "line": 1350,
+      "text": "\n              📋 Copy\n            "
+    },
+    {
+      "line": 1354,
+      "tag": "a",
+      "attributes": {
+        "id": "addonStremioDirectBtn",
+        "class": "settings-gate__btn hidden",
+        "href": "#",
+        "target": "_blank",
+        "rel": "noopener noreferrer",
+        "style": "\n              display: flex;\n              align-items: center;\n              justify-content: center;\n              gap: 8px;\n              width: 100%;\n              margin-top: 10px;\n              padding: 10px 16px;\n              text-decoration: none;\n              font-weight: 600;\n              background: #ff6b35;\n              color: #fff;\n              box-sizing: border-box;\n            "
+      }
+    },
+    {
+      "line": 1374,
+      "text": "\n            🎬 Add to Stremio\n          "
+    },
+    {
+      "line": 1393,
+      "text": "\n              🎵 Eclipse Music Addon URL\n            "
+    },
+    {
+      "line": 1405,
+      "text": "Music"
+    },
+    {
+      "line": 1409,
+      "tag": "input",
+      "attributes": {
+        "type": "text",
+        "id": "addonManifestEclipseInput",
+        "class": "settings-gate__input",
+        "style": "color: #fb7185; font-family: monospace; font-size: 0.88rem; flex: 1 1 0%; min-width: 0; box-sizing: border-box;",
+        "readonly": null,
+        "value": ""
+      }
+    },
+    {
+      "line": 1417,
+      "tag": "button",
+      "attributes": {
+        "id": "copyAddonManifestEclipseBtn",
+        "class": "settings-gate__btn",
+        "style": "\n                flex: 0 0 auto;\n                white-space: nowrap;\n                padding: 8px 16px;\n                font-size: 0.85rem;\n                background: #e11d48;\n                display: inline-flex;\n                align-items: center;\n                justify-content: center;\n                gap: 4px;\n              "
+      }
+    },
+    {
+      "line": 1431,
+      "text": "\n              📋 Copy\n            "
+    },
+    {
+      "line": 1435,
+      "text": "\n            In Eclipse Music: "
+    },
+    {
+      "line": 1436,
+      "text": "Settings ➔ Connections ➔ Add Connection ➔ Addon"
+    },
+    {
+      "line": 1436,
+      "text": " and paste this URL.\n          "
+    },
+    {
+      "line": 1440,
+      "text": "\n          ✓ Copied to clipboard!\n        "
+    },
+    {
+      "line": 1446,
+      "text": "\n            🎬 Install in Stremio (HTTP API Sync)\n          "
+    },
+    {
+      "line": 1449,
+      "text": "\n            Stremio Web blocks HTTP addon URLs. This sends the selected HTTP\n            manifest to your Stremio account from the browser. Credentials go\n            only to\n            "
+    },
+    {
+      "line": 1453,
+      "text": "api.strem.io"
+    },
+    {
+      "line": 1453,
+      "text": " — nothing is stored on this server.\n          "
+    },
+    {
+      "line": 1456,
+      "tag": "div",
+      "attributes": {
+        "class": "addon-mode-toggle",
+        "role": "radiogroup",
+        "aria-label": "Manifest address",
+        "id": "stremioSyncModeToggle"
+      }
+    },
+    {
+      "line": 1463,
+      "tag": "input",
+      "attributes": {
+        "type": "radio",
+        "name": "stremioSyncMode",
+        "id": "stremioSyncModeLan",
+        "value": "lan",
+        "checked": null
+      }
+    },
+    {
+      "line": 1470,
+      "text": "📡 Wi-Fi / LAN"
+    },
+    {
+      "line": 1473,
+      "tag": "input",
+      "attributes": {
+        "type": "radio",
+        "name": "stremioSyncMode",
+        "id": "stremioSyncModeLocal",
+        "value": "localhost"
+      }
+    },
+    {
+      "line": 1479,
+      "text": "💻 Localhost"
+    },
+    {
+      "line": 1486,
+      "text": "Stremio Email"
+    },
+    {
+      "line": 1488,
+      "tag": "input",
+      "attributes": {
+        "type": "email",
+        "id": "stremioSyncEmail",
+        "class": "settings-gate__input",
+        "autocomplete": "username",
+        "placeholder": "you@example.com"
+      }
+    },
+    {
+      "line": 1498,
+      "text": "Stremio Password"
+    },
+    {
+      "line": 1500,
+      "tag": "input",
+      "attributes": {
+        "type": "password",
+        "id": "stremioSyncPassword",
+        "class": "settings-gate__input",
+        "autocomplete": "current-password",
+        "placeholder": "Your Stremio password"
+      }
+    },
+    {
+      "line": 1510,
+      "text": "Auth Key (optional)"
+    },
+    {
+      "line": 1512,
+      "tag": "input",
+      "attributes": {
+        "type": "password",
+        "id": "stremioSyncAuthKey",
+        "class": "settings-gate__input",
+        "autocomplete": "off",
+        "placeholder": "Paste instead of email/password"
+      }
+    },
+    {
+      "line": 1519,
+      "text": "\n              From Stremio Web DevTools:\n              "
+    },
+    {
+      "line": 1521,
+      "text": "JSON.parse(localStorage.getItem(\"profile\")).auth.key"
+    },
+    {
+      "line": 1524,
+      "tag": "button",
+      "attributes": {
+        "type": "button",
+        "id": "stremioSyncInstallBtn",
+        "class": "settings-gate__btn addon-stremio-sync__btn"
+      }
+    },
+    {
+      "line": 1528,
+      "text": "\n            Install via Stremio API Sync\n          "
+    },
+    {
+      "line": 1556,
+      "text": "\n            🚀 How to install in Nuvio:\n          "
+    },
+    {
+      "line": 1567,
+      "text": "\n              Connect your Android TV, phone, or tablet to the\n              "
+    },
+    {
+      "line": 1569,
+      "text": "same Wi-Fi network"
+    },
+    {
+      "line": 1569,
+      "text": ".\n            "
+    },
+    {
+      "line": 1571,
+      "text": "\n              Open the "
+    },
+    {
+      "line": 1572,
+      "text": "Nuvio"
+    },
+    {
+      "line": 1572,
+      "text": " app.\n            "
+    },
+    {
+      "line": 1574,
+      "text": "\n              Go to "
+    },
+    {
+      "line": 1575,
+      "text": "profile"
+    },
+    {
+      "line": 1575,
+      "text": " →\n              "
+    },
+    {
+      "line": 1576,
+      "text": "content & discovery"
+    },
+    {
+      "line": 1576,
+      "text": " →\n              "
+    },
+    {
+      "line": 1577,
+      "text": "addons"
+    },
+    {
+      "line": 1577,
+      "text": ".\n            "
+    },
+    {
+      "line": 1579,
+      "text": "\n              Paste the "
+    },
+    {
+      "line": 1580,
+      "text": "Wi-Fi / LAN Manifest URL"
+    },
+    {
+      "line": 1580,
+      "text": " and click\n              "
+    },
+    {
+      "line": 1581,
+      "text": "Install addon"
+    },
+    {
+      "line": 1581,
+      "text": ".\n            "
+    }
+  ]
+}
