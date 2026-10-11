@@ -1,6 +1,14 @@
 name: MovieSapaMapuh Android
 
 on:
+  push:
+    branches: ['feature/moviesapamapuh']
+    paths:
+      - 'android/pencarimovie-server/**'
+      - 'public/**'
+      - 'backend.php'
+      - 'tools/**'
+      - '.github/workflows/moviesapamapuh-baseline.yml'
   workflow_dispatch:
     inputs:
       signed_release:
@@ -13,6 +21,10 @@ on:
       - 'public/**'
       - 'tools/**'
       - '.github/workflows/moviesapamapuh-baseline.yml'
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.head_ref || github.ref_name }}
+  cancel-in-progress: true
 
 permissions:
   contents: read
@@ -36,10 +48,13 @@ jobs:
           npm install --prefix "$RUNNER_TEMP/presentation" playwright@1.62.1
           "$RUNNER_TEMP/presentation/node_modules/.bin/playwright" install --with-deps chromium
           NODE_PATH="$RUNNER_TEMP/presentation/node_modules" node tools/test-presentation.cjs
+          NODE_PATH="$RUNNER_TEMP/presentation/node_modules" node tools/test-ui-refinement.cjs
       - uses: actions/upload-artifact@v4
         with:
           name: MovieSapaMapuh-presentation-fixtures
-          path: dist/screenshots/
+          path: |
+            dist/screenshots/
+            dist/refinement-screenshots/
 
   build:
     if: github.repository == 'Paim41/pencarimovie-server'

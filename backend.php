@@ -872,7 +872,7 @@ function fd_auto_provision_guest(): ?array
             'offset_seconds' => (int) $clockProbe['offset'],
         ]);
         return ['error' => "Device clock out of sync!\nYour clock is {$human} {$dir} Telegram's server time.\n\n"
-            . "Enable 'Set time automatically' (Automatic date and time / NTP) in your device Settings, then restart the PencariMovie Server."];
+            . "Enable 'Set time automatically' (Automatic date and time / NTP) in your device Settings, then restart the MovieSapaMapuh."];
     }
 
     // Check if an existing valid guest session is already active or in the pool.
@@ -911,7 +911,7 @@ function fd_auto_provision_guest(): ?array
         $orphan = fd_find_orphan_session_bot_id();
         if ($orphan !== '') {
             fd_log('auto provision aborted: orphan session dir present without bot_id', ['orphan_bot_id' => $orphan]);
-            return ['error' => 'A previous login did not finish. Please restart the PencariMovie Server and try again.'];
+            return ['error' => 'A previous login did not finish. Please restart the MovieSapaMapuh and try again.'];
         }
     }
 
@@ -1569,7 +1569,7 @@ function fd_stremio_locked_stream(string $baseUrl): never
     fd_stremio_json([
         'streams' => [[
             'name' => 'PencariMovie',
-            'description' => "Addon URL changed or password required.\nOpen PencariMovie and re-install the addon from #addon.",
+            'description' => "Addon URL changed or password required.\nOpen MovieSapaMapuh and re-install the addon from #addon.",
             'externalUrl' => rtrim($baseUrl, '/') . '/#addon',
         ]],
     ], 200, 'no-cache, no-store, must-revalidate');
@@ -1581,7 +1581,7 @@ function fd_stremio_locked_stream(string $baseUrl): never
 function fd_eclipse_locked_response(string $baseUrl): never
 {
     fd_stremio_json([
-        'error' => "Addon URL changed or password required. Open PencariMovie and re-install the addon from #addon.",
+        'error' => "Addon URL changed or password required. Open MovieSapaMapuh and re-install the addon from #addon.",
         'externalUrl' => rtrim($baseUrl, '/') . '/#addon',
     ], 200, 'no-cache, no-store, must-revalidate');
 }
@@ -1599,19 +1599,21 @@ function fd_serve_auth_gate_html(): void
     echo <<<'HTML'
 <!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>PencariMovie Server</title>
+<title>MovieSapaMapuh</title>
 <style>
-body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;background:#141414;color:#fff;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
-.card{width:100%;max-width:360px;padding:28px;background:#1c1c1c;border-radius:14px;box-shadow:0 8px 32px rgba(0,0,0,.5)}
-h1{margin:0 0 6px;font-size:1.3rem}
-p{margin:0 0 18px;color:#9a9a9a;font-size:.86rem}
-input{width:100%;box-sizing:border-box;padding:12px;border-radius:8px;border:1px solid #333;background:#111;color:#fff;font-size:1rem}
-button{width:100%;margin-top:12px;padding:12px;border:0;border-radius:8px;background:#ff6b35;color:#fff;font-size:1rem;font-weight:600;cursor:pointer}
-button:disabled{opacity:.6;cursor:default}
-.err{margin-top:10px;color:#ff5c5c;font-size:.84rem;min-height:1.1em}
+body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;background:#0C0C0F;color:#F7F7F8;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+.card{box-sizing:border-box;width:calc(100% - 32px);max-width:400px;margin:16px;padding:24px;background:#222228;border:1px solid #484853;border-radius:20px}
+h1{margin:0 0 12px;font-size:1.4rem;line-height:1.3;overflow-wrap:anywhere}
+p{margin:0 0 18px;color:#AFAFB9;font-size:.9rem;line-height:1.6}
+input{width:100%;box-sizing:border-box;padding:12px;min-height:48px;border-radius:12px;border:1px solid #626270;background:#0C0C0F;color:#F7F7F8;font-size:1rem}
+input::placeholder{color:#AFAFB9;opacity:1}
+button{width:100%;margin-top:12px;padding:12px;min-height:48px;border:0;border-radius:12px;background:#B92336;color:#F7F7F8;font-size:1rem;font-weight:600;cursor:pointer}
+button:disabled{opacity:.7;cursor:default}
+input:focus,button:focus-visible{outline:2px solid #FF8591;outline-offset:3px}
+.err{margin-top:10px;color:#FF8591;font-size:.9rem;line-height:1.5;min-height:1.1em}
 </style></head><body>
 <div class="card">
-<h1>PencariMovie Server</h1>
+<h1>MovieSapaMapuh</h1>
 <p>Enter server password to continue. (Default: <code>123456</code>)</p>
 <form id="f">
 <input id="pw" type="password" placeholder="Password" autocomplete="current-password" autofocus>
@@ -1619,7 +1621,7 @@ button:disabled{opacity:.6;cursor:default}
 <div class="err" id="e"></div>
 </form>
 <div style="margin-top:16px;padding:10px 12px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:8px;font-size:.78rem;color:#aaa;line-height:1.45;text-align:left">
-PencariMovie Server is completely free &mdash; we never sell access or subscriptions. If this is not your personal server, you can easily run your own for free on your phone, PC, or TV &mdash; get the installer at <a href="https://telegra.my" target="_blank" rel="noopener" style="color:#ff6b35;text-decoration:underline">telegra.my</a>.
+MovieSapaMapuh is completely free &mdash; we never sell access or subscriptions. If this is not your personal server, you can easily run your own for free on your phone, PC, or TV &mdash; get the installer at <a href="https://telegra.my" target="_blank" rel="noopener" style="color:#ff6b35;text-decoration:underline">telegra.my</a>.
 </div>
 </div>
 <script>
@@ -4024,7 +4026,7 @@ function fd_environment_preflight(): array
         'fileinfo' => 'MadelineProto requires the fileinfo extension.',
         'openssl'  => 'MadelineProto requires the openssl extension for the MTProto handshake.',
         'mbstring' => 'MadelineProto requires the mbstring extension.',
-        'curl'     => 'PencariMovie Server requires the curl extension to reach the PencariMovie API.',
+        'curl'     => 'MovieSapaMapuh requires the curl extension to reach the PencariMovie API.',
     ];
     foreach ($requiredExtensions as $ext => $why) {
         if (!extension_loaded($ext)) {
@@ -5044,7 +5046,7 @@ function fd_clock_skew_message(): string
 
     return $base
         . "\n\nYour clock is {$human} {$direction} Telegram's server time."
-        . "\n\nFix: enable 'Set time automatically' (Automatic date and time / NTP) in your device Settings, then restart the PencariMovie Server.";
+        . "\n\nFix: enable 'Set time automatically' (Automatic date and time / NTP) in your device Settings, then restart the MovieSapaMapuh.";
 }
 
 /**
@@ -5090,7 +5092,7 @@ function fd_friendly_login_error(string $rawError): string
         || str_contains($lower, 'lock')
         || str_contains($lower, 'could not connect to madelineproto')
     ) {
-        return "Session busy or locked by another process.\nPlease wait a moment or restart the PencariMovie Server.";
+        return "Session busy or locked by another process.\nPlease wait a moment or restart the MovieSapaMapuh.";
     }
 
     // 5. Uncaught Revolt EventLoop exception
@@ -10496,7 +10498,7 @@ if ($isEclipseRoute) {
             'id'          => 'org.pencarimovie.eclipsemusic',
             'name'        => 'PencariMusic',
             'version'     => '1.0.0',
-            'description' => 'Stream Telegram music and audio files via PencariMovie Server',
+            'description' => 'Stream Telegram music and audio files via MovieSapaMapuh',
             'resources'   => ['search', 'stream', 'catalog'],
             'types'       => ['track', 'album', 'artist'],
             'contentType' => 'music',
@@ -15699,7 +15701,7 @@ if (fd_is_guest_provision_in_progress()) {
     header('Cache-Control: no-store, no-cache, must-revalidate');
     if ($path === '/' || str_ends_with($path, '.html')) {
         header('Content-Type: text/html; charset=utf-8');
-        echo '<!DOCTYPE html><html><head><meta charset="utf-8"><meta http-equiv="refresh" content="3"><title>PencariMovie Server</title>'
+        echo '<!DOCTYPE html><html><head><meta charset="utf-8"><meta http-equiv="refresh" content="3"><title>MovieSapaMapuh</title>'
             . '<style>body{margin:0;padding:0;background:#141414;color:#fff;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;gap:20px;text-align:center;box-sizing:border-box;}'
             . '.loading-screen__spinner{width:44px;height:44px;border:4px solid rgba(255,255,255,0.1);border-top-color:#ff6b35;border-radius:50%;animation:loading-spin 0.8s linear infinite;}'
             . '.loading-screen__text{font-size:1rem;color:rgba(255,255,255,0.6);margin:0;animation:loading-pulse 1.5s ease-in-out infinite;}'

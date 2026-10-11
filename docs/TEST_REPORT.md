@@ -1,3 +1,5 @@
+> Latest pass: [1.0.3 UI refinement and validation](UI_REFINEMENT_1.0.3.md). The report below records the original 1.0.2 delivery.
+
 # MovieSapaMapuh test report — 2026-10-11
 
 Work is in `Paim41/pencarimovie-server`, branch `feature/moviesapamapuh`. No upstream writes. This report separates source/build checks from runtime acceptance; full feature parity is not claimed.

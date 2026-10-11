@@ -21,7 +21,7 @@ import java.util.concurrent.ConcurrentHashMap
 import java.util.concurrent.TimeUnit
 
 /**
- * Pure native embedded HTTP server for PencariMovie Server.
+ * Pure native embedded HTTP server for MovieSapaMapuh.
  * Replaces FrankenPHP/PHP runtime by directly serving:
  * - Static frontend assets from assets/web/ (public/)
  * - Core API endpoints (/api/auth, /api/session, /api/proxy-stream, /api/catalog-settings)
@@ -58,19 +58,21 @@ class NativeHttpServer(
         private val AUTH_GATE_HTML = """
 <!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>PencariMovie Server</title>
+<title>MovieSapaMapuh</title>
 <style>
-body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;background:#141414;color:#fff;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
-.card{width:100%;max-width:360px;padding:28px;background:#1c1c1c;border-radius:14px;box-shadow:0 8px 32px rgba(0,0,0,.5)}
-h1{margin:0 0 6px;font-size:1.3rem}
-p{margin:0 0 18px;color:#9a9a9a;font-size:.86rem}
-input{width:100%;box-sizing:border-box;padding:12px;border-radius:8px;border:1px solid #333;background:#111;color:#fff;font-size:1rem}
-button{width:100%;margin-top:12px;padding:12px;border:0;border-radius:8px;background:#ff6b35;color:#fff;font-size:1rem;font-weight:600;cursor:pointer}
-button:disabled{opacity:.6;cursor:default}
-.err{margin-top:10px;color:#ff5c5c;font-size:.84rem;min-height:1.1em}
+body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;background:#0C0C0F;color:#F7F7F8;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+.card{box-sizing:border-box;width:calc(100% - 32px);max-width:400px;margin:16px;padding:24px;background:#222228;border:1px solid #484853;border-radius:20px}
+h1{margin:0 0 12px;font-size:1.4rem;line-height:1.3;overflow-wrap:anywhere}
+p{margin:0 0 18px;color:#AFAFB9;font-size:.9rem;line-height:1.6}
+input{width:100%;box-sizing:border-box;padding:12px;min-height:48px;border-radius:12px;border:1px solid #626270;background:#0C0C0F;color:#F7F7F8;font-size:1rem}
+input::placeholder{color:#AFAFB9;opacity:1}
+button{width:100%;margin-top:12px;padding:12px;min-height:48px;border:0;border-radius:12px;background:#B92336;color:#F7F7F8;font-size:1rem;font-weight:600;cursor:pointer}
+button:disabled{opacity:.7;cursor:default}
+input:focus,button:focus-visible{outline:2px solid #FF8591;outline-offset:3px}
+.err{margin-top:10px;color:#FF8591;font-size:.9rem;line-height:1.5;min-height:1.1em}
 </style></head><body>
 <div class="card">
-<h1>PencariMovie Server</h1>
+<h1>MovieSapaMapuh</h1>
 <p>Enter server password to continue. (Default: <code>123456</code>)</p>
 <form id="f">
 <input id="pw" type="password" placeholder="Password" autocomplete="current-password" autofocus>
@@ -78,7 +80,7 @@ button:disabled{opacity:.6;cursor:default}
 <div class="err" id="e"></div>
 </form>
 <div style="margin-top:16px;padding:10px 12px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:8px;font-size:.78rem;color:#aaa;line-height:1.45;text-align:left">
-PencariMovie Server is completely free &mdash; we never sell access or subscriptions. If this is not your personal server, you can easily run your own for free on your phone, PC, or TV &mdash; get the installer at <a href="https://telegra.my" target="_blank" rel="noopener" style="color:#ff6b35;text-decoration:underline">telegra.my</a>.
+MovieSapaMapuh is completely free &mdash; we never sell access or subscriptions. If this is not your personal server, you can easily run your own for free on your phone, PC, or TV &mdash; get the installer at <a href="https://telegra.my" target="_blank" rel="noopener" style="color:#ff6b35;text-decoration:underline">telegra.my</a>.
 </div>
 </div>
 <script>
@@ -233,7 +235,7 @@ document.getElementById('f').addEventListener('submit', async function(ev){
         val json = JSONObject().apply {
             put("ok", 1)
             put("version", currentVersion)
-            put("app_name", "PencariMovie Server")
+            put("app_name", "MovieSapaMapuh")
             put("architecture", "Native Kotlin + TDLib (32/64-bit)")
             put("current_version", currentVersion)
         }
@@ -495,7 +497,7 @@ document.getElementById('f').addEventListener('submit', async function(ev){
             raw.isBlank() -> ""
             lower.contains("too new") || lower.contains("too old") || lower.contains("message id") || lower.contains("sync your date") ->
                 "Device clock out of sync!\nTelegram requires accurate device time (within ~5 minutes).\n\n" +
-                    "Enable 'Set time automatically' (Automatic date and time / NTP) in your device Settings, then restart the PencariMovie Server."
+                    "Enable 'Set time automatically' (Automatic date and time / NTP) in your device Settings, then restart the MovieSapaMapuh."
             lower.contains("unauthorized") || lower.contains("token_invalid") || lower.contains("token is invalid") || lower.contains("invalid token") ->
                 "Invalid Bot Token!\nPlease double check the bot token from @BotFather. Ensure there are no extra spaces or missing characters."
             lower.contains("could not resolve host") || lower.contains("name or service not known") ||
@@ -628,7 +630,7 @@ document.getElementById('f').addEventListener('submit', async function(ev){
             val scheme = if ((session.headers["x-forwarded-proto"] ?: "").lowercase() == "https") "https" else "http"
             return jsonResponse(JSONObject().put("streams", JSONArray().put(JSONObject().apply {
                 put("name", "PencariMovie")
-                put("description", "Addon URL changed or password required.\nOpen PencariMovie and re-install the addon from #addon.")
+                put("description", "Addon URL changed or password required.\nOpen MovieSapaMapuh and re-install the addon from #addon.")
                 put("externalUrl", "$scheme://$host/#addon")
             })))
         }

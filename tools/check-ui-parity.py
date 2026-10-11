@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Static preservation gate. It intentionally makes no runtime parity claims."""
 import collections
+import re
 from html.parser import HTMLParser
 from pathlib import Path
 import subprocess
@@ -12,9 +13,12 @@ NATIVE = 'a1f5091ceef836d801c8f8efac2392b4431da6ac'
 def original(ref, path):
     return subprocess.check_output(['git', 'show', f'{ref}:{path}'], cwd=repo, text=True)
 def branded(text):
-    for a,b in [('PencariMovie Server','MovieSapaMapuh'),('PencariMovie —','MovieSapaMapuh —'),('PencariMovie Catalogs','MovieSapaMapuh Catalogs'),('PencariMovie Addon Configuration','MovieSapaMapuh Addon Configuration')]:
+    for a,b in [('PencariMovie Server','MovieSapaMapuh'),('PencariMovie —','MovieSapaMapuh —'),('PencariMovie Catalogs','MovieSapaMapuh Catalogs'),('PencariMovie Addon Configuration','MovieSapaMapuh Addon Configuration'),('PencariMovie Downloader.','MovieSapaMapuh.'),('PencariMovie catalogs are off.','MovieSapaMapuh catalogs are off.'),('Enable PencariMovie catalogs in Addon Settings','Enable MovieSapaMapuh catalogs in Addon Settings')]:
         text=text.replace(a,b)
     return text
+def auth_style(text):
+    style=(repo/'tools/fixtures/noir-auth.css').read_text()
+    return re.sub(r'(<title>MovieSapaMapuh</title>\s*<style>).*?(</style>)',lambda m:m[1]+'\n'+style+m[2],text,flags=re.S)
 class Page(HTMLParser):
     def __init__(self, text):
         super().__init__(convert_charrefs=True); self.texts=collections.Counter(); self.ids=set(); self.skip=0; self.feed(text)
@@ -46,7 +50,10 @@ for filename in ['activity_main.xml','activity_web.xml']:
     now=collections.Counter(x.get(ns+'text') for x in new.iter() if x.get(ns+'text'))
     assert not texts-now,('Missing native layout text',texts-now)
 for path in ['backend.php','composer.json','composer.lock','Caddyfile','router.php','index.php']:
-    assert (repo/path).read_bytes()==subprocess.check_output(['git','show',f'{BASE}:{path}'],cwd=repo),path
+    before=original(BASE,path)
+    if path=='backend.php':
+        before=auth_style(before.replace('PencariMovie Server','MovieSapaMapuh').replace('Open PencariMovie and re-install','Open MovieSapaMapuh and re-install'))
+    assert (repo/path).read_text()==before, ('Non-branding PHP engine/dependency change',path)
 # Preserve every dynamic label and event handler in the two distinct frontend baselines.
 for ref,folder in [(BASE,'public'),(NATIVE,'android/pencarimovie-server/app/src/main/assets/web')]:
     path=folder+'/app.js'
@@ -56,5 +63,10 @@ for ref,folder in [(BASE,'public'),(NATIVE,'android/pencarimovie-server/app/src/
     for path in paths:
         if path.endswith(('.js','.json')) and path != folder+'/app.js':
             assert (repo/path).read_bytes()==subprocess.check_output(['git','show',f'{ref}:{path}'],cwd=repo), ('Runtime/translation changed',path)
-print('PASS native resource text/IDs, PHP engine, frontend handlers, bundles and translations')
+path='android/pencarimovie-server/app/src/main/java/com/pencarimovie/server/NativeHttpServer.kt'
+assert (repo/path).read_text()==auth_style(original('0f1c851',path).replace('PencariMovie Server','MovieSapaMapuh').replace('Open PencariMovie and re-install','Open MovieSapaMapuh and re-install')), 'Native server changed beyond UI branding'
+for name in ['TdLibManager.kt','WebActivity.kt','ServerService.kt']:
+    path='android/pencarimovie-server/app/src/main/java/com/pencarimovie/server/'+name
+    assert (repo/path).read_text()==original('0f1c851',path), ('Working native engine/playback changed',path)
+print('PASS native resource text/IDs, PHP/native engine except exact brand substitutions and standalone auth CSS, frontend handlers, bundles and translations')
 print('Dynamic text, visual reachability, event wiring and device behavior still require runtime tests.')

@@ -9,3 +9,5 @@ Intentional text substitutions: app resource names PencariMovie Server → Movie
 Updater makes no network request without an explicitly configured real fork release feed. Optional Gradle property moviesapamapuhUpdateFeed accepts only a GitHub release asset URL in this fork. Parsed metadata must name the exact applicationId and provide a fork-owned APK URL with a SHA-256. Android signature/upgrade checks still apply. No release feed has been invented or published.
 
 No user authentication, Telegram, streaming, range, catalog or service engine is replaced by branding.
+
+1.0.3 also updates the loading fallback, catalog guidance, standalone password-page branding, and restart/reinstall app references. External PencariMovie API/provider/addon names, stream names and filenames stay unchanged. See UI_REFINEMENT_1.0.3.md.

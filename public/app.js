@@ -4818,7 +4818,7 @@ class PencariMovieApp {
           <h3 style="color: #fff; margin-bottom: 8px;">Catalogs are currently disabled</h3>
           <p style="max-width: 480px; margin: 0 auto; font-size: 0.88rem; line-height: 1.5;">
             ${upstreamOnly
-              ? 'PencariMovie catalogs are off. Upstream addon catalogs are still bridged for Stremio/Nuvio, but they are not shown here. Enable PencariMovie catalogs in Addon Settings to browse them on this page.'
+              ? 'MovieSapaMapuh catalogs are off. Upstream addon catalogs are still bridged for Stremio/Nuvio, but they are not shown here. Enable MovieSapaMapuh catalogs in Addon Settings to browse them on this page.'
               : 'Addon is configured for streams only via Streams matched by ID (IMDb, TMDB, Kitsu, and more). You can search files or enable catalogs in Addon Settings.'}
           </p>
         </div>

@@ -47,8 +47,8 @@ android {
         //   ./gradlew :app:assembleRelease -PversionNameOverride=2.0.1 -PversionCodeOverride=21
         def versionNameOverride = project.findProperty("versionNameOverride")
         def versionCodeOverride = project.findProperty("versionCodeOverride")
-        versionCode versionCodeOverride != null ? versionCodeOverride.toString().toInteger() : 10002
-        versionName versionNameOverride != null ? versionNameOverride.toString() : "1.0.2"
+        versionCode versionCodeOverride != null ? versionCodeOverride.toString().toInteger() : 10003
+        versionName versionNameOverride != null ? versionNameOverride.toString() : "1.0.3"
 
         validateVersionName(versionName)
         // No invented release feed. Configure only after a real fork release exists.

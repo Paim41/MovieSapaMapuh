@@ -1,3 +1,5 @@
+> Updated in 1.0.3: extra flame overlays/settings removed; fixed viewport anchoring and normalized sprite bounds added. See [UI refinement](UI_REFINEMENT_1.0.3.md). The initial implementation notes below are historical where they describe optional flame rendering.
+
 # Si Youyou
 
 The two replacement archives were merged into `assets-private/si-youyou/Si_Youyou_Animation_Asset_Pack/` without conflicts. Original filenames, README, manifest, previews, nine originals and 21 sprites are preserved. The oversized archive was not used. SHA-256, RGBA dimensions and alpha bounds are in SI_YOUYOU_ASSET_AUDIT.json.
