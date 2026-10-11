@@ -70085,7 +70085,7 @@ function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
         }).join(""), "\n            </div>\n          </section>\n        ");
       },
       renderEmptyState() {
-        return '\n          <section class="library-empty-state">\n            '.concat(l(), '\n            <h3 class="library-empty-title">').concat(n(this.controller.getEmptyStateTitle()), '</h3>\n            <p class="library-empty-subtitle">').concat(n(this.controller.getEmptyStateSubtitle()), "</p>\n          </section>\n        ");
+        return '\n          <section class="library-empty-state">\n            '.concat(l(), '\n            <h3 class="library-empty-title">').concat(n(window.MovieSapaMapuhLibrary ? window.MovieSapaMapuhLibrary(this.controller.getState(),this.controller.getEmptyStateTitle(),"title") : this.controller.getEmptyStateTitle()), '</h3>\n            <p class="library-empty-subtitle">').concat(n(window.MovieSapaMapuhLibrary ? window.MovieSapaMapuhLibrary(this.controller.getState(),this.controller.getEmptyStateSubtitle(),"subtitle") : this.controller.getEmptyStateSubtitle()), "</p>\n          </section>\n        ");
       },
       applyOpenPickerOptionFocus() {
         var f;

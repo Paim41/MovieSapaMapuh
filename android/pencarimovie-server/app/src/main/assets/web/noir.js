@@ -1,6 +1,25 @@
 /* Optional presentation adapter for prebuilt shell images and decorative UI icons. */
 (function () {
   'use strict';
+  // Display-only Library wording. Never mutate the controller or its filters/items.
+  window.MovieSapaMapuhLibrary = function (state, original, field) {
+    if (state.sourceMode === 'trakt' && !state.isTraktAuthenticated) return original;
+    var scope = (state.allItems || []).filter(function (item) {
+      return state.sourceMode === 'local' || !state.selectedListKey ||
+        (item.listKeys || []).indexOf(state.selectedListKey) !== -1;
+    });
+    var filtered = scope.length > 0 && !(state.visibleItems || []).length &&
+      ((state.selectedTypeKey && state.selectedTypeKey !== '__all__') || state.selectedGenre ||
+       state.selectedYear || (state.selectedWatchedFilter && state.selectedWatchedFilter !== 'all'));
+    // Preserve translated messages. Correct the defective English fallback only.
+    if (field === 'subtitle') return filtered && /^(Use \+|Start saving)/.test(original)
+      ? 'Try changing your Library filters. ' + original : original;
+    if (filtered && /^No .*( yet| in this list| in this Simkl status)$/.test(original)) return 'No matching titles';
+    if (original === 'No all yet') return 'Your library is empty';
+    if (original === 'No all in this list') return 'This list is empty';
+    if (original === 'No all in this Simkl status') return 'This Simkl status is empty';
+    return original;
+  };
   var svgNS = 'http://www.w3.org/2000/svg';
   var paths = {
     '⚙️': 'M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8M12 2v3m0 14v3M2 12h3m14 0h3M5 5l2 2m10 10 2 2M5 19l2-2M17 7l2-2',
@@ -31,8 +50,40 @@
   paths['💾']='M3 3h15l3 3v15H3zM7 3v6h10V3M7 21v-8h10v8';
   paths['🎵']='M9 17V4l12-2v13M9 7l12-2M9 17a3 3 0 1 1-3-3h3M21 15a3 3 0 1 1-3-3h3';
   paths['🚀']='M8 16l-4-1 3-6 4-1M8 16l1 4 6-3 1-4M8 16C10 7 15 3 21 3c0 6-4 11-13 13zM4 20l-1 1';
+  function measureDock(dock) {
+    if (!matchMedia('(max-width:800px)').matches) return;
+    var height=dock.getBoundingClientRect().height;
+    if(height>0) document.documentElement.style.setProperty('--noir-dock-space',
+      'calc(' + Math.ceil(height+28) + 'px + var(--noir-safe-bottom))');
+  }
+  function dockAccessibility(root) {
+    if (!root.querySelectorAll) return;
+    var panels = Array.prototype.slice.call(root.querySelectorAll('.modern-sidebar-panel'));
+    if (root.matches && root.matches('.modern-sidebar-panel')) panels.unshift(root);
+    var docks=Array.prototype.slice.call(root.querySelectorAll('.home-sidebar.root-sidebar-legacy,.modern-sidebar-shell'));
+    if(root.matches && root.matches('.home-sidebar.root-sidebar-legacy,.modern-sidebar-shell')) docks.unshift(root);
+    docks.forEach(function(dock){
+      measureDock(dock);
+      if(window.ResizeObserver && !dock.noirSizeObserver){
+        dock.noirSizeObserver=new ResizeObserver(function(){measureDock(dock);});
+        dock.noirSizeObserver.observe(dock);
+      }
+    });
+    panels.forEach(function(panel) {
+      var shell = panel.closest('.modern-sidebar-shell');
+      var hidden = !matchMedia('(max-width:800px)').matches && !shell.classList.contains('expanded');
+      if (panel.getAttribute('aria-hidden') !== String(hidden)) panel.setAttribute('aria-hidden', String(hidden));
+    });
+  }
+  function releaseDock(root) {
+    if(!root.querySelectorAll) return;
+    var docks=Array.prototype.slice.call(root.querySelectorAll('.home-sidebar.root-sidebar-legacy,.modern-sidebar-shell'));
+    if(root.matches && root.matches('.home-sidebar.root-sidebar-legacy,.modern-sidebar-shell')) docks.unshift(root);
+    docks.forEach(function(dock){if(dock.noirSizeObserver){dock.noirSizeObserver.disconnect();dock.noirSizeObserver=null;}});
+  }
   function decorate(root) {
     if (!root.querySelectorAll) return;
+    dockAccessibility(root);
     var images = Array.prototype.slice.call(root.querySelectorAll('img'));
     if(root.matches && root.matches('img')) images.unshift(root);
     for (var i=0;i<images.length;i++) {
@@ -61,10 +112,11 @@
   }
   function start() {
     decorate(document);
+    window.addEventListener('resize',function(){dockAccessibility(document);});
     // Observe additions, not animation/style changes; process each added subtree only.
     new MutationObserver(function (records) {
-      records.forEach(function (record) { for(var i=0;i<record.addedNodes.length;i++) decorate(record.addedNodes[i].nodeType===3 ? record.addedNodes[i].parentNode : record.addedNodes[i]); });
-    }).observe(document.body,{childList:true,subtree:true});
+      records.forEach(function (record) { if(record.type==='attributes') dockAccessibility(record.target); for(var j=0;j<record.removedNodes.length;j++) releaseDock(record.removedNodes[j]); for(var i=0;i<record.addedNodes.length;i++) decorate(record.addedNodes[i].nodeType===3 ? record.addedNodes[i].parentNode : record.addedNodes[i]); });
+    }).observe(document.body,{childList:true,subtree:true,attributes:true,attributeFilter:['aria-hidden']});
   }
   if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',start); else start();
 }());

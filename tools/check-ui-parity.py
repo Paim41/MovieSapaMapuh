@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Static preservation gate. It intentionally makes no runtime parity claims."""
 import collections
+import json
 import re
 from html.parser import HTMLParser
 from pathlib import Path
@@ -62,11 +63,18 @@ for ref,folder in [(BASE,'public'),(NATIVE,'android/pencarimovie-server/app/src/
     paths=subprocess.check_output(['git','ls-tree','-r','--name-only',ref,folder],cwd=repo,text=True).splitlines()
     for path in paths:
         if path.endswith(('.js','.json')) and path != folder+'/app.js':
-            assert (repo/path).read_bytes()==subprocess.check_output(['git','show',f'{ref}:{path}'],cwd=repo), ('Runtime/translation changed',path)
+            expected=subprocess.check_output(['git','show',f'{ref}:{path}'],cwd=repo)
+            if path == folder+'/app.bundle.js':
+                # Two explicit display-only hooks. All controller, route, filter and player code stays byte-identical.
+                for patch in json.loads((repo/'tools/fixtures/library-copy-patch.json').read_text()):
+                    before=patch['before'].encode(); after=patch['after'].encode()
+                    assert expected.count(before)==1
+                    expected=expected.replace(before,after)
+            assert (repo/path).read_bytes()==expected, ('Runtime/translation changed',path)
 path='android/pencarimovie-server/app/src/main/java/com/pencarimovie/server/NativeHttpServer.kt'
 assert (repo/path).read_text()==auth_style(original('0f1c851',path).replace('PencariMovie Server','MovieSapaMapuh').replace('Open PencariMovie and re-install','Open MovieSapaMapuh and re-install')), 'Native server changed beyond UI branding'
 for name in ['TdLibManager.kt','WebActivity.kt','ServerService.kt']:
     path='android/pencarimovie-server/app/src/main/java/com/pencarimovie/server/'+name
     assert (repo/path).read_text()==original('0f1c851',path), ('Working native engine/playback changed',path)
-print('PASS native resource text/IDs, PHP/native engine except exact brand substitutions and standalone auth CSS, frontend handlers, bundles and translations')
+print('PASS native resource text/IDs, PHP/native engine except exact brand substitutions and standalone auth CSS, frontend handlers, translations and bundles except two explicit Library display hooks')
 print('Dynamic text, visual reachability, event wiring and device behavior still require runtime tests.')

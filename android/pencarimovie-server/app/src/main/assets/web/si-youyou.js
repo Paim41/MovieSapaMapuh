@@ -27,7 +27,7 @@
     if(x<8||y<8||x+112>innerWidth-8||y+128>innerHeight-8)return false;
     if(!obstacles){
       obstacles=[];
-      var controls=document.querySelectorAll('button,a,input,select,textarea,video,audio,[data-action],.focusable,p,h1,h2,h3,.movie-cast-track,.detail-meta-row,[role="button"],nav,[role="navigation"],.bottom-nav,.sidebar');
+      var controls=document.querySelectorAll('button,a,input,select,textarea,video,audio,[data-action],.focusable,p,h1,h2,h3,.movie-cast-track,.detail-meta-row,[role="button"],nav,[role="navigation"],.bottom-nav,.sidebar,.home-sidebar,.modern-sidebar-shell,.library-empty-state');
       for(var i=0;i<controls.length;i++){
         if(!root.contains(controls[i])&&visible(controls[i]))obstacles.push(controls[i].getBoundingClientRect());
       }

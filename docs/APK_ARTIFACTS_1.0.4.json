@@ -1,0 +1,50 @@
+{
+  "version": "1.0.4",
+  "versionCode": 10004,
+  "build": "local debug",
+  "previous_apks_preserved": true,
+  "lint": {
+    "Warning": 90
+  },
+  "artifacts": [
+    {
+      "file": "dist/MovieSapaMapuh-1.0.4-universal-debug.apk",
+      "bytes": 57442369,
+      "sha256": "21e8813ba73d7fb2086c8baf7763b122dfc0d431606807fada931aa4c18edcad",
+      "signature": "v1/v2 verified; same certificate as previous local 1.0.3",
+      "certificate_sha256": "8fb7640da9631bac9f784164379fbc864a94eb4807d01f6165c685c2eba7c711",
+      "manifest": [
+        "package: name='com.moviesapamapuh.server' versionCode='10004' versionName='1.0.4' platformBuildVersionName='16' platformBuildVersionCode='36' compileSdkVersion='36' compileSdkVersionCodename='16'",
+        "sdkVersion:'21'",
+        "targetSdkVersion:'28'",
+        "native-code: 'arm64-v8a' 'armeabi-v7a'"
+      ]
+    },
+    {
+      "file": "dist/MovieSapaMapuh-1.0.4-arm64-v8a-debug.apk",
+      "bytes": 48538408,
+      "sha256": "1200a6dd68e6361079a872168883c557c30ec09f94400624d08ed140cb96482f",
+      "signature": "v1/v2 verified; same certificate as previous local 1.0.3",
+      "certificate_sha256": "8fb7640da9631bac9f784164379fbc864a94eb4807d01f6165c685c2eba7c711",
+      "manifest": [
+        "package: name='com.moviesapamapuh.server' versionCode='10004' versionName='1.0.4' platformBuildVersionName='16' platformBuildVersionCode='36' compileSdkVersion='36' compileSdkVersionCodename='16'",
+        "sdkVersion:'21'",
+        "targetSdkVersion:'28'",
+        "native-code: 'arm64-v8a'"
+      ]
+    },
+    {
+      "file": "dist/MovieSapaMapuh-1.0.4-armeabi-v7a-debug.apk",
+      "bytes": 47298689,
+      "sha256": "a6bcde4a7c8cdff9161353fa0df8c7e5c117e10da980423e5b7e68447afe03b7",
+      "signature": "v1/v2 verified; same certificate as previous local 1.0.3",
+      "certificate_sha256": "8fb7640da9631bac9f784164379fbc864a94eb4807d01f6165c685c2eba7c711",
+      "manifest": [
+        "package: name='com.moviesapamapuh.server' versionCode='10004' versionName='1.0.4' platformBuildVersionName='16' platformBuildVersionCode='36' compileSdkVersion='36' compileSdkVersionCodename='16'",
+        "sdkVersion:'21'",
+        "targetSdkVersion:'28'",
+        "native-code: 'armeabi-v7a'"
+      ]
+    }
+  ]
+}

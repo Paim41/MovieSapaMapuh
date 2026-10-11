@@ -49,12 +49,14 @@ jobs:
           "$RUNNER_TEMP/presentation/node_modules/.bin/playwright" install --with-deps chromium
           NODE_PATH="$RUNNER_TEMP/presentation/node_modules" node tools/test-presentation.cjs
           NODE_PATH="$RUNNER_TEMP/presentation/node_modules" node tools/test-ui-refinement.cjs
+          NODE_PATH="$RUNNER_TEMP/presentation/node_modules" node tools/test-dock-library.cjs
       - uses: actions/upload-artifact@v4
         with:
           name: MovieSapaMapuh-presentation-fixtures
           path: |
             dist/screenshots/
             dist/refinement-screenshots/
+            dist/dock-library-screenshots/
 
   build:
     if: github.repository == 'Paim41/pencarimovie-server'
