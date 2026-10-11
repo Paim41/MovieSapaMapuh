@@ -108,6 +108,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        NativeIcons.apply(findViewById(android.R.id.content))
+        findViewById<View>(R.id.petSettings).setOnClickListener { findViewById<SiYouyouView>(R.id.siYouyou).showSettings() }
 
         viewStatusDot = findViewById(R.id.viewStatusDot)
         tvStatus = findViewById(R.id.tvStatus)
@@ -169,6 +171,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
+        findViewById<SiYouyouView>(R.id.siYouyou).setActive(true)
         if (currentState is ServerState.Running) {
             fetchTunnelStatus()
             startTunnelPolling()
@@ -176,6 +179,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onStop() {
+        findViewById<SiYouyouView>(R.id.siYouyou).setActive(false)
         super.onStop()
         stopTunnelPolling()
         if (isBound) {
@@ -475,6 +479,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun onStateChanged(state: ServerState) {
+        findViewById<SiYouyouView>(R.id.siYouyou).serverState(when(state) {
+            is ServerState.Running -> "running"
+            is ServerState.Error -> "error"
+            else -> "idle"
+        })
         currentState = state
         when (state) {
             is ServerState.Running -> {
@@ -691,7 +700,7 @@ class MainActivity : AppCompatActivity() {
 
         MaterialAlertDialogBuilder(this)
             .setTitle("Keep Server Running in Background")
-            .setMessage(message)
+            .setMessage(NativeIcons.warnings(this, message))
             .setCancelable(true)
             .setPositiveButton("Open Settings") { _, _ ->
                 openAppSettings()

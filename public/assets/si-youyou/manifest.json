@@ -1,0 +1,424 @@
+{
+  "pet_name": "Si Youyou",
+  "theme": "NOIR Crimson",
+  "style": "detailed chibi pixel-art fantasy character with crimson flame aura",
+  "source_uploaded": "Si-Youyou(2).zip",
+  "source_png_count": 9,
+  "extracted_png_count": 21,
+  "background": "transparent RGBA",
+  "asset_map": [
+    {
+      "source_filename": "351180e3-cf7e-4b03-806f-43e7efbf25b6.png",
+      "renamed_original": "originals/si_youyou_flame_variations_3frames.png",
+      "size": [
+        2172,
+        724
+      ]
+    },
+    {
+      "source_filename": "dfc11e68-542c-45a4-990e-afb1d030eff5.png",
+      "renamed_original": "originals/si_youyou_front_idle.png",
+      "size": [
+        1180,
+        1333
+      ]
+    },
+    {
+      "source_filename": "342a05e5-feab-4f98-b584-7840137961e5.png",
+      "renamed_original": "originals/si_youyou_blink_front_side_2poses.png",
+      "size": [
+        1690,
+        931
+      ]
+    },
+    {
+      "source_filename": "d8be6727-3e61-455c-a5dc-25c67baa14e0.png",
+      "renamed_original": "originals/si_youyou_side_back_2views.png",
+      "size": [
+        1690,
+        931
+      ]
+    },
+    {
+      "source_filename": "149c76e6-6a2d-467c-9ec8-f85322857d0e.png",
+      "renamed_original": "originals/si_youyou_sleep_front_side_2poses.png",
+      "size": [
+        1942,
+        809
+      ]
+    },
+    {
+      "source_filename": "abc30d9a-ebf6-40ea-b002-747898e874e4.png",
+      "renamed_original": "originals/si_youyou_happy_wave_2poses.png",
+      "size": [
+        1944,
+        809
+      ]
+    },
+    {
+      "source_filename": "0b29249c-0df2-47f5-913d-16748dc27e25.png",
+      "renamed_original": "originals/si_youyou_walk_left_4frames.png",
+      "size": [
+        1394,
+        1128
+      ]
+    },
+    {
+      "source_filename": "eb376636-f4e9-4c33-ba2d-f10a483bf750.png",
+      "renamed_original": "originals/si_youyou_jump_3poses.png",
+      "size": [
+        2172,
+        724
+      ]
+    },
+    {
+      "source_filename": "d0457dcf-d916-4881-acc7-c9cb92acfbc3.png",
+      "renamed_original": "originals/si_youyou_sit_front_side_2poses.png",
+      "size": [
+        1944,
+        809
+      ]
+    }
+  ],
+  "sprites": [
+    {
+      "file": "sprites/idle/si_youyou_idle_front.png",
+      "source": "originals/si_youyou_front_idle.png",
+      "original_crop_box": null,
+      "size": [
+        1186,
+        1336
+      ]
+    },
+    {
+      "file": "sprites/blink/si_youyou_blink_front.png",
+      "source": "originals/si_youyou_blink_front_side_2poses.png",
+      "original_crop_box": [
+        0,
+        0,
+        871,
+        931
+      ],
+      "size": [
+        859,
+        942
+      ]
+    },
+    {
+      "file": "sprites/blink/si_youyou_blink_side_left.png",
+      "source": "originals/si_youyou_blink_front_side_2poses.png",
+      "original_crop_box": [
+        871,
+        0,
+        1690,
+        931
+      ],
+      "size": [
+        823,
+        897
+      ]
+    },
+    {
+      "file": "sprites/idle/si_youyou_idle_side_left.png",
+      "source": "originals/si_youyou_side_back_2views.png",
+      "original_crop_box": [
+        0,
+        0,
+        845,
+        931
+      ],
+      "size": [
+        862,
+        951
+      ]
+    },
+    {
+      "file": "sprites/idle/si_youyou_idle_back.png",
+      "source": "originals/si_youyou_side_back_2views.png",
+      "original_crop_box": [
+        845,
+        0,
+        1690,
+        931
+      ],
+      "size": [
+        858,
+        951
+      ]
+    },
+    {
+      "file": "sprites/sleep/si_youyou_sleep_front.png",
+      "source": "originals/si_youyou_sleep_front_side_2poses.png",
+      "original_crop_box": [
+        0,
+        0,
+        971,
+        809
+      ],
+      "size": [
+        962,
+        815
+      ]
+    },
+    {
+      "file": "sprites/sleep/si_youyou_sleep_side_left.png",
+      "source": "originals/si_youyou_sleep_front_side_2poses.png",
+      "original_crop_box": [
+        971,
+        0,
+        1942,
+        809
+      ],
+      "size": [
+        971,
+        800
+      ]
+    },
+    {
+      "file": "sprites/reactions/si_youyou_happy.png",
+      "source": "originals/si_youyou_happy_wave_2poses.png",
+      "original_crop_box": [
+        0,
+        0,
+        972,
+        809
+      ],
+      "size": [
+        992,
+        829
+      ]
+    },
+    {
+      "file": "sprites/reactions/si_youyou_wave.png",
+      "source": "originals/si_youyou_happy_wave_2poses.png",
+      "original_crop_box": [
+        972,
+        0,
+        1944,
+        809
+      ],
+      "size": [
+        974,
+        829
+      ]
+    },
+    {
+      "file": "sprites/jump/si_youyou_jump_crouch.png",
+      "source": "originals/si_youyou_jump_3poses.png",
+      "original_crop_box": [
+        0,
+        0,
+        724,
+        724
+      ],
+      "size": [
+        721,
+        736
+      ]
+    },
+    {
+      "file": "sprites/jump/si_youyou_jump_airborne.png",
+      "source": "originals/si_youyou_jump_3poses.png",
+      "original_crop_box": [
+        724,
+        0,
+        1448,
+        724
+      ],
+      "size": [
+        740,
+        702
+      ]
+    },
+    {
+      "file": "sprites/jump/si_youyou_jump_landing.png",
+      "source": "originals/si_youyou_jump_3poses.png",
+      "original_crop_box": [
+        1448,
+        0,
+        2172,
+        724
+      ],
+      "size": [
+        708,
+        719
+      ]
+    },
+    {
+      "file": "sprites/sit/si_youyou_sit_front.png",
+      "source": "originals/si_youyou_sit_front_side_2poses.png",
+      "original_crop_box": [
+        0,
+        0,
+        993,
+        809
+      ],
+      "size": [
+        1013,
+        824
+      ]
+    },
+    {
+      "file": "sprites/sit/si_youyou_sit_side_left.png",
+      "source": "originals/si_youyou_sit_front_side_2poses.png",
+      "original_crop_box": [
+        993,
+        0,
+        1944,
+        809
+      ],
+      "size": [
+        955,
+        793
+      ]
+    },
+    {
+      "file": "sprites/effects/flame/si_youyou_flame_01.png",
+      "source": "originals/si_youyou_flame_variations_3frames.png",
+      "original_crop_box": [
+        0,
+        0,
+        724,
+        724
+      ],
+      "size": [
+        744,
+        732
+      ]
+    },
+    {
+      "file": "sprites/effects/flame/si_youyou_flame_02.png",
+      "source": "originals/si_youyou_flame_variations_3frames.png",
+      "original_crop_box": [
+        724,
+        0,
+        1448,
+        724
+      ],
+      "size": [
+        744,
+        732
+      ]
+    },
+    {
+      "file": "sprites/effects/flame/si_youyou_flame_03.png",
+      "source": "originals/si_youyou_flame_variations_3frames.png",
+      "original_crop_box": [
+        1448,
+        0,
+        2172,
+        724
+      ],
+      "size": [
+        744,
+        732
+      ]
+    },
+    {
+      "file": "sprites/walk/si_youyou_walk_left_01.png",
+      "source": "originals/si_youyou_walk_left_4frames.png",
+      "original_crop_box": [
+        0,
+        0,
+        720,
+        562
+      ],
+      "size": [
+        740,
+        586
+      ]
+    },
+    {
+      "file": "sprites/walk/si_youyou_walk_left_02.png",
+      "source": "originals/si_youyou_walk_left_4frames.png",
+      "original_crop_box": [
+        720,
+        0,
+        1394,
+        562
+      ],
+      "size": [
+        740,
+        586
+      ]
+    },
+    {
+      "file": "sprites/walk/si_youyou_walk_left_03.png",
+      "source": "originals/si_youyou_walk_left_4frames.png",
+      "original_crop_box": [
+        0,
+        562,
+        720,
+        1128
+      ],
+      "size": [
+        740,
+        586
+      ]
+    },
+    {
+      "file": "sprites/walk/si_youyou_walk_left_04.png",
+      "source": "originals/si_youyou_walk_left_4frames.png",
+      "original_crop_box": [
+        720,
+        562,
+        1394,
+        1128
+      ],
+      "size": [
+        740,
+        586
+      ]
+    }
+  ],
+  "states": {
+    "idle": [
+      "sprites/idle/si_youyou_idle_front.png",
+      "sprites/idle/si_youyou_idle_side_left.png",
+      "sprites/idle/si_youyou_idle_back.png"
+    ],
+    "blink": [
+      "sprites/blink/si_youyou_blink_front.png",
+      "sprites/blink/si_youyou_blink_side_left.png"
+    ],
+    "walk_left": [
+      "sprites/walk/si_youyou_walk_left_01.png",
+      "sprites/walk/si_youyou_walk_left_02.png",
+      "sprites/walk/si_youyou_walk_left_03.png",
+      "sprites/walk/si_youyou_walk_left_04.png"
+    ],
+    "jump": [
+      "sprites/jump/si_youyou_jump_crouch.png",
+      "sprites/jump/si_youyou_jump_airborne.png",
+      "sprites/jump/si_youyou_jump_landing.png"
+    ],
+    "sit": [
+      "sprites/sit/si_youyou_sit_front.png",
+      "sprites/sit/si_youyou_sit_side_left.png"
+    ],
+    "sleep": [
+      "sprites/sleep/si_youyou_sleep_front.png",
+      "sprites/sleep/si_youyou_sleep_side_left.png"
+    ],
+    "happy": [
+      "sprites/reactions/si_youyou_happy.png"
+    ],
+    "wave": [
+      "sprites/reactions/si_youyou_wave.png"
+    ],
+    "flame": [
+      "sprites/effects/flame/si_youyou_flame_01.png",
+      "sprites/effects/flame/si_youyou_flame_02.png",
+      "sprites/effects/flame/si_youyou_flame_03.png"
+    ]
+  },
+  "notes": [
+    "Animation poses originate from the uploaded artwork; splitting did not synthesize new poses.",
+    "4 walk poses and 3 flame variations are cyclic candidates; review alignment and loop quality in-app.",
+    "Side-view faces left. To make right-facing walk, reflect only if asymmetric costume/detail mirroring is acceptable.",
+    "Flame-only variations depict an isolated aura; they are NOT precisely registered/masked to main pose, so align and test at runtime.",
+    "No dedicated compact-flame/low-aura character image was found among the 9 PNGs.",
+    "Blink variants may have different framing than main idle and need careful alignment or a transition.",
+    "Performance: use smaller runtime render sizes, lazy loading, transform animations; hide when video fullscreen."
+  ]
+}

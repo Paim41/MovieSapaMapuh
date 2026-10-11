@@ -279,21 +279,10 @@ android/termux-app-fork-x86_64/.kotlin/
 android/termux-app-fork-x86_64/.idea/
 android/termux-app-fork-x86_64/local.properties
 
-# ---------------------------------------------------------------------------
-# android/pencarimovie-server — native Kotlin + TDLib server app.
-#
-# LOCAL-ONLY working copy. The APK is built and signed on this machine and the
-# SOURCE IS DELIBERATELY NOT IN THE REPOSITORY — only the published release
-# assets are, on the rolling `apk-server-latest` tag. The `android/*` rule above
-# therefore excludes this whole tree; do NOT add a `!android/pencarimovie-server/`
-# re-include (it was intentionally removed — the repo carries releases + the PHP
-# server only).
-#
-# Cutting a release from this machine:
-#   1. cd android/pencarimovie-server && gradlew :app:assembleDebug
-#   2. cd .. && powershell -File _stage_release.ps1      (stages + hashes + version.json)
-#   3. gh release upload apk-server-latest \
-#        _apk_dist/*.apk _apk_dist/*.sha256 _apk_dist/version.json --clobber
-# Keep version.json BOM-free: PowerShell's `Set-Content -Encoding UTF8` writes a
-# BOM and UpdateChecker's JSONObject() would throw, silently disabling updates.
-# ---------------------------------------------------------------------------
+# The native Kotlin/TDLib project is recovered on this fork. Its nested
+# .gitignore excludes builds, local SDK paths, signing keys and generated JNI.
+!android/pencarimovie-server/
+!android/pencarimovie-server/**
+assets-private/
+.native-build/
+tools/__pycache__/

@@ -19,8 +19,8 @@
         <item name="colorOnSecondary">@color/black</item>
 
         <item name="android:fontFamily">sans</item>
-        <item name="shapeAppearanceSmallComponent">ShapeAppearance.MovieSapaMapuh</item>
-        <item name="shapeAppearanceMediumComponent">ShapeAppearance.MovieSapaMapuh</item>
+        <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.MovieSapaMapuh</item>
+        <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.MovieSapaMapuh</item>
         <!-- Surfaces -->
         <item name="android:colorBackground">@color/glass_bg</item>
         <item name="colorSurface">@color/glass_bg</item>
