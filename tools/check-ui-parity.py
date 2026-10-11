@@ -54,6 +54,8 @@ for path in ['backend.php','composer.json','composer.lock','Caddyfile','router.p
     before=original(BASE,path)
     if path=='backend.php':
         before=auth_style(before.replace('PencariMovie Server','MovieSapaMapuh').replace('Open PencariMovie and re-install','Open MovieSapaMapuh and re-install'))
+        marker='    // ── GET /api/sub-proxy'
+        before=before.replace(marker,(repo/'tools/fixtures/youtube-php-route.txt').read_text()+marker)
     assert (repo/path).read_text()==before, ('Non-branding PHP engine/dependency change',path)
 # Preserve every dynamic label and event handler in the two distinct frontend baselines.
 for ref,folder in [(BASE,'public'),(NATIVE,'android/pencarimovie-server/app/src/main/assets/web')]:
@@ -73,7 +75,9 @@ for ref,folder in [(BASE,'public'),(NATIVE,'android/pencarimovie-server/app/src/
                     expected=expected.replace(before,after)
             assert (repo/path).read_bytes()==expected, ('Runtime/translation changed',path)
 path='android/pencarimovie-server/app/src/main/java/com/pencarimovie/server/NativeHttpServer.kt'
-assert (repo/path).read_text()==auth_style(original('0f1c851',path).replace('PencariMovie Server','MovieSapaMapuh').replace('Open PencariMovie and re-install','Open MovieSapaMapuh and re-install')), 'Native server changed beyond UI branding'
+expected=auth_style(original('0f1c851',path).replace('PencariMovie Server','MovieSapaMapuh').replace('Open PencariMovie and re-install','Open MovieSapaMapuh and re-install'))
+expected=expected.replace('    private val auth by lazy', '    private val youtubePlaylists by lazy { YouTubePlaylists(context) }\n\n    private val auth by lazy').replace('                uri == \"/api/version\"', '                uri == \"/api/youtube-playlists\" -> youtubePlaylists.serve(session)\n                uri == \"/api/version\"')
+assert (repo/path).read_text()==expected, 'Native server changed beyond UI branding and isolated playlist route'
 for name in ['TdLibManager.kt','WebActivity.kt','ServerService.kt']:
     path='android/pencarimovie-server/app/src/main/java/com/pencarimovie/server/'+name
     expected=original('0f1c851',path)
@@ -81,7 +85,7 @@ for name in ['TdLibManager.kt','WebActivity.kt','ServerService.kt']:
         marker='        // Handle custom protocols like Stremio, Telegram, Magnet, Intents'
         expected=expected.replace(marker,(repo/'tools/fixtures/developer-email-intent.kt').read_text()+marker)
     assert (repo/path).read_text()==expected, ('Working native engine/playback changed',path)
-print('PASS native resource text/IDs, PHP/native engine except exact brand substitutions and standalone auth CSS, frontend handlers, translations and bundles except explicit Library copy and loading-markup hooks')
+print('PASS native resource text/IDs, PHP/native engine except exact branding/auth CSS and isolated playlist route, frontend handlers, translations and bundles except explicit Library copy and loading-markup hooks')
 print('Dynamic text, visual reachability, event wiring and device behavior still require runtime tests.')
 
 # The retired native pet was added after recovery: permit only its UI/lifecycle removal.

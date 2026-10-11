@@ -1,0 +1,20 @@
+    // Isolated local playlist configuration, behind the existing authentication gate.
+    if ($path === '/api/youtube-playlists') {
+        require_once __DIR__ . '/src/YouTubePlaylists.php';
+        header('Content-Type: application/json; charset=utf-8');
+        header('Cache-Control: no-store');
+        // Do not inherit permissive CORS from other APIs for configuration writes.
+        header_remove('Access-Control-Allow-Origin');
+        try {
+            [$status, $payload] = msp_playlist_api(fd_storage_path('storage/youtube_playlists.json'), $method,
+                array_filter(['origin'=>$_SERVER['HTTP_ORIGIN'] ?? null, 'host'=>$_SERVER['HTTP_HOST'] ?? '', 'x-msp-playlists'=>$_SERVER['HTTP_X_MSP_PLAYLISTS'] ?? '', 'content-type'=>$_SERVER['CONTENT_TYPE'] ?? ''], fn($v) => $v !== null),
+                file_get_contents('php://input', false, null, 0, 131073));
+            http_response_code($status);
+            echo json_encode($payload, JSON_THROW_ON_ERROR);
+        } catch (Throwable $e) {
+            http_response_code(500);
+            echo json_encode(['error'=>'Playlist storage unavailable. Existing configuration was not replaced.']);
+        }
+        exit;
+    }
+

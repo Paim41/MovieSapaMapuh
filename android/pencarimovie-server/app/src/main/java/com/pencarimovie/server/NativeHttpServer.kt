@@ -121,6 +121,8 @@ document.getElementById('f').addEventListener('submit', async function(ev){
         DebugLog.log("HTTP", "NativeHttpServer created on port $port")
     }
 
+    private val youtubePlaylists by lazy { YouTubePlaylists(context) }
+
     private val auth by lazy { AuthManager(context) }
 
     override fun serve(session: IHTTPSession): Response {
@@ -154,6 +156,7 @@ document.getElementById('f').addEventListener('submit', async function(ev){
 
         return try {
             when {
+                uri == "/api/youtube-playlists" -> youtubePlaylists.serve(session)
                 uri == "/api/version" -> handleVersion()
                 uri == "/api/lan-ip" -> handleLanIp()
                 uri == "/api/session" -> handleSession()

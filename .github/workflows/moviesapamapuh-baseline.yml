@@ -7,6 +7,7 @@ on:
       - 'android/pencarimovie-server/**'
       - 'public/**'
       - 'backend.php'
+      - 'src/YouTubePlaylists.php'
       - 'tools/**'
       - '.github/workflows/moviesapamapuh-baseline.yml'
   workflow_dispatch:
@@ -17,6 +18,8 @@ on:
         default: false
   pull_request:
     paths:
+      - 'backend.php'
+      - 'src/YouTubePlaylists.php'
       - 'android/pencarimovie-server/**'
       - 'public/**'
       - 'tools/**'
@@ -43,6 +46,8 @@ jobs:
           node-version: '22'
       - name: Preserve baseline text and handlers
         run: python3 tools/check-ui-parity.py
+      - name: Test local playlist storage
+        run: php tools/test-youtube-storage.php
       - name: Test isolated presentation (no real API requests)
         run: |
           npm install --prefix "$RUNNER_TEMP/presentation" playwright@1.62.1
@@ -52,6 +57,7 @@ jobs:
           NODE_PATH="$RUNNER_TEMP/presentation/node_modules" node tools/test-dock-library.cjs
           NODE_PATH="$RUNNER_TEMP/presentation/node_modules" node tools/test-youyou-loader.cjs
           NODE_PATH="$RUNNER_TEMP/presentation/node_modules" node tools/test-youyou-cursor.cjs
+          NODE_PATH="$RUNNER_TEMP/presentation/node_modules" node tools/test-youtube-playlists.cjs
       - uses: actions/upload-artifact@v4
         with:
           name: MovieSapaMapuh-presentation-fixtures
@@ -60,6 +66,7 @@ jobs:
             dist/refinement-screenshots/
             dist/dock-library-screenshots/
             dist/loader-screenshots/
+            dist/youtube-screenshots/
 
   build:
     # UI-only commits may defer expensive APK assembly while keeping presentation checks.
