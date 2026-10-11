@@ -1,14 +1,16 @@
 # MovieSapaMapuh audit and implementation plan
 
-Status: Phase 1 audit findings recorded; implementation blocked on native source/dependency recovery and pet asset access. No application changes have been made. This is not a claim that every dynamic screen or reference APK behavior has been exercised.
+Status (2026-10-11): recovery and the original Android baseline build succeeded. Branding, native/web NOIR presentation and Si Youyou are implemented in reviewable phases. Local build and fixture validation are recorded in TEST_REPORT.md. Physical-device and authenticated-service acceptance remains pending.
+
+The original audit findings below describe the checkout before recovery; superseding evidence is in ANDROID_RECOVERY.md and ANDROID_DEPENDENCY_PROVENANCE.json.
 
 ## Repository and evidence
 
 - Editable origin: `https://github.com/Paim41/pencarimovie-server.git`.
 - Baseline: `6e278427e3e4f5e2f5868df7c4f6211905298ca5`; feature branch: `feature/moviesapamapuh`. No upstream edits or pushes.
 - 298 tracked files inventoried in `baseline-files.json`; complete file hashes retain evidence for all existing bytes, including text, settings, bundles and translations.
-- HEAD explicitly removes `android/pencarimovie-server` (173 changed files in that commit). `.gitignore` documents that the project is deliberately kept local.
-- Historical source exists in parent `a1f5091ceef836d801c8f8efac2392b4431da6ac`. It was inspected outside the checkout, not restored or used to reconstruct the APK.
+- The original baseline commit explicitly removes `android/pencarimovie-server` (173 changed files in that commit). `.gitignore` documents that the project is deliberately kept local.
+- Historical source exists in parent `a1f5091ceef836d801c8f8efac2392b4431da6ac`. It was initially inspected outside the checkout, then restored in a19c0bb without resetting the branch or using APK implementation binaries.
 - Actual reference APK: package `com.pencarimovie.server`, versionName `1.0.9`, versionCode `10009`, minSdk 21, targetSdk 28, compileSdk 36. Its manifest and ZIP resources were inspected without decompiling application code.
 - APK SHA-256: `6cc438284aa600a050d7db6e8cc3d0161cd8f987a21330691342fbda161f7eff`.
 
@@ -28,12 +30,12 @@ Historical `tdlib.jar` exists, but neither `src/main/jniLibs/arm64-v8a/libtdjni.
 - A prebuilt `app.bundle.js` plus `css/bundle.css`, boot guard, polyfills, platform libraries and 36 translation JSON files provide the integrated shell. `build:nuvio` expects ignored `storage/NuvioTVSmart`, absent from this checkout. Generated bundles must not be blindly rewritten.
 - `index.html` references `assets/runtime/legacy-polyfills.js`, absent from current tracked public files but present in the reference APK: existing compatibility gap, not caused by this work.
 - Of 114 APK web files compared with `public/`: 57 byte-identical, 45 differ only by CRLF/LF, 11 differ in content, 1 exists only in APK. Differences include app JS/bundle, HTML/CSS, boot dependencies and player libraries. Source and APK are not interchangeable baselines.
-- Logos inspected: `logo.png` 1254×1254 RGBA and `longlogowithtext.png` 2172×724 RGBA. Preserve masters and alpha; fit without distortion. No branding import has occurred yet.
+- Logos inspected: `logo.png` 1254×1254 RGBA and `longlogowithtext.png` 2172×724 RGBA. Preserve masters and alpha; fit without distortion. The originals are now copied into web/native runtime assets without alteration.
 - Four screenshots and their notes were inspected. They are partial views, including installed 1.0.9/update 1.0.10, and cannot establish full-screen parity.
-- SiYouyouPets.zip could not be transferred: attachment tool has a 32 MiB limit. Its manifest, README and sprites remain **uninspected**. Do not guess frame names or implement substitute artwork.
+- The original oversized pet archive was replaced by two smaller archives. Both merged without conflicts; README/manifest, 9 originals and 21 sprites inspected and hashed. See SI_YOUYOU_ASSET_AUDIT.json. Original names and structure are preserved in assets-private; runtime copies contain the original sprites.
 - Reference APK, screenshots and pasted instructions remain outside the repository.
 
-## Actionable recovery prerequisites
+## Original recovery prerequisites (now resolved except distribution licensing)
 
 1. Obtain the matching native project's source and a trusted, versioned TDLib JAR/JNI dependency set with build provenance and license notices for each supported ABI. Prefer the maintainer's matching source package. Alternatively use the already available historical Kotlin source as a reviewed recovery starting point, then obtain/build compatible TDLib from its authoritative source and reconcile differences against the reference APK. Historical recovery alone is insufficient.
 2. Supply the pet README/manifest and sprite pack in separate archives below 32 MiB each (masters can be separate). Preserve originals; do not downsample merely to pretend the full asset audit succeeded.
@@ -54,7 +56,7 @@ Keep each phase in separate commits. Do not publish releases as an audit side ef
 
 ## Identity, updater and risk decisions
 
-Proposed independent application ID: `com.moviesapamapuh.server` (not yet applied). This permits coexistence but creates a new sandbox: no automatic upstream-session migration or upgrade claim. Preserve upstream installation and data until the user chooses an explicit migration strategy. Audit hardcoded paths, provider authorities and runtime IDs before renaming anything.
+Implemented independent application ID: `com.moviesapamapuh.server`. This permits coexistence but creates a new sandbox: no automatic upstream-session migration or upgrade claim. Preserve upstream installation and data until the user chooses an explicit migration strategy. Audit hardcoded paths, provider authorities and runtime IDs before renaming anything.
 
 Preserve the Update action. The historical native updater points to upstream `apk-server-latest`; the existing wrapper workflow publishes `apk-latest`. Neither is a configured custom release. Use a fork-owned feed only once real artifacts exist; otherwise show a truthful not-configured status. Verify hash, ABI, package/signing compatibility and version monotonicity. Never re-use publicly committed signing keys for trusted custom releases.
 

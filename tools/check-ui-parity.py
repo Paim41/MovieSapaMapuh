@@ -12,7 +12,7 @@ NATIVE = 'a1f5091ceef836d801c8f8efac2392b4431da6ac'
 def original(ref, path):
     return subprocess.check_output(['git', 'show', f'{ref}:{path}'], cwd=repo, text=True)
 def branded(text):
-    for a,b in [('PencariMovie Server','MovieSapaMapuh'),('PencariMovie —','MovieSapaMapuh —'),('PencariMovie Catalogs','MovieSapaMapuh Catalogs')]:
+    for a,b in [('PencariMovie Server','MovieSapaMapuh'),('PencariMovie —','MovieSapaMapuh —'),('PencariMovie Catalogs','MovieSapaMapuh Catalogs'),('PencariMovie Addon Configuration','MovieSapaMapuh Addon Configuration')]:
         text=text.replace(a,b)
     return text
 class Page(HTMLParser):
@@ -47,5 +47,14 @@ for filename in ['activity_main.xml','activity_web.xml']:
     assert not texts-now,('Missing native layout text',texts-now)
 for path in ['backend.php','composer.json','composer.lock','Caddyfile','router.php','index.php']:
     assert (repo/path).read_bytes()==subprocess.check_output(['git','show',f'{BASE}:{path}'],cwd=repo),path
-print('PASS native resource text, control IDs, and unchanged PHP engine/dependencies')
+# Preserve every dynamic label and event handler in the two distinct frontend baselines.
+for ref,folder in [(BASE,'public'),(NATIVE,'android/pencarimovie-server/app/src/main/assets/web')]:
+    path=folder+'/app.js'
+    expected=branded(original(ref,path)).replace("this.siteName = 'PencariMovie';", "this.siteName = 'MovieSapaMapuh';")
+    assert (repo/path).read_text()==expected, ('Unexpected frontend behavior/text change',path)
+    paths=subprocess.check_output(['git','ls-tree','-r','--name-only',ref,folder],cwd=repo,text=True).splitlines()
+    for path in paths:
+        if path.endswith(('.js','.json')) and path != folder+'/app.js':
+            assert (repo/path).read_bytes()==subprocess.check_output(['git','show',f'{ref}:{path}'],cwd=repo), ('Runtime/translation changed',path)
+print('PASS native resource text/IDs, PHP engine, frontend handlers, bundles and translations')
 print('Dynamic text, visual reachability, event wiring and device behavior still require runtime tests.')

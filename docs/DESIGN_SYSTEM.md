@@ -1,6 +1,6 @@
 # NOIR Crimson design specification
 
-Planned, not implemented. Preserve every existing text and action; increase space and scrolling rather than shortening content.
+Implemented in native color/theme/layout resources and additive public/noir.css + noir.js (also bundled in the actual native app). Preserve every existing text and action; increase space and scrolling rather than shortening content.
 
 | Token | Value |
 |---|---|
@@ -17,4 +17,4 @@ Preserve supplied RGBA logo masters: 1254×1254 mark, 2172×724 wordmark. Fit pr
 
 Native: retain original screen/navigation, view IDs, callback wiring and service state. Web: use an additive scoped stylesheet, preserve DOM-backed controls, allow multiline labels and full-height modal scrolling. Avoid broad rules that hide legacy controls or assume all shell classes are stable. APK must package the exact reviewed web assets deterministically.
 
-Pet sits only in safe regions, yields to dialogs/keyboard/fullscreen/player controls and respects reduced motion. Design validation is pending recovered native source and full pet assets.
+Pet sits only in safe regions, yields to dialogs/keyboard/fullscreen/player controls and respects reduced motion. Browser fixture validation covers four widths, full settings scrolling and fullscreen exclusion. Native appearance, launcher masks, text scaling, optical sprite anchors and physical-device performance require manual review.

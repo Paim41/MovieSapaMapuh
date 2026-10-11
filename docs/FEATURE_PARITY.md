@@ -1,12 +1,12 @@
 # Feature parity checklist
 
-Baseline: `6e278427e3e4f5e2f5868df7c4f6211905298ca5`. Status: **no presentation or behavior changes yet**. Checkboxes below are acceptance tests, not claims of completed tests. A source mapping is not evidence of functioning Telegram/network/device behavior.
+Baseline: `6e278427e3e4f5e2f5868df7c4f6211905298ca5`. Status: static text/ID/handler preservation gates pass after branding and pet integration. Runtime acceptance checkboxes remain pending unless explicitly recorded in TEST_REPORT.md. Checkboxes below are acceptance tests, not claims of completed tests. A source mapping is not evidence of functioning Telegram/network/device behavior.
 
-`baseline-files.json` records all 298 tracked files. `baseline-web-content.json` records static HTML text with original whitespace and controls/attributes; `SOURCE_INDEX.md` indexes PHP/JS handlers. The remaining dynamic text in app.js, bundled shell, all translations, backend-generated HTML and native dialogs must be compared against their immutable Git baseline when those surfaces change. The actual native source must first be recovered and tied to the reference APK. This inventory cannot yet claim complete APK text equivalence.
+`baseline-files.json` records all 298 tracked files. `baseline-web-content.json` records static HTML text with original whitespace and controls/attributes; `SOURCE_INDEX.md` indexes PHP/JS handlers. The remaining dynamic text in app.js, bundled shell, all translations, backend-generated HTML and native dialogs must be compared against their immutable Git baseline when those surfaces change. The native source has been recovered from a1f5091; its reference-APK correspondence is documented in ANDROID_RECOVERY.md. This inventory cannot yet claim complete APK text equivalence.
 
 ## Native Android
 
-The actual app's paths below refer to historical `android/pencarimovie-server/app/src/main/java/com/pencarimovie/server/` at `a1f5091`; they are absent at current HEAD. Remaining wrappers use `android/termux-app-fork*/app/main/java/com/pencarimovie/downloader/` and are a separate baseline.
+The actual app's paths below refer to historical `android/pencarimovie-server/app/src/main/java/com/pencarimovie/server/` at `a1f5091`; they are restored on this branch. Remaining wrappers use `android/termux-app-fork*/app/main/java/com/pencarimovie/downloader/` and are a separate baseline.
 
 | Preserve / acceptance check | Source handler / persistence |
 |---|---|
@@ -61,8 +61,8 @@ Native historical route coverage differs from PHP (e.g. explicit Eclipse routes 
 ## Text and visual acceptance procedure
 
 1. Freeze all source text, IDs, names, options, handler wiring, locales and generated assets at the baseline commit. Preserve API-provided titles/categories verbatim; sample dynamic responses only with authorized access and sanitize secrets.
-2. Before each presentation commit, compare exact extracted text and attributes. Changes are allowed only in an explicit app-owned branding allowlist with old/new string and location. **Current intentional text changes: none.** Do not rename service hosts, backend identifiers, third-party brands or legal credits.
+2. Before each presentation commit, compare exact extracted text and attributes. Changes are allowed only in an explicit app-owned branding allowlist with old/new string and location. **Intentional text changes are limited to the branding allowlist in BRANDING_CHANGES.md and new pet/updater guidance.** Do not rename service hosts, backend identifiers, third-party brands or legal credits.
 3. Replace decorative emoji with vector/SVG icons only after recording the affected location. Keep the complete accompanying label and accessible name; do not silently remove status information encoded by an icon.
 4. Test every row and dynamic dialog, not only screenshots. Capture full scroll, focus traversal, 200% text, soft keyboard, long labels, screen rotation, media fullscreen and overlays. Validate native and browser surfaces separately.
 5. Require genuine API/service results. Mark failures, skipped and unavailable checks explicitly. Byte preservation is verified now; complete functional/visual parity remains pending.
-6. For Si Youyou, test hidden/disabled equivalence, genuine event reactions, persisted toggles, drag ownership, fullscreen/dialog exclusion and visibility/reduced-motion suspension. No pet is implemented yet.
+6. For Si Youyou, test hidden/disabled equivalence, genuine event reactions, persisted toggles, drag ownership, fullscreen/dialog exclusion and visibility/reduced-motion suspension. Both renderers are implemented; browser fixture checks pass, native/device interaction checks remain pending.

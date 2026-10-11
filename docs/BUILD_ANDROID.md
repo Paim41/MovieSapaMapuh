@@ -1,24 +1,10 @@
-# Android build and recovery
+# Build and install MovieSapaMapuh
 
-There is currently **no MovieSapaMapuh APK** and no CI run for this branch.
+The native Kotlin/TDLib source was recovered from `a1f5091ceef836d801c8f8efac2392b4431da6ac`. The original baseline and branded debug APKs build locally. See ANDROID_RECOVERY.md for exact reference-APK/source correspondence and ANDROID_DEPENDENCY_PROVENANCE.json for dependency evidence. No APK code or native implementation binary was extracted for reuse.
 
-The existing `.github/workflows/android-apk.yml` is workflow_dispatch-only in its actual trigger configuration. Its comments mention other triggers that are not configured. It targets `android/termux-app-fork`, assembles the older arm64 wrapper, uploads an artifact and publishes a rolling `apk-latest` release. Running it unchanged would build/publish the wrong app.
+## Reproduce on Linux
 
-The reference APK is the removed `com.pencarimovie.server` Kotlin/TDLib app, minSdk 21, targetSdk 28, compileSdk 36, ARM64 + ARMv7. Historical source at `a1f5091` has a Gradle 9.2.1 wrapper, AGP 8.13.2, Kotlin 2.1.0 and Java/Kotlin target 17. These are observed pins, not a verified working toolchain. JDK/Gradle/AGP compatibility must be tested after source recovery; do not silently guess new versions. Native JAR/JNI pairing, 32-bit compatibility and library provenance are required.
-
-Recovery must supply the actual source plus pinned TDLib JAR and JNI libraries/build recipe for each ABI. Do not use the reference APK as an implementation source. Do not restore historical committed release keys or use public signing passwords. Debug builds should use a dedicated development key; release signing belongs in GitHub Secrets and must preserve its chosen identity across upgrades.
-
-Planned workflow: checkout the fork feature branch; verify source/dependency checksums; configure a supported pinned JDK/SDK/Gradle combination; cache by toolchain and dependency inputs; run unit/lint checks; stage reviewed web/brand/pet assets using a deterministic Gradle task; assemble debug; verify manifest package/version/ABIs and embedded asset hashes; upload clearly named `MovieSapaMapuh-universal-debug.apk` and supported ABI artifacts with SHA-256 sums. No automatic rolling-release publication for feature-branch validation. Release is a separate explicit signed workflow.
-
-Do not label an arm64-only wrapper a universal replacement. ARMv7 is supported by the reference native TDLib architecture, not by desktop MadelineProto's 64-bit requirement. Keep those architectures distinct.
-
-After an actual successful build: download the Actions artifact from the user's fork, verify its checksum and signature/package identity, install through Android's normal installer, grant only existing required permissions, then test Start/Stop, notifications/boot/background, LAN dashboard, Addon Setup, Settings, tunnel/update, authenticated streaming/seek/download and pet behavior. POCO F3 and other physical-device tests are pending. A separate application ID will coexist with the original but does not inherit its sessions or data. Keep the original app for rollback; do not uninstall or erase it automatically.
-
-## Recovery update — original source build now succeeds
-
-The blocker above describes the initial audit. Source has since been recovered in commit a19c0bb; see ANDROID_RECOVERY.md and ANDROID_DEPENDENCY_PROVENANCE.json. Both native libraries were rebuilt from pinned official sources and original debug APKs assembled successfully. Source-level recovery does not prove device or streaming parity.
-
-Repeat on Linux with JDK 21, Gradle wrapper 9.2.1, Android platform 36, Build Tools 35.0.0 and NDK 23.2.8568313. Install CMake, Ninja, gperf, C/C++ toolchain, PHP CLI, Perl, Make, Git, Python 3, libssl-dev and zlib development headers. Set ANDROID_HOME to the SDK, then:
+Use JDK 21, Gradle wrapper 9.2.1 (distribution SHA-256 pinned), AGP 8.13.2, Kotlin 2.1.0, Android platform 36, Build Tools 35.0.0 and NDK 23.2.8568313. Java/Kotlin target remains 17, minSdk 21 and targetSdk 28. Install CMake, Ninja, gperf, PHP CLI, Perl, Make, Git, Python 3, a C/C++ compiler, libssl-dev and zlib development headers. Set JAVA_HOME and ANDROID_HOME, accept SDK licenses, then:
 
 ```sh
 bash tools/build-tdlib.sh
@@ -26,8 +12,41 @@ cd android/pencarimovie-server
 bash gradlew :app:assembleDebug :app:lintDebug :app:testDebugUnitTest --no-daemon --max-workers=2
 cd ../..
 python3 tools/verify-android-apk.py android/pencarimovie-server/app/build/outputs/apk/debug/*_universal.apk
+python3 tools/check-ui-parity.py
 ```
 
-Use MOVIESAPAMAPUH_NATIVE_BUILD_DIR to place dependency builds outside the checkout and MOVIESAPAMAPUH_BUILD_JOBS to bound native parallelism (default 4). Dependency builds take substantial time; reuse only caches with the same pinned inputs. Source and dependency pins are checked before compilation. The script deliberately refuses a changed TDLib JAR until compatibility is reviewed. Its commands follow the locally executed successful build, with paths parameterized for CI. No claim of a fresh hosted CI run is made.
+The unit-test task currently reports NO-SOURCE; it is not evidence of passing native unit tests. The meaningful automated checks are compile, Android lint, static preservation, package checks and isolated browser interactions.
 
-`.github/workflows/moviesapamapuh-baseline.yml` reuses Actions JDK/SDK/Gradle setup and artifact upload, restricts execution to the fork, and never publishes a release. It rebuilds JNI from source rather than committing generated binaries. It is not yet pushed or run on GitHub. Debug outputs use an independently generated development signing key; do not install them over the original publisher's signed app or uninstall that app to work around signature mismatch.
+`tools/build-tdlib.sh` fetches pinned official TDLib 1.8.64 (`e0943d068ce90b5010f1aea946e6901e25b43bf6`) and OpenSSL 1.1.1w (`e04bd3433fd84e1861bf258ea37928d9845e6a86`), verifies the recovered Java API hash, and compiles both ARM ABIs. Set MOVIESAPAMAPUH_NATIVE_BUILD_DIR for external build storage and MOVIESAPAMAPUH_BUILD_JOBS to bound parallelism. Generated JNI is ignored by Git. This is a documented reproducible source build, not a byte-identical reproduction of the upstream signed APK.
+
+For browser fixtures, install Playwright 1.62.1 and its Chromium, then `node tools/test-presentation.cjs`. Set CHROMIUM_PATH to use an installed Chromium. This test isolates HTML/CSS/new adapters; it does not log in, provision bots or call service APIs.
+
+## GitHub Actions
+
+Use `.github/workflows/moviesapamapuh-baseline.yml`, displayed as **MovieSapaMapuh Android**. It reuses checkout/JDK/SDK/Gradle/artifact infrastructure, rebuilds native dependencies, tests presentation separately, checks signatures/identity/embedded bytes and uploads `MovieSapaMapuh-Android-Debug` with universal, arm64-v8a and armeabi-v7a APKs, checksums and reports. Its permissions are read-only and it never publishes a release. PRs trigger it for relevant changes; workflow_dispatch defaults to debug.
+
+After this branch/workflow is available on GitHub, open the fork's Actions tab, select the workflow/run, and download its artifact. Extract the artifact ZIP before installing an APK. A newly added dispatch workflow may need to be present on the default branch before the manual Run workflow button appears; the PR trigger supplies pre-merge validation.
+
+**Hosted Actions has not run in this environment.** GitHub API access failed, and `gh auth status` reports the supplied GH_TOKEN is invalid. No pushed branch, PR, hosted artifact or release URL is claimed. Local APKs are available under `dist/` and are listed in TEST_REPORT.md.
+
+The old `android-apk.yml` targets a Termux wrapper and publishes its own rolling release. Do not use it for the recovered native app.
+
+## Signing and updates
+
+Debug APKs use a locally generated development key. Fresh CI debug keys may differ, so debug builds from different machines/runs are not a stable upgrade channel. Preserve the existing installation/data rather than uninstalling to force an upgrade.
+
+The optional **signed_release** dispatch input assembles Release and requires these fork secrets: MOVIESAPAMAPUH_KEYSTORE_BASE64, MOVIESAPAMAPUH_KEY_ALIAS, MOVIESAPAMAPUH_STORE_PASSWORD, MOVIESAPAMAPUH_KEY_PASSWORD. It signs in temporary runner storage, verifies signatures, removes the key and uploads artifacts without publication. This path has not been executed; no signing key was supplied. Historical publicly committed release credentials were not restored. Keep one private release key securely backed up for future upgrades.
+
+Application ID is `com.moviesapamapuh.server`; Kotlin namespace remains `com.pencarimovie.server`. Historical version defaults are 1.0.2 / 10002; these do not claim equivalence with reference 1.0.9. Use `-PversionNameOverride=X.Y.Z -PversionCodeOverride=N` with increasing version codes for future releases.
+
+Update action remains visible, with truthful unconfigured-feed guidance. It makes no update request by default. Only after a real fork release exists, configure `-PmoviesapamapuhUpdateFeed=<actual fork release asset URL>`. Metadata must name this applicationId, a newer version, fork-owned APK URL and exact SHA-256; Android enforces package/signing compatibility. Never point it at upstream's rolling APK or invent a feed URL.
+
+## Install and validate
+
+1. Download the universal debug APK for convenient testing, or arm64-v8a for POCO F3 and other ARM64 phones. ARMv7 APK is for supported 32-bit ARM devices. x86/x86_64 is not supported by these recovered native libraries.
+2. Compare the file's SHA-256 with the accompanying checksum, transfer it to the phone and open it using Android's package installer. Allow installation from that source only when prompted.
+3. MovieSapaMapuh installs alongside PencariMovie with a separate data sandbox. It does not migrate Telegram sessions/settings. Keep the original app/data for rollback. Stop one server before starting the other if both use the same port.
+4. Open MovieSapaMapuh, retain normal permission prompts, select Start Server, and use the displayed LAN address from another client on the same network. Use Open Web, Addon Setup and Settings as before. Keep the existing password/remote-token safeguards.
+5. Test every row in FEATURE_PARITY.md, especially start/stop, permissions, boot/background/notification behavior, authentication, bot pool/password, LAN/tunnel, catalogs, real playback/seek/range/download and external integrations. Pet settings can disable the companion independently.
+
+No physical POCO F3, emulator or other handset was available. API21/old WebView, modern Android background policies, 16 KiB-page devices, long-running streaming, battery/CPU/memory behavior and release signing remain unverified. Root MIT versus README GPL-3.0 licensing descriptions remain conflicting; retain all notices and complete distribution review before public release.
