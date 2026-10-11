@@ -6,6 +6,8 @@ import android.graphics.BitmapFactory
 import android.graphics.Canvas
 import android.graphics.Paint
 import android.graphics.RectF
+import android.graphics.Rect
+import org.json.JSONObject
 import android.os.Handler
 import android.os.Looper
 import android.util.AttributeSet
@@ -28,7 +30,12 @@ class SiYouyouView @JvmOverloads constructor(context: Context, attrs: AttributeS
     private var state = "idle"
     private var frame = 0
     private var ticks = 0
-    private var direction = -1
+    private val anchors = context.assets.open("web/assets/si-youyou/anchors.json").bufferedReader().use { JSONObject(it.readText()) }
+    private var lastFrame: Pair<String, Bitmap>? = null
+    private var dragStartX = 0f
+    private var dragStartY = 0f
+    private var blinkAt = 40 + (Math.random()*40).toInt()
+    private var idleCycles = 0
     private var xFraction = prefs.getFloat("x", .5f)
     private var yFraction = prefs.getFloat("y", .8f)
     private var downX = 0f
@@ -48,7 +55,7 @@ class SiYouyouView @JvmOverloads constructor(context: Context, attrs: AttributeS
     )
     private fun enabled() = prefs.getBoolean("enabled", true)
     private fun moving() = prefs.getBoolean("animations", true) && !prefs.getBoolean("reduced", false) && android.provider.Settings.Global.getFloat(context.contentResolver, android.provider.Settings.Global.ANIMATOR_DURATION_SCALE, 1f) != 0f
-    private fun transition(next: String) { state = next; frame = 0; ticks = 0; invalidate() }
+    private fun transition(next: String) { state = next; frame = 0; ticks = 0; if(next=="idle") blinkAt=40+(Math.random()*40).toInt(); invalidate() }
     private val tick = object : Runnable {
         override fun run() {
             if (!active || !hasWindowFocus() || !isShown || !enabled() || !moving()) return
@@ -56,15 +63,11 @@ class SiYouyouView @JvmOverloads constructor(context: Context, attrs: AttributeS
             if (!touchHeld) {
                 ticks++
                 when (state) {
-                    "idle" -> if (ticks > 40 + (Math.random()*40).toInt()) transition("blink")
-                    "blink" -> if (ticks > 2) transition(if (Math.random() < .5) "walk" else "sit")
-                    "walk" -> {
-                        xFraction = (xFraction + direction * .004f).coerceIn(0f, 1f)
-                        if (xFraction == 0f || xFraction == 1f) direction *= -1
-                        if (ticks > 65) transition("sit")
-                    }
+                    "idle" -> if (ticks > blinkAt) transition("blink")
+                    "blink" -> if (ticks > 2) { idleCycles++; transition(if(idleCycles >= 4) "sit" else if(idleCycles==2) "walk" else "idle") }
+                    "walk" -> if (ticks > 12) transition("idle")
                     "sit" -> if (ticks > 90) transition("sleep")
-                    "sleep" -> if (ticks > 180) transition("idle")
+                    "sleep" -> if (ticks > 180) { idleCycles=0; transition("idle") }
                     "jump", "happy", "wave" -> if (ticks > 12) transition("idle")
                 }
                 frame++
@@ -114,33 +117,32 @@ class SiYouyouView @JvmOverloads constructor(context: Context, attrs: AttributeS
         val group = frames[if (moving()) state else "idle"] ?: return
         if (group.isEmpty()) return
         val index = if(state == "jump") min(ticks / 4, group.size-1) else frame % group.size
-        val b = bitmap(group[index]) ?: bitmap(idle) ?: return
-        val box = min(height.toFloat() * .85f, 132 * resources.displayMetrics.density)
-        val scale = min(box / b.width, box / b.height)
-        val w = b.width * scale; val h = b.height * scale
-        val left = (width - box).coerceAtLeast(0f) * xFraction + (box-w)/2
-        val bottom = box + (height-box).coerceAtLeast(0f)*yFraction
-        val rise = if (moving() && state=="jump" && ticks in 4..7) 12*resources.displayMetrics.density else 0f
-        canvas.drawBitmap(b, null, RectF(left,bottom-h-rise,left+w,bottom-rise),paint)
-        if (prefs.getBoolean("flame",false) && moving() && state!="sleep") {
-            bitmap("effects/flame/si_youyou_flame_0${frame % 3+1}.png")?.let {
-                paint.alpha=38
-                canvas.drawBitmap(it,null,RectF(left,bottom-h,left+w,bottom),paint)
-                paint.alpha=255
-            }
-        }
+        val name = group[index]
+        bitmap(name)?.let { lastFrame = name to it }
+        bitmap(group[(index+1)%group.size]) // preload without replacing an unready pose with idle
+        val (shown, b) = lastFrame ?: return
+        val data=anchors.getJSONObject(shown); val bounds=data.getJSONArray("bounds"); val size=data.getJSONArray("size")
+        val sx=b.width.toFloat()/size.getInt(0); val sy=b.height.toFloat()/size.getInt(1)
+        val source=Rect((bounds.getInt(0)*sx).toInt(),(bounds.getInt(1)*sy).toInt(),(bounds.getInt(2)*sx).toInt(),(bounds.getInt(3)*sy).toInt())
+        val density=resources.displayMetrics.density
+        val box=min(112*density,width.toFloat()); val h=min(84*density,height.toFloat()-8*density)
+        val w=h*(bounds.getInt(2)-bounds.getInt(0))/(bounds.getInt(3)-bounds.getInt(1))
+        val drift=if(state=="walk" && moving()) kotlin.math.sin(min(ticks/12f,1f)*Math.PI).toFloat()*8*density*(if(xFraction<.5f) 1 else -1) else 0f
+        val left=((width-box).coerceAtLeast(0f)*xFraction+(box-w)/2+drift).coerceIn(0f,(width-w).coerceAtLeast(0f))
+        val bottom=h+(height-h-8*density).coerceAtLeast(0f)*yFraction
+        canvas.drawBitmap(b,source,RectF(left,bottom-h,left+w,bottom),paint)
     }
     private val hold = Runnable { if(touchHeld && !dragging) { menuOpened=true; showSettings() } }
     override fun onTouchEvent(event: MotionEvent): Boolean {
         when(event.actionMasked) {
             MotionEvent.ACTION_DOWN -> {
-                touchHeld=true; dragging=false; menuOpened=false; downX=event.x; downY=event.y
+                touchHeld=true; dragging=false; menuOpened=false; downX=event.x; downY=event.y; dragStartX=xFraction; dragStartY=yFraction; idleCycles=0
                 handler.postDelayed(hold,550); parent?.requestDisallowInterceptTouchEvent(true); return true
             }
             MotionEvent.ACTION_MOVE -> {
                 if(abs(event.x-downX)+abs(event.y-downY)>12*resources.displayMetrics.density) {
                     dragging=true; handler.removeCallbacks(hold); state="dragged"
-                    xFraction=(event.x/width).coerceIn(0f,1f); yFraction=(event.y/height).coerceIn(0f,1f); invalidate()
+                    xFraction=(dragStartX+(event.x-downX)/(width-112*resources.displayMetrics.density).coerceAtLeast(1f)).coerceIn(0f,1f); yFraction=(dragStartY+(event.y-downY)/(height-92*resources.displayMetrics.density).coerceAtLeast(1f)).coerceIn(0f,1f); invalidate()
                 }; return true
             }
             MotionEvent.ACTION_UP, MotionEvent.ACTION_CANCEL -> {
@@ -155,10 +157,10 @@ class SiYouyouView @JvmOverloads constructor(context: Context, attrs: AttributeS
     override fun performClick(): Boolean { super.performClick(); return true }
     fun showSettings() {
         handler.removeCallbacks(tick)
-        val keys=arrayOf("enabled","animations","flame","reduced")
-        val labels=arrayOf("Enable Pet","Enable Animations","Flame Effects","Reduced Motion / Performance Mode")
+        val keys=arrayOf("enabled","animations","reduced")
+        val labels=arrayOf("Enable Pet","Enable Animations","Reduced Motion / Performance Mode")
         AlertDialog.Builder(context).setTitle("Si Youyou")
-            .setMultiChoiceItems(labels,booleanArrayOf(enabled(),prefs.getBoolean("animations",true),prefs.getBoolean("flame",false),prefs.getBoolean("reduced",false))) { _, i, checked ->
+            .setMultiChoiceItems(labels,booleanArrayOf(enabled(),prefs.getBoolean("animations",true),prefs.getBoolean("reduced",false))) { _, i, checked ->
                 prefs.edit().putBoolean(keys[i],checked).apply(); transition(if(enabled()) "idle" else "hidden")
             }.setNeutralButton("Reset Pet Position") { _, _ ->
                 xFraction=.5f; yFraction=.8f; prefs.edit().remove("x").remove("y").apply(); invalidate()
@@ -168,5 +170,5 @@ class SiYouyouView @JvmOverloads constructor(context: Context, attrs: AttributeS
     }
     override fun onAttachedToWindow() { super.onAttachedToWindow(); if(decoder.isShutdown) decoder=Executors.newSingleThreadExecutor() }
     override fun onWindowFocusChanged(hasWindowFocus: Boolean) { super.onWindowFocusChanged(hasWindowFocus); handler.removeCallbacks(tick); if(hasWindowFocus && active && enabled() && moving()) handler.post(tick) }
-    override fun onDetachedFromWindow() { setActive(false); handler.removeCallbacks(hold); decoder.shutdownNow(); cache.clear(); pending.clear(); super.onDetachedFromWindow() }
+    override fun onDetachedFromWindow() { setActive(false); handler.removeCallbacks(hold); decoder.shutdownNow(); cache.clear(); pending.clear(); lastFrame=null; super.onDetachedFromWindow() }
 }

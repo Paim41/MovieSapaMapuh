@@ -1,9 +1,8 @@
-.youyou-pet { position:fixed; width:112px; height:128px; padding:0; border:0; background:transparent; z-index:100; cursor:grab; touch-action:none; }
+.youyou-pet { position:fixed; width:112px; height:128px; padding:0; border:0; background:transparent !important; box-shadow:none !important; min-height:0 !important; max-width:none !important; transform:none !important; z-index:100; cursor:grab; touch-action:none; }
 .youyou-pet[hidden],.youyou-pet img[hidden] { display:none !important; }
-.youyou-pet>img { position:absolute; bottom:0; left:0; width:100%; height:100%; object-fit:contain; object-position:center bottom; image-rendering:pixelated; pointer-events:none; }
+.youyou-pet>img { position:absolute; bottom:0; left:0; image-rendering:pixelated; pointer-events:none; }
 .youyou-pet:active { cursor:grabbing; }
 .youyou-pet:focus-visible { outline:2px solid #F04452; outline-offset:3px; border-radius:16px; }
-.youyou-pet .youyou-flame { opacity:.15; }
 .youyou-settings { border-top:1px solid #484853; margin-top:24px; padding:24px 0 8px; color:#F7F7F8; }
 .youyou-settings h3 { margin-bottom:12px; }
 .youyou-settings label { display:flex; gap:12px; align-items:center; min-height:48px; line-height:1.5; }
