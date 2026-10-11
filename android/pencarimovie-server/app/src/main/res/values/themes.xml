@@ -18,6 +18,9 @@
         <item name="colorSecondaryVariant">@color/secondary_dark</item>
         <item name="colorOnSecondary">@color/black</item>
 
+        <item name="android:fontFamily">sans</item>
+        <item name="shapeAppearanceSmallComponent">ShapeAppearance.MovieSapaMapuh</item>
+        <item name="shapeAppearanceMediumComponent">ShapeAppearance.MovieSapaMapuh</item>
         <!-- Surfaces -->
         <item name="android:colorBackground">@color/glass_bg</item>
         <item name="colorSurface">@color/glass_bg</item>
@@ -33,4 +36,8 @@
         <item name="android:windowBackground">@color/glass_bg</item>
     </style>
     <style name="Theme.PencariMovie" parent="Theme.PencariMovieBase" />
+    <style name="ShapeAppearance.MovieSapaMapuh" parent="ShapeAppearance.MaterialComponents.MediumComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">20dp</item>
+    </style>
 </resources>
