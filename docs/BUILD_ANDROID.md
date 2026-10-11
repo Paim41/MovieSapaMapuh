@@ -37,7 +37,7 @@ Debug APKs use a locally generated development key. Fresh CI debug keys may diff
 
 The optional **signed_release** dispatch input assembles Release and requires these fork secrets: MOVIESAPAMAPUH_KEYSTORE_BASE64, MOVIESAPAMAPUH_KEY_ALIAS, MOVIESAPAMAPUH_STORE_PASSWORD, MOVIESAPAMAPUH_KEY_PASSWORD. It signs in temporary runner storage, verifies signatures, removes the key and uploads artifacts without publication. This path has not been executed; no signing key was supplied. Historical publicly committed release credentials were not restored. Keep one private release key securely backed up for future upgrades.
 
-Application ID is `com.moviesapamapuh.server`; Kotlin namespace remains `com.pencarimovie.server`. Current version defaults are 1.0.4 / 10004 (the first branded build was 1.0.2 / 10002); these do not claim equivalence with reference 1.0.9. Use `-PversionNameOverride=X.Y.Z -PversionCodeOverride=N` with increasing version codes for future releases.
+Application ID is `com.moviesapamapuh.server`; Kotlin namespace remains `com.pencarimovie.server`. Current version defaults are 1.0.5 / 10005 (the first branded build was 1.0.2 / 10002); these do not claim equivalence with reference 1.0.9. Use `-PversionNameOverride=X.Y.Z -PversionCodeOverride=N` with increasing version codes for future releases.
 
 Update action remains visible, with truthful unconfigured-feed guidance. It makes no update request by default. Only after a real fork release exists, configure `-PmoviesapamapuhUpdateFeed=<actual fork release asset URL>`. Metadata must name this applicationId, a newer version, fork-owned APK URL and exact SHA-256; Android enforces package/signing compatibility. Never point it at upstream's rolling APK or invent a feed URL.
 

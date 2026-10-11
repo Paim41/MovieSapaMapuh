@@ -1,0 +1,43 @@
+{
+  "source": "walk.zip supplied by user",
+  "fps": 8,
+  "css_width": 148,
+  "frames": [
+    {
+      "file": "si_youyou_walk_left_01.png",
+      "sha256": "c2f64295bf60c3a46e7c0cb678932d2ec9ad15446aee6bee963554fc41493e30",
+      "size": [
+        740,
+        586
+      ],
+      "feet_baseline": 576
+    },
+    {
+      "file": "si_youyou_walk_left_02.png",
+      "sha256": "947f436a875c38c12e366c883084cec029be5653b0e3d15605ed6805e0388c6f",
+      "size": [
+        740,
+        586
+      ],
+      "feet_baseline": 576
+    },
+    {
+      "file": "si_youyou_walk_left_03.png",
+      "sha256": "85b1864e7ab6c6c2a98dbfa774316cdcfd2bc296e6bcd537746b4a93e34f65fa",
+      "size": [
+        740,
+        586
+      ],
+      "feet_baseline": 576
+    },
+    {
+      "file": "si_youyou_walk_left_04.png",
+      "sha256": "5e6f765ec511992f42a4ad9ce204323fdc641c2ae1dfa6d6fabb2b5512480126",
+      "size": [
+        740,
+        586
+      ],
+      "feet_baseline": 576
+    }
+  ]
+}

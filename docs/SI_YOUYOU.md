@@ -1,3 +1,5 @@
+Retired in 1.0.5: the interactive pet and all Pet Settings have been removed at the user’s request. See [replacement report](SI_YOUYOU_REPLACEMENT_1.0.5.md). The documentation below is historical.
+
 > Updated in 1.0.3: extra flame overlays/settings removed; fixed viewport anchoring and normalized sprite bounds added. See [UI refinement](UI_REFINEMENT_1.0.3.md). The initial implementation notes below are historical where they describe optional flame rendering.
 
 # Si Youyou

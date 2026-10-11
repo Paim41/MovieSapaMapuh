@@ -1,0 +1,3 @@
+Retired interactive-pet runtime artwork, README, manifest and anchor metadata are preserved here for development reference. These files were previously bundled at public/assets/si-youyou and remain unchanged. They are not copied into the Web Dashboard or Android APK. The new walking loader uses only the four PNGs from the separately supplied walk.zip.
+
+The cursor/ directory preserves the complete supplied cursor archive, including README, original manifest, reference artwork and runtime sizes. Only normal.png and click.png from runtime/64 are packaged, with selected hotspot coordinates documented in docs/CURSOR_RUNTIME_ASSETS.json.

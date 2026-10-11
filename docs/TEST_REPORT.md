@@ -1,3 +1,5 @@
+Latest: [1.0.5 pet replacement / loader / cursor / Search](SI_YOUYOU_REPLACEMENT_1.0.5.md).
+
 Latest: [1.0.4 dock and Library report](UI_REFINEMENT_1.0.4.md). Earlier results below remain historical.
 
 > Latest pass: [1.0.3 UI refinement and validation](UI_REFINEMENT_1.0.3.md). The report below records the original 1.0.2 delivery.

@@ -65,8 +65,9 @@ for ref,folder in [(BASE,'public'),(NATIVE,'android/pencarimovie-server/app/src/
         if path.endswith(('.js','.json')) and path != folder+'/app.js':
             expected=subprocess.check_output(['git','show',f'{ref}:{path}'],cwd=repo)
             if path == folder+'/app.bundle.js':
-                # Two explicit display-only hooks. All controller, route, filter and player code stays byte-identical.
-                for patch in json.loads((repo/'tools/fixtures/library-copy-patch.json').read_text()):
+                # Explicit Library copy and loading-markup hooks only. Controllers, routes, filters and player stay byte-identical.
+                for patch in json.loads((repo/'tools/fixtures/library-copy-patch.json').read_text()) + json.loads((repo/'tools/fixtures/loader-markup-patch.json').read_text()):
+                    if patch.get('folder',folder) != folder: continue
                     before=patch['before'].encode(); after=patch['after'].encode()
                     assert expected.count(before)==1
                     expected=expected.replace(before,after)
@@ -76,5 +77,20 @@ assert (repo/path).read_text()==auth_style(original('0f1c851',path).replace('Pen
 for name in ['TdLibManager.kt','WebActivity.kt','ServerService.kt']:
     path='android/pencarimovie-server/app/src/main/java/com/pencarimovie/server/'+name
     assert (repo/path).read_text()==original('0f1c851',path), ('Working native engine/playback changed',path)
-print('PASS native resource text/IDs, PHP/native engine except exact brand substitutions and standalone auth CSS, frontend handlers, translations and bundles except two explicit Library display hooks')
+print('PASS native resource text/IDs, PHP/native engine except exact brand substitutions and standalone auth CSS, frontend handlers, translations and bundles except explicit Library copy and loading-markup hooks')
 print('Dynamic text, visual reachability, event wiring and device behavior still require runtime tests.')
+
+# The retired native pet was added after recovery: permit only its UI/lifecycle removal.
+path='android/pencarimovie-server/app/src/main/java/com/pencarimovie/server/MainActivity.kt'
+expected=original('6874276',path)
+expected=expected.replace('        findViewById<View>(R.id.petSettings).setOnClickListener { findViewById<SiYouyouView>(R.id.siYouyou).showSettings() }', '        // Retire only the old companion preferences; server/account settings stay intact.\n        getSharedPreferences("moviesapamapuh.pet", MODE_PRIVATE).edit().clear().apply()')
+for active in ['true','false']:
+    expected=expected.replace('        findViewById<SiYouyouView>(R.id.siYouyou).setActive('+active+')\n','')
+expected=re.sub(r'        findViewById<SiYouyouView>\(R.id.siYouyou\).serverState\(when\(state\) \{.*?        \}\)\n','',expected,flags=re.S)
+assert (repo/path).read_text()==expected, 'Native activity changed beyond explicit pet removal'
+for folder in ['public','android/pencarimovie-server/app/src/main/assets/web']:
+    assert not (repo/folder/'si-youyou.js').exists()
+    assert not (repo/folder/'si-youyou.css').exists()
+    assert not (repo/folder/'assets/si-youyou').exists()
+assert not (repo/'android/pencarimovie-server/app/src/main/java/com/pencarimovie/server/SiYouyouView.kt').exists()
+print('PASS retired native/web pet components absent; original native activity behavior preserved')

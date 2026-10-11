@@ -50,6 +50,8 @@ jobs:
           NODE_PATH="$RUNNER_TEMP/presentation/node_modules" node tools/test-presentation.cjs
           NODE_PATH="$RUNNER_TEMP/presentation/node_modules" node tools/test-ui-refinement.cjs
           NODE_PATH="$RUNNER_TEMP/presentation/node_modules" node tools/test-dock-library.cjs
+          NODE_PATH="$RUNNER_TEMP/presentation/node_modules" node tools/test-youyou-loader.cjs
+          NODE_PATH="$RUNNER_TEMP/presentation/node_modules" node tools/test-youyou-cursor.cjs
       - uses: actions/upload-artifact@v4
         with:
           name: MovieSapaMapuh-presentation-fixtures
@@ -57,6 +59,7 @@ jobs:
             dist/screenshots/
             dist/refinement-screenshots/
             dist/dock-library-screenshots/
+            dist/loader-screenshots/
 
   build:
     if: github.repository == 'Paim41/pencarimovie-server'

@@ -45,26 +45,7 @@ const repo=path.resolve(__dirname,'..');
     if(width===390){await page.locator('.stream-route-list').evaluate(el=>el.scrollTop=0);fs.mkdirSync(path.join(repo,'dist/refinement-screenshots'),{recursive:true});await page.screenshot({path:path.join(repo,'dist/refinement-screenshots',`${folder==='public'?'web':'android'}-${screen}.png`)});}
    }
   }
-  // No UI beneath this area: isolate position and render timing from service behavior.
-  await page.setViewportSize({width:390,height:844});
-  await page.evaluate(()=>{document.getElementById('app').remove();document.body.style.height='3000px';document.body.style.overflow='auto';document.documentElement.style.overflow='auto';window.dispatchEvent(new Event('resize'));});
-  await page.waitForFunction(()=>!document.getElementById('siYouyou').hidden);
-  const position=await page.locator('#siYouyou').evaluate(el=>[el.style.left,el.style.top]);
-  await page.evaluate(()=>{window.scrollTo(0,700);document.dispatchEvent(new Event('scroll'));});
-  assert.deepEqual(await page.locator('#siYouyou').evaluate(el=>[el.style.left,el.style.top]),position,'Scroll moved the viewport anchor');
-  await page.evaluate(()=>{const pet=document.getElementById('siYouyou'),block=document.createElement('button');block.id='obstacle';block.textContent='Play';Object.assign(block.style,{position:'fixed',left:pet.style.left,top:pet.style.top,width:'112px',height:'128px'});document.body.appendChild(block);});
-  await page.waitForFunction(()=>document.getElementById('siYouyou').hidden);
-  await page.evaluate(()=>document.getElementById('obstacle').remove());
-  await page.waitForFunction(()=>!document.getElementById('siYouyou').hidden);
-  assert.deepEqual(await page.locator('#siYouyou').evaluate(el=>[el.style.left,el.style.top]),position,'Collision relocated pet');
-  for(const event of ['tap','play','download']){
-   await page.evaluate(event=>SiYouyou.react(event),event);
-   await page.waitForFunction(()=>document.querySelector('#siYouyou img').complete);
-   const size=await page.locator('#siYouyou').evaluate(el=>({w:el.getBoundingClientRect().width,h:el.getBoundingClientRect().height,count:el.querySelectorAll('img').length}));
-   assert.deepEqual(size,{w:112,h:128,count:1});
-  }
-  assert.equal(await page.locator('.youyou-flame').count(),0);
-  await page.evaluate(()=>document.documentElement.requestFullscreen());await page.waitForFunction(()=>document.getElementById('siYouyou').hidden);await page.evaluate(()=>document.exitFullscreen());
-  assert.deepEqual(errors,[]);console.log('PASS',folder,'detail/source widths, text contrast, unchanged filename, scrolling, fixed pet anchor, collision hiding and fullscreen');await context.close();
+  assert.equal(await page.locator('#siYouyou,.youyou-settings').count(),0);
+  assert.deepEqual(errors,[]);console.log('PASS',folder,'detail/source widths, text contrast, unchanged filename, scrolling, retired pet absent');await context.close();
  }}finally{await browser.close();}
 })().catch(e=>{console.error(e);process.exit(1)});

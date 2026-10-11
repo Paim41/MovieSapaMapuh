@@ -109,7 +109,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         NativeIcons.apply(findViewById(android.R.id.content))
-        findViewById<View>(R.id.petSettings).setOnClickListener { findViewById<SiYouyouView>(R.id.siYouyou).showSettings() }
+        // Retire only the old companion preferences; server/account settings stay intact.
+        getSharedPreferences("moviesapamapuh.pet", MODE_PRIVATE).edit().clear().apply()
 
         viewStatusDot = findViewById(R.id.viewStatusDot)
         tvStatus = findViewById(R.id.tvStatus)
@@ -171,7 +172,6 @@ class MainActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        findViewById<SiYouyouView>(R.id.siYouyou).setActive(true)
         if (currentState is ServerState.Running) {
             fetchTunnelStatus()
             startTunnelPolling()
@@ -179,7 +179,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onStop() {
-        findViewById<SiYouyouView>(R.id.siYouyou).setActive(false)
         super.onStop()
         stopTunnelPolling()
         if (isBound) {
@@ -479,11 +478,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun onStateChanged(state: ServerState) {
-        findViewById<SiYouyouView>(R.id.siYouyou).serverState(when(state) {
-            is ServerState.Running -> "running"
-            is ServerState.Error -> "error"
-            else -> "idle"
-        })
         currentState = state
         when (state) {
             is ServerState.Running -> {

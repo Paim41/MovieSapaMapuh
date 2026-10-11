@@ -17,7 +17,7 @@ const originalTitle=between('getEmptyStateTitle(){','getPickerOptions(');
   const context=await browser.newContext(); const page=await context.newPage(); const errors=[];page.on('pageerror',e=>errors.push(e.message));
   await context.route('**/*',route=>{
    const u=new URL(route.request().url());if(u.origin!=='http://fixture.test')return route.abort();
-   if(u.pathname==='/')return route.fulfill({contentType:'text/html',body:`<!doctype html><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><link rel="stylesheet" href="css/bundle.css"><link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="noir.css"><link rel="stylesheet" href="noir-dock-library.css"><link rel="stylesheet" href="si-youyou.css"><script defer src="noir.js"></script><script defer src="si-youyou.js"></script><div id="app"></div>`});
+   if(u.pathname==='/')return route.fulfill({contentType:'text/html',body:`<!doctype html><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><link rel="stylesheet" href="css/bundle.css"><link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="noir.css"><link rel="stylesheet" href="noir-dock-library.css"><link rel="stylesheet" href="youyou-loader.css"><script defer src="noir.js"></script><script defer src="youyou-loader.js"></script><div id="app"></div>`});
    const f=path.resolve(repo,folder,'.'+u.pathname);if(!f.startsWith(path.resolve(repo,folder)+path.sep)||!fs.existsSync(f))return route.abort();
    return route.fulfill({body:fs.readFileSync(f),contentType:({'.css':'text/css','.js':'text/javascript','.png':'image/png'})[path.extname(f)]||'application/json'});
   });
@@ -92,13 +92,7 @@ const originalTitle=between('getEmptyStateTitle(){','getPickerOptions(');
   assert.ok(await page.locator('.library-shell').evaluate(e=>e.scrollHeight>e.clientHeight));
   await page.locator('.library-shell').evaluate(e=>e.scrollTop=e.scrollHeight);
   assert.ok(await page.locator('.library-empty-subtitle').evaluate(e=>e.getBoundingClientRect().bottom<document.querySelector('.home-sidebar').getBoundingClientRect().top));
-  // Pet saved position intersects dock or empty-state text: suppress instead of relocating.
-  await page.setViewportSize({width:390,height:844});await render(navs.legacylibrary);
-  for(const target of ['.home-sidebar','.library-empty-title']){
-   await page.evaluate(target=>{const r=document.querySelector(target).getBoundingClientRect();localStorage.setItem('moviesapamapuh.pet.v1',JSON.stringify({enabled:true,animations:false,x:20,y:Math.min(innerHeight-136,r.top-30)}));},target);
-   await page.reload();await setup();await render(navs.legacylibrary);
-   await page.waitForFunction(()=>document.getElementById('siYouyou').hidden);
-  }
+  assert.equal(await page.locator('#siYouyou,.youyou-settings').count(),0);
   assert.deepEqual(errors,[]);console.log('PASS',folder,'dock labels/actions/SVG, variants, state copy, empty/populated scrolling and safe area');await context.close();
  }}finally{await browser.close();}
 })().catch(e=>{console.error(e);process.exit(1)});
