@@ -55,7 +55,7 @@ for path in ['backend.php','composer.json','composer.lock','Caddyfile','router.p
     if path=='backend.php':
         before=auth_style(before.replace('PencariMovie Server','MovieSapaMapuh').replace('Open PencariMovie and re-install','Open MovieSapaMapuh and re-install'))
         marker='    // ── GET /api/sub-proxy'
-        before=before.replace(marker,(repo/'tools/fixtures/youtube-php-route.txt').read_text()+marker)
+        before=before.replace(marker,(repo/'tools/fixtures/youtube-php-route.txt').read_text()+'\n'+marker)
     assert (repo/path).read_text()==before, ('Non-branding PHP engine/dependency change',path)
 # Preserve every dynamic label and event handler in the two distinct frontend baselines.
 for ref,folder in [(BASE,'public'),(NATIVE,'android/pencarimovie-server/app/src/main/assets/web')]:
