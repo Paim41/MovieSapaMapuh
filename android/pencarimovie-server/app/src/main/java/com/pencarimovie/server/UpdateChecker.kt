@@ -311,7 +311,8 @@ object UpdateChecker {
                     Log.w(TAG, "APK download returned HTTP $code")
                     return@withContext null
                 }
-                val total = conn.contentLengthLong
+                // Header parsing preserves 64-bit lengths on API 21–23 too.
+                val total = conn.getHeaderField("Content-Length")?.toLongOrNull() ?: -1L
 
                 conn.inputStream.use { input ->
                     FileOutputStream(tmp).use { output ->

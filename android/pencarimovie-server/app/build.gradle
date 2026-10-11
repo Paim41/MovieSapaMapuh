@@ -146,6 +146,7 @@ android {
     packagingOptions {
         jniLibs {
             useLegacyPackaging false
+            keepDebugSymbols += ["**/libtdjni.so"]
         }
     }
 

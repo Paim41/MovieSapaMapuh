@@ -5,7 +5,7 @@
       stays dark regardless of the system setting — the glass surfaces are
       tuned for a near-black backdrop and would wash out on a light one.
     -->
-    <style name="Theme.PencariMovie" parent="Theme.MaterialComponents.NoActionBar">
+    <style name="Theme.PencariMovieBase" parent="Theme.MaterialComponents.NoActionBar">
         <!-- colorPrimary drives the status bar tint on some OEM skins, so it is
              pinned to the background rather than the accent. The accent is
              applied per-widget via backgroundTint instead. -->
@@ -28,10 +28,9 @@
         <!-- System bars blend into the black background -->
         <item name="android:statusBarColor">@color/glass_bg</item>
         <item name="android:navigationBarColor">@color/glass_bg</item>
-        <item name="android:windowLightStatusBar">false</item>
-        <item name="android:windowLightNavigationBar">false</item>
 
         <!-- Translucent window so the glass reads as glass -->
         <item name="android:windowBackground">@color/glass_bg</item>
     </style>
+    <style name="Theme.PencariMovie" parent="Theme.PencariMovieBase" />
 </resources>
