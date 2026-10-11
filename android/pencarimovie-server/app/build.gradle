@@ -34,7 +34,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.pencarimovie.server"
+        applicationId "com.moviesapamapuh.server"
         minSdkVersion project.properties.minSdkVersion.toInteger()
         targetSdkVersion project.properties.targetSdkVersion.toInteger()
 
@@ -51,9 +51,16 @@ android {
         versionName versionNameOverride != null ? versionNameOverride.toString() : "1.0.2"
 
         validateVersionName(versionName)
+        // No invented release feed. Configure only after a real fork release exists.
+        def feed = project.findProperty("moviesapamapuhUpdateFeed")?.toString() ?: ""
+        if (feed && !(feed ==~ /https:\/\/github\.com\/Paim41\/pencarimovie-server\/releases\/download\/[A-Za-z0-9._\/-]+/)) {
+            throw new GradleException("Update feed must be a release asset in Paim41/pencarimovie-server")
+        }
+        buildConfigField "String", "UPDATE_FEED_URL", '"' + feed + '"'
 
-        manifestPlaceholders.PENCARIMOVIE_PACKAGE_NAME = "com.pencarimovie.server"
-        manifestPlaceholders.PENCARIMOVIE_APP_NAME = "PencariMovie Server"
+
+        manifestPlaceholders.PENCARIMOVIE_PACKAGE_NAME = "com.moviesapamapuh.server"
+        manifestPlaceholders.PENCARIMOVIE_APP_NAME = "MovieSapaMapuh"
 
         // externalNativeBuild is disabled until NDK is installed.
         // When re-enabling, uncomment this block:
@@ -154,10 +161,10 @@ android {
         variant.outputs.all { output ->
             if (variant.buildType.name == "debug") {
                 def abi = output.getFilter(com.android.build.OutputFile.ABI)
-                outputFileName = new File("pencarimovie-server_" + (apkVersionTag ? apkVersionTag : "debug") + "_" + (abi ? abi : "universal") + ".apk")
+                outputFileName = new File("MovieSapaMapuh_" + (apkVersionTag ? apkVersionTag : "debug") + "_" + (abi ? abi : "universal") + ".apk")
             } else if (variant.buildType.name == "release") {
                 def abi = output.getFilter(com.android.build.OutputFile.ABI)
-                outputFileName = new File("pencarimovie-server_" + (apkVersionTag ? apkVersionTag : "release") + "_" + (abi ? abi : "universal") + ".apk")
+                outputFileName = new File("MovieSapaMapuh_" + (apkVersionTag ? apkVersionTag : "release") + "_" + (abi ? abi : "universal") + ".apk")
             }
         }
     }

@@ -285,10 +285,10 @@ class ServerService : Service() {
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O) return
         val channel = NotificationChannel(
             CHANNEL_ID,
-            "PencariMovie Server",
+            "MovieSapaMapuh",
             NotificationManager.IMPORTANCE_LOW
         ).apply {
-            description = "Notification for PencariMovie Server status"
+            description = "Notification for MovieSapaMapuh status"
             setShowBadge(false)
         }
         val manager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
@@ -325,7 +325,7 @@ class ServerService : Service() {
         )
 
         val builder = NotificationCompat.Builder(this, CHANNEL_ID)
-            .setContentTitle("PencariMovie Server")
+            .setContentTitle("MovieSapaMapuh")
             .setContentText(content)
             .setSmallIcon(android.R.drawable.ic_menu_compass)
             .setOngoing(onGoing)

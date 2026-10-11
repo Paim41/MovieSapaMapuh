@@ -55,12 +55,13 @@ object UpdateChecker {
     // published by .github/workflows/android-server-apk.yml). It is deliberately
     // NOT the `apk-latest` tag, which feeds the legacy pencarimovie.downloader
     // app (android-apk.yml) — sharing it would offer the wrong app's APK.
-    private const val VERSION_JSON_URL =
-        "https://github.com/aiskendi/pencarimovie-server/releases/download/apk-server-latest/version.json"
+    private val VERSION_JSON_URL = BuildConfig.UPDATE_FEED_URL
+
+    val isConfigured: Boolean get() = VERSION_JSON_URL.isNotBlank()
 
     /** Where the user is sent if the direct download fails. */
     const val RELEASE_PAGE_URL =
-        "https://github.com/aiskendi/pencarimovie-server/releases/tag/apk-server-latest"
+        "https://github.com/Paim41/pencarimovie-server/releases"
 
     /** Subdirectory of cacheDir where the APK is staged for the installer. */
     private const val UPDATE_DIR = "updates"
@@ -83,6 +84,7 @@ object UpdateChecker {
      */
     suspend fun checkForUpdate(currentVersionCode: Int, currentVersionName: String = BuildConfig.VERSION_NAME): UpdateInfo? =
         withContext(Dispatchers.IO) {
+            if (!isConfigured) return@withContext null
             try {
                 val json = fetchVersionJson() ?: return@withContext null
                 val info = parse(json) ?: return@withContext null
@@ -158,7 +160,7 @@ object UpdateChecker {
             // Application-id guard: never offer an update built for another app
             // (e.g. the old com.pencarimovie.downloader release).
             val pkg = o.optString("applicationId", o.optString("package", "")).trim()
-            if (pkg.isNotEmpty() && pkg != BuildConfig.APPLICATION_ID) {
+            if (pkg != BuildConfig.APPLICATION_ID) {
                 Log.i(TAG, "Ignoring update for applicationId=$pkg (this app is ${BuildConfig.APPLICATION_ID})")
                 return null
             }
@@ -175,6 +177,9 @@ object UpdateChecker {
                 Log.w(TAG, "version.json has no usable APK asset")
                 return null
             }
+
+            if (!apk.first.startsWith("https://github.com/Paim41/pencarimovie-server/releases/download/") ||
+                !apk.second.matches(Regex("[0-9a-fA-F]{64}"))) return null
 
             UpdateInfo(
                 versionName = name,

@@ -2139,7 +2139,7 @@ class PencariMovieApp {
           this._showLoadingScreen("Provisioning guest bot...");
           if (this._provisionPollCount > 20) {
             this._provisionPollCount = 0;
-            this.provisionError = "Provisioning is taking longer than expected. Please restart the PencariMovie Server, or enter your Telegram bot token below.";
+            this.provisionError = "Provisioning is taking longer than expected. Please restart the MovieSapaMapuh, or enter your Telegram bot token below.";
             this._clearCachedSession();
             this.showSettingsGate({
               forceToken: true,
@@ -2165,7 +2165,7 @@ class PencariMovieApp {
               const secs = off % 60;
               const human = mins > 0 ? "".concat(mins, "m ").concat(secs, "s") : "".concat(secs, "s");
               const dir = Number(clock.offset_seconds) > 0 ? "ahead of" : "behind";
-              this.provisionError = "Device clock out of sync!\nYour clock is ".concat(human, " ").concat(dir, " Telegram's server time.\n\n") + "Enable 'Set time automatically' (Automatic date and time / NTP) in your device Settings, then restart the PencariMovie Server.";
+              this.provisionError = "Device clock out of sync!\nYour clock is ".concat(human, " ").concat(dir, " Telegram's server time.\n\n") + "Enable 'Set time automatically' (Automatic date and time / NTP) in your device Settings, then restart the MovieSapaMapuh.";
               this._clearCachedSession();
               return;
             }

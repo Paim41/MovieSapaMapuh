@@ -237,7 +237,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun copyToClipboard(text: String, message: String) {
         val clipboard = getSystemService(Context.CLIPBOARD_SERVICE) as? ClipboardManager
-        val clip = ClipData.newPlainText("PencariMovie Server URL", text)
+        val clip = ClipData.newPlainText("MovieSapaMapuh URL", text)
         clipboard?.setPrimaryClip(clip)
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
@@ -386,6 +386,14 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun checkForAppUpdate() {
+        if (!UpdateChecker.isConfigured) {
+            updateBanner.visibility = View.VISIBLE
+            tvUpdateText.setText(R.string.update_not_configured)
+            btnUpdateDownload.setOnClickListener {
+                Toast.makeText(this, R.string.update_not_configured, Toast.LENGTH_LONG).show()
+            }
+            return
+        }
         lifecycleScope.launch {
             val info = UpdateChecker.checkForUpdate(BuildConfig.VERSION_CODE, BuildConfig.VERSION_NAME) ?: return@launch
 
@@ -664,12 +672,12 @@ class MainActivity : AppCompatActivity() {
         prefs.edit().putBoolean(KEY_BACKGROUND_GUIDE_SHOWN, true).apply()
 
         val message = StringBuilder().apply {
-            append("⚠️ IMPORTANT: Android may stop PencariMovie Server if background activity is restricted!\n\n")
+            append("⚠️ IMPORTANT: Android may stop MovieSapaMapuh if background activity is restricted!\n\n")
             append("Recommended steps to keep the server running in the background:\n\n")
             append("1. Allow Background Activity:\n")
             append("   Allow the app to run in the background.\n\n")
             append("2. Lock in Recents App:\n")
-            append("   Open the Recent Apps screen, long-press (or open the menu on) PencariMovie, and choose Lock (padlock/pin icon).\n\n")
+            append("   Open the Recent Apps screen, long-press (or open the menu on) MovieSapaMapuh, and choose Lock (padlock/pin icon).\n\n")
             append("3. Battery > Unrestricted:\n")
             append("   Go to App Info > Battery / Battery usage > set to 'Unrestricted' / 'No restrictions', and turn OFF Smart mode / Optimized.\n")
             append("   (Samsung/Xiaomi/Oppo/Vivo users: also turn OFF 'Deep sleeping apps' and turn ON 'Auto-start' / 'Background launch').\n\n")
@@ -678,7 +686,7 @@ class MainActivity : AppCompatActivity() {
             append("5. Do NOT Swipe Clear:\n")
             append("   After locking in recents, keep the server notification active. Android kills background processes that have no foreground notification.\n\n")
             append("6. Check Cleaner / RAM Booster:\n")
-            append("   If you use a cleaner or battery booster, exclude/whitelist PencariMovie from its clean list.")
+            append("   If you use a cleaner or battery booster, exclude/whitelist MovieSapaMapuh from its clean list.")
         }.toString()
 
         MaterialAlertDialogBuilder(this)
