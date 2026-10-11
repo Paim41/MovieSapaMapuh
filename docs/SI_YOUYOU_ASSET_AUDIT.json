@@ -1,0 +1,456 @@
+{
+  "originals": 9,
+  "sprites": 21,
+  "files": [
+    {
+      "file": "originals/si_youyou_flame_variations_3frames.png",
+      "size": [
+        2172,
+        724
+      ],
+      "mode": "RGBA",
+      "alpha_bounds": [
+        15,
+        12,
+        2158,
+        724
+      ],
+      "sha256": "5a936965457343c101a79f194374be2b237afed1330a29800de90c591b26dd79"
+    },
+    {
+      "file": "originals/si_youyou_front_idle.png",
+      "size": [
+        1180,
+        1333
+      ],
+      "mode": "RGBA",
+      "alpha_bounds": [
+        0,
+        17,
+        1166,
+        1333
+      ],
+      "sha256": "fa159460811f5a4a800fbdc68d3083a491340f77096e750b8264f6a78be8e31e"
+    },
+    {
+      "file": "originals/si_youyou_blink_front_side_2poses.png",
+      "size": [
+        1690,
+        931
+      ],
+      "mode": "RGBA",
+      "alpha_bounds": [
+        32,
+        0,
+        1674,
+        922
+      ],
+      "sha256": "3c1cdae926a3f2148615c3685da63578e415b92a0d6dda0d9a831e1793610b92"
+    },
+    {
+      "file": "originals/si_youyou_side_back_2views.png",
+      "size": [
+        1690,
+        931
+      ],
+      "mode": "RGBA",
+      "alpha_bounds": [
+        0,
+        0,
+        1690,
+        931
+      ],
+      "sha256": "06389eddaef7c1fc3f29098c4894eacf74273105f2691e893d089b7dcb4c0165"
+    },
+    {
+      "file": "originals/si_youyou_sleep_front_side_2poses.png",
+      "size": [
+        1942,
+        809
+      ],
+      "mode": "RGBA",
+      "alpha_bounds": [
+        17,
+        0,
+        1929,
+        795
+      ],
+      "sha256": "feb02f9d8a2b4255b3a0d5b49a35a1459453d13b469ad598ae3def26108b4082"
+    },
+    {
+      "file": "originals/si_youyou_happy_wave_2poses.png",
+      "size": [
+        1944,
+        809
+      ],
+      "mode": "RGBA",
+      "alpha_bounds": [
+        0,
+        0,
+        1926,
+        809
+      ],
+      "sha256": "c26ac9cfc3b6e779c23013ee3fcefc3b2ef5f4de31537d4e4b09c0501c4064f5"
+    },
+    {
+      "file": "originals/si_youyou_walk_left_4frames.png",
+      "size": [
+        1394,
+        1128
+      ],
+      "mode": "RGBA",
+      "alpha_bounds": [
+        0,
+        0,
+        1394,
+        1128
+      ],
+      "sha256": "c945fc9f86777574306030e15f4222aebdca2bbf4ed3d24d0cdd562f0e0c13b7"
+    },
+    {
+      "file": "originals/si_youyou_jump_3poses.png",
+      "size": [
+        2172,
+        724
+      ],
+      "mode": "RGBA",
+      "alpha_bounds": [
+        23,
+        2,
+        2145,
+        724
+      ],
+      "sha256": "b4e6ab0f7e12733688461af2d0e66d754d6c026ff654da8b0efa762e8c77bc0d"
+    },
+    {
+      "file": "originals/si_youyou_sit_front_side_2poses.png",
+      "size": [
+        1944,
+        809
+      ],
+      "mode": "RGBA",
+      "alpha_bounds": [
+        0,
+        5,
+        1928,
+        809
+      ],
+      "sha256": "d19ce32d6cc3fc8ba18718d86280273e12868c5e371bfae8888e6f0a07c77e7f"
+    },
+    {
+      "file": "sprites/idle/si_youyou_idle_front.png",
+      "size": [
+        1186,
+        1336
+      ],
+      "mode": "RGBA",
+      "alpha_bounds": [
+        10,
+        10,
+        1176,
+        1326
+      ],
+      "sha256": "af6acca83667b01ea02104d539968964c20d0b973160ddc5f0a83ac077b3086b"
+    },
+    {
+      "file": "sprites/blink/si_youyou_blink_front.png",
+      "size": [
+        859,
+        942
+      ],
+      "mode": "RGBA",
+      "alpha_bounds": [
+        10,
+        10,
+        849,
+        932
+      ],
+      "sha256": "b7e41992baf56650b3bb01f190400c77815a5f830037c221a30f7a870a15395f"
+    },
+    {
+      "file": "sprites/blink/si_youyou_blink_side_left.png",
+      "size": [
+        823,
+        897
+      ],
+      "mode": "RGBA",
+      "alpha_bounds": [
+        10,
+        10,
+        813,
+        887
+      ],
+      "sha256": "9f6ea16efe61a4a85e713bdfbe5195a7953fd5574065cde7e3c567abeb552f4d"
+    },
+    {
+      "file": "sprites/idle/si_youyou_idle_side_left.png",
+      "size": [
+        862,
+        951
+      ],
+      "mode": "RGBA",
+      "alpha_bounds": [
+        10,
+        10,
+        852,
+        941
+      ],
+      "sha256": "7158412511e839aa0b21c207b23041fa927c358e53ed64cb9a0cdb9df3333f63"
+    },
+    {
+      "file": "sprites/idle/si_youyou_idle_back.png",
+      "size": [
+        858,
+        951
+      ],
+      "mode": "RGBA",
+      "alpha_bounds": [
+        10,
+        10,
+        848,
+        941
+      ],
+      "sha256": "17b3f75b8be3b949a62dab94e6905dfc1b2f91c663ec07751e0cea34cf8d3103"
+    },
+    {
+      "file": "sprites/sleep/si_youyou_sleep_front.png",
+      "size": [
+        962,
+        815
+      ],
+      "mode": "RGBA",
+      "alpha_bounds": [
+        10,
+        10,
+        952,
+        805
+      ],
+      "sha256": "fac86eebcb977379a385077abeb4c4d12b848d3546dbaee0a550548f9137d24b"
+    },
+    {
+      "file": "sprites/sleep/si_youyou_sleep_side_left.png",
+      "size": [
+        971,
+        800
+      ],
+      "mode": "RGBA",
+      "alpha_bounds": [
+        10,
+        10,
+        961,
+        790
+      ],
+      "sha256": "ac61e70fbf448a4360a0a9e25b8c9d1a1b98be70821d3bf6121671888ae095a8"
+    },
+    {
+      "file": "sprites/reactions/si_youyou_happy.png",
+      "size": [
+        992,
+        829
+      ],
+      "mode": "RGBA",
+      "alpha_bounds": [
+        10,
+        10,
+        982,
+        819
+      ],
+      "sha256": "7588bb9a233f83609fa0d4642b809ef96856ca3d0d7682980795d1a2c6451fa8"
+    },
+    {
+      "file": "sprites/reactions/si_youyou_wave.png",
+      "size": [
+        974,
+        829
+      ],
+      "mode": "RGBA",
+      "alpha_bounds": [
+        10,
+        10,
+        964,
+        819
+      ],
+      "sha256": "816a8037e9010e03245f1b9de5ac4ac6af20c0bad454fd86789df45898cb6e46"
+    },
+    {
+      "file": "sprites/jump/si_youyou_jump_crouch.png",
+      "size": [
+        721,
+        736
+      ],
+      "mode": "RGBA",
+      "alpha_bounds": [
+        10,
+        10,
+        711,
+        726
+      ],
+      "sha256": "1652eeb5037383bdfbcd09af6379ee28c63542ec6e080f371c972b235309d4ab"
+    },
+    {
+      "file": "sprites/jump/si_youyou_jump_airborne.png",
+      "size": [
+        740,
+        702
+      ],
+      "mode": "RGBA",
+      "alpha_bounds": [
+        10,
+        10,
+        730,
+        692
+      ],
+      "sha256": "64b88b98ebcb23d0701e9624dddc5fec90693586a8333ff5c3c13f82f5debc0f"
+    },
+    {
+      "file": "sprites/jump/si_youyou_jump_landing.png",
+      "size": [
+        708,
+        719
+      ],
+      "mode": "RGBA",
+      "alpha_bounds": [
+        10,
+        10,
+        698,
+        709
+      ],
+      "sha256": "b04813119a4eb6aff7982df8dd74949804c58539cffb6d126abf77f811380e14"
+    },
+    {
+      "file": "sprites/sit/si_youyou_sit_front.png",
+      "size": [
+        1013,
+        824
+      ],
+      "mode": "RGBA",
+      "alpha_bounds": [
+        10,
+        10,
+        1003,
+        814
+      ],
+      "sha256": "2179022ba3ed106423d5d0b22785089d4b7cdf81ab7318c8afcea62ecc022b6f"
+    },
+    {
+      "file": "sprites/sit/si_youyou_sit_side_left.png",
+      "size": [
+        955,
+        793
+      ],
+      "mode": "RGBA",
+      "alpha_bounds": [
+        10,
+        10,
+        945,
+        783
+      ],
+      "sha256": "2cc96725281028421ef49a45f5aa2e4f9932bbf763048833877ab97e3be31ec0"
+    },
+    {
+      "file": "sprites/effects/flame/si_youyou_flame_01.png",
+      "size": [
+        744,
+        732
+      ],
+      "mode": "RGBA",
+      "alpha_bounds": [
+        17,
+        19,
+        726,
+        722
+      ],
+      "sha256": "3580007a2c0a84fc791ddd5ce0e8fe35eeb1d47081a06e0a9c3b22a74b1e0182"
+    },
+    {
+      "file": "sprites/effects/flame/si_youyou_flame_02.png",
+      "size": [
+        744,
+        732
+      ],
+      "mode": "RGBA",
+      "alpha_bounds": [
+        10,
+        19,
+        734,
+        722
+      ],
+      "sha256": "3d5bb6b3cfa5b35d3006ed7218614a245642c0a29436803664c8174343db30aa"
+    },
+    {
+      "file": "sprites/effects/flame/si_youyou_flame_03.png",
+      "size": [
+        744,
+        732
+      ],
+      "mode": "RGBA",
+      "alpha_bounds": [
+        17,
+        10,
+        727,
+        722
+      ],
+      "sha256": "864c772ea4ee2c01714f72754aa07e8b4b27012f05d16ae3f4fb562080c5c696"
+    },
+    {
+      "file": "sprites/walk/si_youyou_walk_left_01.png",
+      "size": [
+        740,
+        586
+      ],
+      "mode": "RGBA",
+      "alpha_bounds": [
+        24,
+        14,
+        715,
+        576
+      ],
+      "sha256": "c2f64295bf60c3a46e7c0cb678932d2ec9ad15446aee6bee963554fc41493e30"
+    },
+    {
+      "file": "sprites/walk/si_youyou_walk_left_02.png",
+      "size": [
+        740,
+        586
+      ],
+      "mode": "RGBA",
+      "alpha_bounds": [
+        33,
+        14,
+        707,
+        576
+      ],
+      "sha256": "947f436a875c38c12e366c883084cec029be5653b0e3d15605ed6805e0388c6f"
+    },
+    {
+      "file": "sprites/walk/si_youyou_walk_left_03.png",
+      "size": [
+        740,
+        586
+      ],
+      "mode": "RGBA",
+      "alpha_bounds": [
+        10,
+        10,
+        730,
+        576
+      ],
+      "sha256": "85b1864e7ab6c6c2a98dbfa774316cdcfd2bc296e6bcd537746b4a93e34f65fa"
+    },
+    {
+      "file": "sprites/walk/si_youyou_walk_left_04.png",
+      "size": [
+        740,
+        586
+      ],
+      "mode": "RGBA",
+      "alpha_bounds": [
+        33,
+        24,
+        707,
+        576
+      ],
+      "sha256": "5e6f765ec511992f42a4ad9ce204323fdc641c2ae1dfa6d6fabb2b5512480126"
+    }
+  ]
+}

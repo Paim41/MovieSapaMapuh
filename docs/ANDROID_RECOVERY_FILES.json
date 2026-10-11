@@ -1,0 +1,686 @@
+[
+  {
+    "path": "android/pencarimovie-server/app/build.gradle",
+    "sha256": "6ec14b06aea6268bf345eaeced33ac63f37dfd4111bb16c4164b697950371a4c"
+  },
+  {
+    "path": "android/pencarimovie-server/app/libs/tdlib.jar",
+    "sha256": "ea351c3ad339c51c6a8c015d2198f1a09d3da4bd23da0347f48d015cfc17ba83"
+  },
+  {
+    "path": "android/pencarimovie-server/app/proguard-rules.pro",
+    "sha256": "e3d3cbae7b51fd7cbffffce178641c72766c63f29b967bd648977c1101e8ea95"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/AndroidManifest.xml",
+    "sha256": "9fcc2483dc7d278bb287578123aa3608f533c5f419b1c24f4a7cf51600c96e7a"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/cacert.pem",
+    "sha256": "a41b5d356aea97a529fe27e0f7316d2f9d946d75927476cf9cf1b90637d00505"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/app.bundle.js",
+    "sha256": "1f660470506738345dab438d071e5a072d878d2f9739bcd9d797a154b89ef6f2"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/app.js",
+    "sha256": "23fddd189cc817456b732e3e4106a52be7c8503ac5da0513855f4417be3408c0"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/appinfo.json",
+    "sha256": "cab07fd3d703eb268d6d0e4484852ddcbccc225ff4fc75882541b2682d4573c0"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/assets/brand/app_logo_mark.png",
+    "sha256": "cb8a9cc9b1d891724f7124cdd84cee107bf6ceeb92f7b95763a30dc2462ac994"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/assets/brand/app_logo_wordmark.png",
+    "sha256": "b03339a92401a0e5b5d1eaabed87f76b49c4481438a667a502888c3d2ba03407"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/assets/brand/app_logo_wordmark_arctic_blue.png",
+    "sha256": "a64120c10e190281f75eb58104427e310214d60f4cb6f30c1d48d1bb8aceab89"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/assets/brand/app_logo_wordmark_gold.png",
+    "sha256": "ee7b7921fae7385b38876259cd1b3233a9b2d3e4577deee7fb8fe26d3ab4cab6"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/assets/brand/app_logo_wordmark_graphite.png",
+    "sha256": "8c3798fcc47ceb2b57f628e318a31fbbf25c5a626eaa78c8ea1fbb6a9414a7ab"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/assets/brand/app_logo_wordmark_jade.png",
+    "sha256": "20e9cc2df48e01057a42817567db9d9c908933c8d764d8126dbb1faf779f4ef0"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/assets/brand/app_logo_wordmark_rose_gold.png",
+    "sha256": "980f3d5647151a842dc68214baf554e701c35116e4aabaa4448d2cf2ee6ec29a"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/assets/icons/discover_compass.svg",
+    "sha256": "d7e8682d135d7e0b98d97b76adba387c4e388213330aa8f0cf591e5539c19ea0"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/assets/icons/ic_chevron_compact_left.png",
+    "sha256": "fa99b2ca4d2162f32cfb85a4d5fe164486c17cc26d1a4645044717bd0ed65ec3"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/assets/icons/ic_player_aspect_ratio.svg",
+    "sha256": "a338b833757947bb2f45f31c5bd736d9e339923534d041b32aa2eb169bfb8d4c"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/assets/icons/ic_player_audio_filled.svg",
+    "sha256": "7074637cf7039805f1bde6de64c2691555e0152f46e8358dd7dd15f0b0c53fbf"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/assets/icons/ic_player_audio_outline.svg",
+    "sha256": "67a8a6f8f8cb6f605ddfee42963252dc8bca8257cb4c1f6b107ed986bbe0f44d"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/assets/icons/ic_player_episodes.svg",
+    "sha256": "e9076904f34cc460abe3911c15ad08e9e8ffe2cca06a19291556a5180e4e925b"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/assets/icons/ic_player_pause.svg",
+    "sha256": "e258831897eefacb2edb8bac34e3180a6c23e02052049f2582fb71260c99d056"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/assets/icons/ic_player_play.svg",
+    "sha256": "740525465cf82de43f446f76d952318028525125ec2db326492f9a24e1333e7e"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/assets/icons/ic_player_skip_next.svg",
+    "sha256": "8106d18d2d8e6bff8966a538dd311ff8ff2b3ef1fda4fb663d29bcef304e0ebc"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/assets/icons/ic_player_source.svg",
+    "sha256": "0ab0d83096842bf8de7b1fcf95bf10234b74aaee01135987521ee463d07cf26b"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/assets/icons/ic_player_subtitles.svg",
+    "sha256": "ac2012b15ae93921e2049122f21eea30c2439b80e098a9af4e4ae6b980f83ba6"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/assets/icons/imdb_logo_2016.svg",
+    "sha256": "27f93b15a075b015e2448eca7949f7a3da03c37fbf26cecf6df3bdab45fda993"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/assets/icons/library_add_plus.svg",
+    "sha256": "a8c8f563e0da6a3010f060525e85819d448dca92fea6e1547ab0d116aa416ae2"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/assets/icons/mdblist_audience.png",
+    "sha256": "9cb037f1a35d02cd22c37f53817c0886fed8e956d2383a2fb2845c140c419f1e"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/assets/icons/mdblist_audience_stale.svg",
+    "sha256": "3877205dabc842456ec744a960dd9c3bea96825c0c30e25e4d6e568912636d13"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/assets/icons/mdblist_audience_verified_hot.svg",
+    "sha256": "83478ac27109a1f61cce6d75ec7c55e5a92690eccd730465c1552f0ea08718f1"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/assets/icons/mdblist_letterboxd.svg",
+    "sha256": "1976ebdb8e0f116e520fa86432413effacd97d3ae39056d5be85faa057e251d4"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/assets/icons/mdblist_mal.svg",
+    "sha256": "5db396c3447e99b9d1a593b95b14046bfbcee341b972571304011a60c46f4cae"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/assets/icons/mdblist_metacritic.png",
+    "sha256": "57de3ca127222a545cd1c6c4c23f9e51364d4fe6815aa96577567fbad824f42c"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/assets/icons/mdblist_tmdb.svg",
+    "sha256": "d537fb228cf3ded904ef09b136fe3fec72548ebc1fea3fbbd1ad9e36364db38b"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/assets/icons/mdblist_tomatoes.svg",
+    "sha256": "01aa8a3c3e9db48f0e1c6af25056940986784315bf66f48a8120a7317bf6d75a"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/assets/icons/mdblist_tomatoes_certified.svg",
+    "sha256": "182ea16585719676e136f1989b57b2bc1d24d6551362d6e2a143bb8d062e28fd"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/assets/icons/mdblist_tomatoes_rotten.svg",
+    "sha256": "9980851c06f68e73ab4a1195718b9ceadbb3e7bdd2b4c82a2c361f796bcef38a"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/assets/icons/mdblist_trakt.svg",
+    "sha256": "9892e85077923add0300a6b68557be92a16473a487dfddf8f372a463d1702390"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/assets/icons/sidebar_home.svg",
+    "sha256": "41030150f51afc601f94ccbed3e9f9b3dc9200a89f4ee487e60f368ece444115"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/assets/icons/sidebar_library.svg",
+    "sha256": "f3cf54324f917394d212e0def57777c446ee4dba28f9ce0dfc432b33d3ec2c96"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/assets/icons/sidebar_plugin.svg",
+    "sha256": "a67886f05a00c1a8e02a73d02ccce462c3d817b4b9ea683a9ffff8e356d0dcc5"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/assets/icons/sidebar_search.svg",
+    "sha256": "a5ce19554dba8a41d36ba8a04638ca5f0c0d7dcaecd75bf82f1b4a26ad62fad1"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/assets/icons/sidebar_settings.svg",
+    "sha256": "580c443be1bc87f9914cda4044dd67d015b427a2b04156421f18f9e749f1c006"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/assets/icons/simkl_tv_glyph.svg",
+    "sha256": "51d52685b85f24082002a51f3280ad9e7468efd0d2ae7ae852db8ebd707b2bfc"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/assets/icons/trailer_play_button.svg",
+    "sha256": "4be560339a7f01280da8fb456b9fefccc4a7d4398510b09d35dad6a5f0b35cf6"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/assets/icons/trakt_tv_favicon.svg",
+    "sha256": "5a7efddf459a87347842f37f1738c4b541c85de93a008365ff4af47f44b08563"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/assets/icons/trakt_tv_glyph.svg",
+    "sha256": "1973f7ecd1f8902094622a7009cb3aef44764c0ba8e1a78811c26b669513a81b"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/assets/icons/visibility.svg",
+    "sha256": "ded30d7c0e576f37702c32e08ef9688f107b4927e30fa18b9ffee2202dd27b8a"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/assets/icons/visibility_off.svg",
+    "sha256": "ebe8c56241b97aa5450bb9da34b3adf136784a9cb5e86ea1fa264fe4b31191cf"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/assets/images/icon.png",
+    "sha256": "e55fd9d8bb6f54b1c05a81bfcf38a4b6db68778dce1800cd06c984851c28f31b"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/assets/images/largeIcon.png",
+    "sha256": "80eccf534656cbb44474de165708175688bc3bb5c47031b578832a86593fcdfb"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/assets/images/nuviotv.png",
+    "sha256": "b03339a92401a0e5b5d1eaabed87f76b49c4481438a667a502888c3d2ba03407"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/assets/images/splash.png",
+    "sha256": "bc5013d7ca35f872051e0a972c5b0f12644a129eb62f3978b632d1eef0234b38"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/assets/images/tizenIcon.png",
+    "sha256": "cb8a9cc9b1d891724f7124cdd84cee107bf6ceeb92f7b95763a30dc2462ac994"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/assets/libs/ass.min.js",
+    "sha256": "edf03e329ac2ad9c861da267290f42af4de51de7abd441fc7fdfede99c9bdeab"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/assets/libs/assjs.LICENSE",
+    "sha256": "974299957766f1c4a9d17931bff936598e7f8a03d6aacf861771400a4f4850a0"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/assets/libs/crypto-js.LICENSE",
+    "sha256": "f729d14b7e1bf8adca0dcc38b93b929d14d53fcd5db56c3d1c9b2daa7aa69396"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/assets/libs/dash.all.min.js",
+    "sha256": "3aad1a165aff63f218bdcebaea782b75a39904af29a6c1dabcd84fc185278e41"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/assets/libs/dashjs.LICENSE.md",
+    "sha256": "f7cc4ba24850cc564766c75923d07c3d22fa27f304285f4d25ecffeaec964e28"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/assets/libs/hls.js.LICENSE",
+    "sha256": "ca8773cf798c7ed997d4dd7c8e23c348699f8d5b7462636694cc14de6cda12db"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/assets/libs/hls.min.js",
+    "sha256": "c79bf591ccac9060fd1cf68065ae85c14e63d2fcd2b850e5d5675b0a48baef90"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/assets/libs/libbitsub.LICENSE",
+    "sha256": "e052a6a20dd3ae7714556dca283e9edadc4bf4d98438581ff9429392cfdf3188"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/assets/libs/libbitsub_bg.wasm",
+    "sha256": "976c06eb5116a7c5aa5feac468ddca010824bfd9028c8cc92b21797f2644fb3e"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/assets/libs/qrcode-generator.js",
+    "sha256": "c828a70a767324cca6f3c48b2e4145fd3bbf54c5596198e7dad0240207a34500"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/assets/libs/quickjs-emscripten.LICENSE",
+    "sha256": "3c6040aa318612a234cc951609b640c0c63d85ae5a98a9330d3116f1553a79db"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/assets/libs/quickjs-emscripten.global.js",
+    "sha256": "bbeecc2b7437d80066c9f5f1ddc49c0b1fc2acec4aeae97dd8302c689f41b950"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/assets/libs/webOSTV.js",
+    "sha256": "2e83e028aef8651ef0b79b25a70c7ebc076a36781486a68623634bc0c2162670"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/assets/runtime/legacy-features.js",
+    "sha256": "ecc131a64dd6f0cbbd3ba958b7a492f9e880574b08b818bd45b3bda1bb8e6496"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/assets/runtime/legacy-polyfills.js",
+    "sha256": "dd7c653204846a0071beb9a3d741731e7f1bb70f6cf8da105a52869b8d128d8b"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/assets/runtime/plugin-worker.js",
+    "sha256": "cf63b140f9b41b36864da82fe4f00120a7e9ae3d62f478f6e8a0a41566fac246"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/boot-guard.js",
+    "sha256": "3e25140a23cd1e5186092d0d647eb2acab279301e0bb0de8b47b1bca74cfd307"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/core-js.bundle.js",
+    "sha256": "429cfcff7d03b3ab4e61d231990f1099ff2d2f643a1586e63529b01e7a0d44b0"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/css/bundle.css",
+    "sha256": "53114750467a416b752fa1b4ec7746bcbc1606868a1ff4efc114fc6381483ab6"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/index.html",
+    "sha256": "437e1b075056048d0d894654941e4845fa73c11e898d0ad869fb69aca496630b"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/logo.png",
+    "sha256": "7e0ca78016e7a6fd0b97f34506f868f44e20e3dd2b9bd2ee70b9827706dfb931"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/nuvio.env.js",
+    "sha256": "6660c2b8fd2ac47d30a312fb983c53d82ea03066363d03e6836384ffc1d12ad7"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/res/i18n/ar.json",
+    "sha256": "4df8acb09f4d97a3f6afcf9279a23a675f676d638201bf7192085c6e555192c6"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/res/i18n/bg.json",
+    "sha256": "35bb4cb8053af6172f4a376c2c5a83486be1affbf3957fbed002ac9ca33eca32"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/res/i18n/bs.json",
+    "sha256": "d3bed9715ee30ea0e1ae61b57ee21b589becee57fe80b3f8b6dc026166d2d481"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/res/i18n/cs.json",
+    "sha256": "d3239a6e84dcbcdc0d07f51736e190351345776a1624bfcb5aa94db2c970c53c"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/res/i18n/da.json",
+    "sha256": "56ce4ce7fdcb3bcb49943ddff109c8dad08c1a5df0a9fa0f15e7657719b59d4c"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/res/i18n/de.json",
+    "sha256": "2b71efaffa0d2c16ee90e93c8b94f5f979c8435d704c2b78b5da4b86f4648f3b"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/res/i18n/el.json",
+    "sha256": "23e347b4b416c2dc58ce58160a89ffd0ea0d35ee3fd98226460c5fc75464621c"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/res/i18n/en.json",
+    "sha256": "9a93bd7561e9416a747f1f02515f978a3c05abe46056c9e47ae871ca5f8c85cf"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/res/i18n/es-419.json",
+    "sha256": "2e1ed1f190b7cee4cddcf56c86b79ff520093cd516c77f8cacd7509cf8a7c69f"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/res/i18n/es.json",
+    "sha256": "3328e4f5b77099c0f7a3c21fb2e3e66215dc3c2c215b0be7b519c45fc7c85b9e"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/res/i18n/fr.json",
+    "sha256": "1ec9c146a8503c2ff35cbb10617e5086405ee2817c6420aae766cc99cae396e8"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/res/i18n/he.json",
+    "sha256": "40a7dc128c5138a7559591f3da9127ac390569b580ffed4a335fbc5ce432c1a1"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/res/i18n/hi.json",
+    "sha256": "a1b61abe06a2422907319daf2abedd7da53b7fe696650eb49dc26e6b11f4cbc3"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/res/i18n/hu.json",
+    "sha256": "d2aa7ef1150d3a09f56d290c7d9ba00b215987f5a3034394bbd4553bb488eafb"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/res/i18n/id.json",
+    "sha256": "829ac2b357a5584af391a4fc1bdfe93c598e2fc69ba461e34ea091885677d4ad"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/res/i18n/it.json",
+    "sha256": "4244036b775357a1e97f0d083d2c4a8654f62e96c281e68c35d2fcbaf5309a74"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/res/i18n/ja.json",
+    "sha256": "0849ce8fb89faf49b773d6ad74d5b4aacda33cf50bcc49435f37099b9c0942b0"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/res/i18n/lt.json",
+    "sha256": "de3fc84f3e7ca47caf29feea170f6c84bc09fa77d3d5ecc4050a0643c029c315"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/res/i18n/nl.json",
+    "sha256": "996e78ee172f22462337ba5a31459e29851d8110027178a744cb26d4dd6f082e"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/res/i18n/no.json",
+    "sha256": "41016e0d9b6864807919d37339f5d405905d9b89786a78ad3fa93a9f564f5fe6"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/res/i18n/pl.json",
+    "sha256": "6041e5265eefeeed5874f136b8580135880aa45dbb157b7314f5c476ff043407"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/res/i18n/pt-br.json",
+    "sha256": "7b0f7b8ea3a06186a51cfcd47057703770713e4ede47aca0953880811aa14122"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/res/i18n/pt-pt.json",
+    "sha256": "530c002d6eb6c505d7918815035b9b0a1b116ab233b2bb7f302de3445226d337"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/res/i18n/ro.json",
+    "sha256": "03fca9b5658f81f806fc02b93734e5bf9628c3367e8860d6b3187dfd6ac4fbca"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/res/i18n/ru.json",
+    "sha256": "300d3cac2ef72210741f62e122f00f5c5c9c9a98da037603e920bc167b778320"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/res/i18n/sk.json",
+    "sha256": "8d7988c3adbb819709756c07b7e6023b0780897c1ba11ad400d9aaca6b97337a"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/res/i18n/sl.json",
+    "sha256": "084d787991beaa50146855395837d30791295f6b8a28d716da28745387796f0b"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/res/i18n/sq.json",
+    "sha256": "e88261314fe9d358b5a2d48f495c9845ae89636b253c7a2d7393d2ac05ccf822"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/res/i18n/sr-latn.json",
+    "sha256": "573c330848a254565dbf5dc8e5677c9db97f0cb36fea56f69b2e65ec8ec645ab"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/res/i18n/sv.json",
+    "sha256": "dfd4894cfe90d8b8fa70d36d4b2bf53f85f47142db2d246e176bc31ee7b6d7bd"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/res/i18n/ta.json",
+    "sha256": "8025a32cbfbd944f909bfd05832f3362e66c3d88cb9efeb39d89a231a623d2e2"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/res/i18n/tr.json",
+    "sha256": "98bb1b01b8c15c34151ca53051be619be43c02e844bda650f1cc5ab953563b5c"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/res/i18n/uk.json",
+    "sha256": "2137e212e165daa5a0e072195bbe64fe6436483bbc8fdaf714b44c28fa872ade"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/res/i18n/vi.json",
+    "sha256": "ea64e2571baa9bdd6067a7ac30fa3ba4c05f101f09e8dad9b50c492c60860244"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/res/i18n/zh-cn.json",
+    "sha256": "781574ee5d7741bf82baa953df41c0af9a95a8f2b7abc91fe9a055f58f005891"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/res/i18n/zh-tw.json",
+    "sha256": "b1856933b2c761bc72456dc0f956f2f4f205599afdbec1a2d3dac15e868697a9"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/res/values/colors.xml",
+    "sha256": "e300c2055d5e29495a3b3d1dedc199c3886a9413a4fac65d3e3a029ce88279f0"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/res/values/strings.xml",
+    "sha256": "c9565e10ca5cb9b99c7b75b146940415eff1c121a7cd0ef5f1cdda901330af6a"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/res/values/themes.xml",
+    "sha256": "5eb4ae8c484c092fc592e9bcc6b6816237ef8052a6924cff32efb93b6397c308"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/stream-theme.css",
+    "sha256": "15cac027aa7a840b8edddeda841818aaedab7fb914551bb57972a97ff780278c"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/styles.css",
+    "sha256": "3f94be7bf180d161befff8b5c8b85caa65307847326804743281b241a97c041c"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/assets/web/youtube-proxy.html",
+    "sha256": "b82b3e8dde63ffae7a530d285e4b9fd81b5e70bf38055e83a92d82e40f3b96c9"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/java/com/pencarimovie/server/AuthManager.kt",
+    "sha256": "dbd196119ad282b5813b9fc867a8cd00f71418655451a8b7ffa6609dc6bda965"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/java/com/pencarimovie/server/BootReceiver.kt",
+    "sha256": "312033d24d1cca0927d14499de97df3607351661f1e929eb1741214dd480918a"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/java/com/pencarimovie/server/BotPool.kt",
+    "sha256": "d402f6401162b83f868305dc44d452d157cecac0409b4a6d3ad3c5edd6da1f02"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/java/com/pencarimovie/server/DebugLog.kt",
+    "sha256": "c1421baaee1816a9bdaf2b15e62bf4b9e51279e2d020f9e1960fdb12f95002c0"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/java/com/pencarimovie/server/MainActivity.kt",
+    "sha256": "c5b489f85e70820f0ab938752f35810d54eeb55668576f2a87f6e69225b4c2c2"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/java/com/pencarimovie/server/NativeHttpServer.kt",
+    "sha256": "bc9e665a9a5e71c5e05de6f361ad0495f4786a829cf146f7ede0ddb709465578"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/java/com/pencarimovie/server/ServerApplication.java",
+    "sha256": "03e61899e0064a64796b328bcb39b9af6c0d8ae56a246330847eb9912b0ce34b"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/java/com/pencarimovie/server/ServerService.kt",
+    "sha256": "ca1557985d530bb2f4159e06552a2f9dcfeebfad6ebcff18d0863c633740b09e"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/java/com/pencarimovie/server/ServerState.kt",
+    "sha256": "0213197a2dfaf95d30d5385a7a2e80a507ba3adcc4354cf765254dce97d9c860"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/java/com/pencarimovie/server/TdLibManager.kt",
+    "sha256": "485e204701f02cc54c0abc815b7f16e2baa755f800481c41cddc25e0b0724d2c"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/java/com/pencarimovie/server/TunnelManager.kt",
+    "sha256": "5323b3c519e421080d1e7a41c47e6d6123cc9863c90553aedba6f2e9462deb4a"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/java/com/pencarimovie/server/UpdateChecker.kt",
+    "sha256": "13de0d5af01ae3cda97bcdd4ca8bebce457ded3f53156f560c7df1f714484ddd"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/java/com/pencarimovie/server/WebActivity.kt",
+    "sha256": "48d2ae0c556a6794e3f4b17ca36a9cd2e4a399d235f75d5257ac386e1b4f0e68"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/java/com/pencarimovie/server/WheelWebView.kt",
+    "sha256": "21468152a48514f934474f08cee0c3b06a6df9f5cbefab82f9265b018b260783"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/res/drawable/glass_card.xml",
+    "sha256": "c5600c0da58422bfd6132a49e6a98ff65f60223b6a251ceccd7fa61298c87ccf"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/res/drawable/ic_arrow_back.xml",
+    "sha256": "ea50343d3ae5008a729ce5fb05285c868a07782823a9ccd7b15899150422c9d9"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/res/drawable/ic_launcher_background.xml",
+    "sha256": "5700f73b62f81fa1e4a3c1551c781b137b7c274d77fd90ec3bcaccc221af61b0"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/res/drawable/ic_launcher_foreground.xml",
+    "sha256": "ce09ea8c50d4b4d1aeb4f63a8e9771028bc421077de06b193541817ee3e14b69"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/res/drawable/ic_refresh.xml",
+    "sha256": "e16f09f3f5d0b2d254b35a1f48248ab9e4bcf17f74f9592861a471e10b3e89a9"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/res/layout/activity_main.xml",
+    "sha256": "b22b2e7c47e6efd008872668300c7c8d57f0a5d9854559031cb67e9f3c61d4d6"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/res/layout/activity_web.xml",
+    "sha256": "043f277cdc256af2f9c1ac39ee4f97a30f516688a44c3a0e24c4eb724d101be8"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/res/menu/menu_web.xml",
+    "sha256": "009d7ce5cdd660e6404937c2a9431634c62772f6f4e36fc716f7d8827945a15f"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml",
+    "sha256": "7b770b6f7ac673cf4ebe0130818866cc8f3a79f51fefd91ca45434f734db1858"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml",
+    "sha256": "7b770b6f7ac673cf4ebe0130818866cc8f3a79f51fefd91ca45434f734db1858"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/res/mipmap-hdpi/ic_launcher.webp",
+    "sha256": "bd154f9b8c7dc7575c0e44e28b2c4333b0df3bf7dd96a5e58c64c92d53153d46"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/res/mipmap-hdpi/ic_launcher_foreground.webp",
+    "sha256": "74cbcac95468c414cbf42ef0d2f3e89575cff9caf12a31cc7c5b9ecc727314b9"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/res/mipmap-hdpi/ic_launcher_round.webp",
+    "sha256": "3e67f9f1f0acd5cf89cc8bc26c95bde79b524f167dda03ec88bc3329b4d17fd5"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/res/mipmap-mdpi/ic_launcher.webp",
+    "sha256": "127ade0bb4c52003c404862de0c1f4523809ee8ffe3c34155e2a82830d75b2fd"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/res/mipmap-mdpi/ic_launcher_foreground.webp",
+    "sha256": "2e0f55b30c70b8c7dd3815bb10bee1ed0a6135613f7cb396dbd1f6a932f57b4e"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/res/mipmap-mdpi/ic_launcher_round.webp",
+    "sha256": "fd8a4ceabe69cc9419fd41a0a914bfdeb48aa1c95c2e4d729d022d72ede39ddb"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/res/mipmap-xhdpi/ic_launcher.webp",
+    "sha256": "b99273a99dc9dd1ba619299d00922febf143bf0e5d8817fdb1f3fb513d8eac52"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/res/mipmap-xhdpi/ic_launcher_foreground.webp",
+    "sha256": "d5c5c701a6c37e30f9172fe80c905fabe5afa480218b14ef5af63967ab3cd9d8"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/res/mipmap-xhdpi/ic_launcher_round.webp",
+    "sha256": "700571e301765727237d37183fcd05ee12f700c407d4ce5a0d85e36fc58c8f74"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/res/mipmap-xxhdpi/ic_launcher.webp",
+    "sha256": "233d28a2727e11cf0902a1d62fa4db397dd50dd349b670cb649d2df527d2cebd"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/res/mipmap-xxhdpi/ic_launcher_foreground.webp",
+    "sha256": "2f6d80a466b180bfed410e0966a6c678340070f476488f9b1ba2b02260067b10"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.webp",
+    "sha256": "4545517387134aa7b1121bef84c3a4d450498f76b7e3c7e1f8986a3bb77dad2b"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp",
+    "sha256": "61d2f449c27d617bcbfbab22f764a56d7d4ab26e21866c438b3cd68d5dcb9873"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/res/mipmap-xxxhdpi/ic_launcher_foreground.webp",
+    "sha256": "69daa250db7ce8cf8e8ac4020c29a493d34bbd7334c82c6e3785168cd8d304f9"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp",
+    "sha256": "620326c13f475cb6b5763163a730e2b0fd7207940c60863a393da6c8e70ddf18"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/res/values/colors.xml",
+    "sha256": "27301855c96a4a69dc7c98ff6dcd8b63b63927fc2c6b3c9894d33860bd4f46cc"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/res/values/ic_launcher_background.xml",
+    "sha256": "04c2dba6c6fcbe3fe141746f0217cf9391923918e42cf934922bfb94375cda7a"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/res/values/strings.xml",
+    "sha256": "e68a34737254bb6ef9104ec1260bef9d05ae673f3726145fc0f4822a87676e8b"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/res/values/themes.xml",
+    "sha256": "7d9e551d9522ca6009b4edc50c3fa906f0450c5e61c7c728cb8fa0893b667108"
+  },
+  {
+    "path": "android/pencarimovie-server/app/src/main/res/xml/file_paths.xml",
+    "sha256": "e6fc4c7f7fbb66587678dd27f2a4ae3e45897c5febc1a0bddccda988f58e1646"
+  },
+  {
+    "path": "android/pencarimovie-server/build.gradle",
+    "sha256": "5a77bf4ed25dc333bf48ec1ef76ec3472b6be7812a7cf17e4252a46b0a79b301"
+  },
+  {
+    "path": "android/pencarimovie-server/gradle.properties",
+    "sha256": "33a3ad6fc888b02c37991973e6a8569b0c8fc86aa7181f021c333083f7149c5e"
+  },
+  {
+    "path": "android/pencarimovie-server/gradle/gradle-daemon-jvm.properties",
+    "sha256": "231649d2f8e8dc24310f18c921e3ae33fd2715b7f48a7ddcaf27a85003e0729a"
+  },
+  {
+    "path": "android/pencarimovie-server/gradle/wrapper/gradle-wrapper.jar",
+    "sha256": "423cb469ccc0ecc31f0e4e1c309976198ccb734cdcbb7029d4bda0f18f57e8d9"
+  },
+  {
+    "path": "android/pencarimovie-server/gradle/wrapper/gradle-wrapper.properties",
+    "sha256": "9efd7948359a68d9c80aa8d5df1717af1415c440b59d493040d3cfbd13885383"
+  },
+  {
+    "path": "android/pencarimovie-server/gradlew",
+    "sha256": "fb68debc1b1acf8ec55dc0d5e5495e1dedd0bd6b61f304bee61613eeb2bd9b92"
+  },
+  {
+    "path": "android/pencarimovie-server/gradlew.bat",
+    "sha256": "9ca26d733ada3a45f27b2151288f54e75c9f95b287d1f82ef942ec5cc2d4f006"
+  },
+  {
+    "path": "android/pencarimovie-server/settings.gradle",
+    "sha256": "d141ad89c381887b08bb8a91e08e37d07654aab87ef35b516a6010eb3cc2ee9c"
+  }
+]
