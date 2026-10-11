@@ -19,3 +19,7 @@ PencariMovie Downloader bundles or can be packaged with third-party software. Ea
 ## User responsibility
 
 Users and redistributors should review bundled third-party license files before redistributing modified release packages.
+
+## Developer Credits icons
+
+The inline LinkedIn, GitHub and Mail SVGs come from [Lucide 0.468.0](https://github.com/lucide-icons/lucide/tree/0.468.0/icons). The supplied ISC license, including Feather attribution, is retained in `public/assets/libs/lucide.LICENSE` and the matching Android web asset. Existing project and dependency notices remain unchanged.

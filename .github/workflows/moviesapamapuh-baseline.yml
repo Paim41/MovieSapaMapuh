@@ -62,7 +62,8 @@ jobs:
             dist/loader-screenshots/
 
   build:
-    if: github.repository == 'Paim41/pencarimovie-server'
+    # UI-only commits may defer expensive APK assembly while keeping presentation checks.
+    if: github.repository == 'Paim41/pencarimovie-server' && (github.event_name != 'push' || !contains(github.event.head_commit.message, '[skip apk]'))
     runs-on: ubuntu-latest
     timeout-minutes: 120
     env:

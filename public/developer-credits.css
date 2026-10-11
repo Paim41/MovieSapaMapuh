@@ -1,0 +1,28 @@
+/* Scoped Settings credit card; existing controls and page layout are unchanged. */
+.developer-credits {
+  margin-top:28px; padding:22px; background:#1A1A20; color:#F7F7F8;
+  border:1px solid #393942; border-radius:22px; text-align:left;
+}
+.developer-credits .developer-credits__eyebrow {
+  margin:0 0 10px; color:#AFAFB9; font-size:11px; font-weight:700; letter-spacing:.12em; line-height:1.5;
+}
+.developer-credits h2 { margin:0; color:#F7F7F8; font-size:24px; font-weight:700; line-height:1.3; letter-spacing:-.02em; }
+.developer-credits h2 span { color:#F04452; }
+.developer-credits .developer-credits__subtitle { margin:8px 0 20px; color:#AFAFB9; font-size:13px; line-height:1.6; }
+.developer-credits__contacts { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; }
+.developer-credits .developer-credits__contact {
+  display:flex; align-items:center; justify-content:center; gap:8px;
+  box-sizing:border-box; min-height:48px; padding:12px 10px;
+  color:#F7F7F8; background:#222228; border:1px solid #484853; border-radius:12px;
+  font-size:14px; font-weight:600; line-height:1.5; text-decoration:none;
+  white-space:normal; overflow-wrap:anywhere;
+}
+.developer-credits__contact svg { width:20px; height:20px; flex:0 0 20px; }
+.developer-credits .developer-credits__contact:hover { background:#30202A; border-color:#F04452; }
+.developer-credits .developer-credits__contact:focus-visible { outline:2px solid #F04452 !important; outline-offset:3px; }
+.developer-credits .developer-credits__contact:active { background:#40212B; border-color:#F04452; }
+.developer-credits .developer-credits__attribution { margin:16px 0 0; color:#AFAFB9; font-size:12px; line-height:1.6; }
+@media(max-width:480px) {
+  .developer-credits { padding:18px 16px; border-radius:20px; }
+  .developer-credits__contacts { grid-template-columns:minmax(0,1fr); }
+}

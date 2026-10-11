@@ -76,7 +76,11 @@ path='android/pencarimovie-server/app/src/main/java/com/pencarimovie/server/Nati
 assert (repo/path).read_text()==auth_style(original('0f1c851',path).replace('PencariMovie Server','MovieSapaMapuh').replace('Open PencariMovie and re-install','Open MovieSapaMapuh and re-install')), 'Native server changed beyond UI branding'
 for name in ['TdLibManager.kt','WebActivity.kt','ServerService.kt']:
     path='android/pencarimovie-server/app/src/main/java/com/pencarimovie/server/'+name
-    assert (repo/path).read_text()==original('0f1c851',path), ('Working native engine/playback changed',path)
+    expected=original('0f1c851',path)
+    if name=='WebActivity.kt':
+        marker='        // Handle custom protocols like Stremio, Telegram, Magnet, Intents'
+        expected=expected.replace(marker,(repo/'tools/fixtures/developer-email-intent.kt').read_text()+marker)
+    assert (repo/path).read_text()==expected, ('Working native engine/playback changed',path)
 print('PASS native resource text/IDs, PHP/native engine except exact brand substitutions and standalone auth CSS, frontend handlers, translations and bundles except explicit Library copy and loading-markup hooks')
 print('Dynamic text, visual reachability, event wiring and device behavior still require runtime tests.')
 
