@@ -39,7 +39,7 @@ The fork retains the existing Kotlin/TDLib and PHP/FrankenPHP implementations ra
 
 ## Run on Android
 
-1. Open **[Actions → MovieSapaMapuh Android](../../actions/workflows/moviesapamapuh-baseline.yml)**.
+1. Open **[Actions → MovieSapaMapuh Android](https://github.com/Paim41/pencarimovie-server/actions/workflows/moviesapamapuh-baseline.yml)**.
 2. Choose **Run workflow**, select **`main`**, keep **`signed_release` unchecked** for a debug build, and start the workflow.
 3. When the run succeeds, download the **`MovieSapaMapuh-Android-Debug`** artifact and extract its ZIP.
 4. Install the appropriate APK on a compatible Android device (universal is the easiest option; ARM64 is suitable for POCO F3).
@@ -88,8 +88,8 @@ Never share Telegram bot tokens, secret keys or server access tokens in screensh
 - **Default branch:** `main`
 - **Android application ID:** `com.moviesapamapuh.server`
 - **Declared Android version:** `1.0.5` (version code `10005`)
-- **Developer Credits baseline:** [`47dd7f7`](../../commit/47dd7f783105596ee63f54c438f5f591d20db85d)
-- **APK build workflow:** [MovieSapaMapuh Android](../../actions/workflows/moviesapamapuh-baseline.yml)
+- **Developer Credits baseline:** [`47dd7f7`](https://github.com/Paim41/pencarimovie-server/commit/47dd7f783105596ee63f54c438f5f591d20db85d)
+- **APK build workflow:** [MovieSapaMapuh Android](https://github.com/Paim41/pencarimovie-server/actions/workflows/moviesapamapuh-baseline.yml)
 
 GitHub Actions presentation checks and Android builds are separate jobs. A green presentation-only run is **not** proof that an APK was produced. Device behavior, external services, LAN conditions and real playback should be verified on the target device before distribution. A production signing/update channel is not configured by this README.
 
