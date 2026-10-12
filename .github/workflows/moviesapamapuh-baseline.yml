@@ -2,7 +2,7 @@ name: MovieSapaMapuh Android
 
 on:
   push:
-    branches: ['feature/moviesapamapuh']
+    branches: ['main', 'feature/moviesapamapuh']
     paths:
       - 'android/pencarimovie-server/**'
       - 'public/**'
@@ -31,7 +31,7 @@ permissions:
 
 jobs:
   presentation:
-    if: github.repository == 'Paim41/pencarimovie-server'
+    if: github.repository_owner == 'Paim41'
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
@@ -63,7 +63,7 @@ jobs:
 
   build:
     # UI-only commits may defer expensive APK assembly while keeping presentation checks.
-    if: github.repository == 'Paim41/pencarimovie-server' && (github.event_name != 'push' || !contains(github.event.head_commit.message, '[skip apk]'))
+    if: github.repository_owner == 'Paim41' && (github.event_name != 'push' || !contains(github.event.head_commit.message, '[skip apk]'))
     runs-on: ubuntu-latest
     timeout-minutes: 120
     env:
