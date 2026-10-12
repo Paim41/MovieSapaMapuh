@@ -1,310 +1,133 @@
-# MovieSapaMapuh — NOIR Crimson
+<div align="center">
 
-This fork customizes [PencariMovie Server](https://github.com/aiskendi/pencarimovie-server) while retaining its original Kotlin/TDLib Android and PHP server implementations. Work lives on `feature/moviesapamapuh` in [Paim41/pencarimovie-server](https://github.com/Paim41/pencarimovie-server). The original README and upstream credits remain below in full.
+<img src="public/assets/moviesapamapuh/longlogowithtext.png" alt="MovieSapaMapuh" width="460">
 
-The recovered native app uses the supplied MovieSapaMapuh logo, NOIR Crimson presentation, an independent package ID and optional Si Youyou companion in native controls and the served dashboard. All original frontend handlers, translations, static labels and PHP engine files are checked against their respective historical baselines, apart from documented owned-brand substitutions. This is not a claim of complete device or streaming parity.
+# MovieSapaMapuh
 
-- [Android recovery and dependency evidence](docs/ANDROID_RECOVERY.md)
-- [Build, Actions artifacts, signing, installation and LAN access](docs/BUILD_ANDROID.md)
-- [Feature-parity checklist](docs/FEATURE_PARITY.md) and [actual test results / limitations](docs/TEST_REPORT.md)
-- [NOIR design system](docs/DESIGN_SYSTEM.md), [branding and updates](docs/BRANDING_CHANGES.md), [Si Youyou controls and sprite mapping](docs/SI_YOUYOU.md)
+**A self-hosted Android media server with a NOIR Crimson interface.**
 
-Local debug APKs are built; hosted Actions execution and physical-phone acceptance remain pending. MovieSapaMapuh coexists with the original app and does not automatically migrate its sessions. Its Update action cannot download an upstream APK; a real fork release feed is not configured yet. Pet settings persist locally and can disable animations/flame effects or hide the companion without changing server operation.
+A personal customization of [PencariMovie Server](https://github.com/aiskendi/pencarimovie-server), built around Telegram-connected media discovery and streaming, plus Stremio/Nuvio addon compatibility.
 
-The upstream MIT LICENSE and its README's GPL claim are both preserved; that conflict and third-party/artwork distribution obligations are not silently resolved by rebranding. Official TDLib/OpenSSL notices are bundled in the native app.
+[![Android](https://img.shields.io/badge/Android-APK-222228?style=flat-square)](docs/BUILD_ANDROID.md)
+[![Design](https://img.shields.io/badge/Theme-NOIR%20Crimson-F04452?style=flat-square)](docs/DESIGN_SYSTEM.md)
+[![Version](https://img.shields.io/badge/Version-1.0.5-222228?style=flat-square)](android/pencarimovie-server/app/build.gradle)
+[![Upstream](https://img.shields.io/badge/Based%20on-PencariMovie-222228?style=flat-square)](https://github.com/aiskendi/pencarimovie-server)
 
----
-
-# 🎬 PencariMovie Server
-
-<p align="center">
-  <strong>Self-hosted Telegram MTProto media stream bridge & local file downloader for Stremio, Nuvio, Eclipse Music, and web clients.</strong><br>
-  Local Execution • Direct MTProto Transport • Zero Cloud Relay
-</p>
-
-<p align="center">
-  <a href="#-quick-install">Quick Install</a> •
-  <a href="#-docker--environment-variables">Docker & .env</a> •
-  <a href="#-stremio-nuvio--eclipse-music-setup">App Setup</a> •
-  <a href="#-server-security--remote-token-auth">Security & Auth</a> •
-  <a href="#-cli-commands-pms">CLI Usage</a> •
-  <a href="#-features">Features</a> •
-  <a href="#-legal-disclaimer--dmca-policy">Legal & DMCA</a>
-</p>
+</div>
 
 ---
 
-## 💡 What is PencariMovie Server?
+## Overview
 
-**PencariMovie Server** is a lightweight, self-hosted streaming utility and protocol bridge connecting client applications to Telegram's MTProto API. It converts user-authorized Telegram file references into local HTTP streams with range-request (`HTTP 206`) seek support for media players including **Stremio**, **Nuvio**, and web browsers.
+**MovieSapaMapuh** is a customized Android-hosted server and responsive web dashboard. Run the server on an Android device, browse your connected media through its local web interface, and use its supported addon endpoints with compatible clients.
 
-- **Client-Side MTProto Bridge**: Directly streams authorized media to the user's local player using MadelineProto.
-- **No Remote File Hosting**: The server does not host, store, or re-transmit copyrighted files; streams originate from Telegram's network directly to the local client.
-- **Local & Private**: Runs on the user's own hardware (localhost / private LAN) without passing credentials or media bytes to external proxy servers.
-- **Cross-Platform**: Available as a native Windows tray application, Linux daemon, Android APK, Termux script, and Docker container.
+The fork retains the existing Kotlin/TDLib and PHP/FrankenPHP implementations rather than replacing the original streaming engine. It is intended for media the user is authorized to access; it does not include a built-in library of movies or series.
 
----
+## Highlights
 
-## 🚀 Quick Install
+- **NOIR Crimson** — dark surfaces, crimson accent (`#F04452`), custom logo and responsive UI.
+- **Movie and series browsing** — Home, Search, Library, details and source selection.
+- **Playback and seeking** — existing streaming/player functionality, including range-request support where available.
+- **Telegram Bot Pool** — connect a bot, add more bots, choose a primary bot and manage local sessions.
+- **Stremio and Nuvio integration** — compatible addon manifests, catalog controls and stream-source configuration.
+- **Local network access** — designed to serve the dashboard over the host device's Wi-Fi address when LAN connectivity permits.
+- **Si Youyou loading animation** — a small walking loader in place of the retired interactive pet.
+- **Si Youyou desktop cursor** — for pointer-capable browsers, not Android touch input.
+- **Developer Credits** — *Designed by Paim* in Settings.
 
-Launch the server with a single command on your platform of choice:
+> **Current feature scope:** The active `main` branch includes Developer Credits and **does not include the experimental YouTube Playlist Integration**. The previous interactive pet and its settings were also removed; only the loading/cursor assets remain.
 
-#### 📱 Android (APK for TV / Phone / Tablet)
+## Run on Android
 
-> [**📥 Download Android APK (telegra.my/apk)**](https://telegra.my/apk) - universal
-> _(Install on your Android TV, phone, or tablet, tap **Start Server**, and stream)_
-> _(The link serves the `universal` build so it runs on any device. Smaller per-ABI APKs
-> (`arm64-v8a`, `armeabi-v7a`) are on the
-> [APK releases page](https://github.com/aiskendi/pencarimovie-server/releases/tag/apk-server-latest).
-> The app updates itself from that release feed.)_
+1. Open **[Actions → MovieSapaMapuh Android](../../actions/workflows/moviesapamapuh-baseline.yml)**.
+2. Choose **Run workflow**, select **`main`**, keep **`signed_release` unchecked** for a debug build, and start the workflow.
+3. When the run succeeds, download the **`MovieSapaMapuh-Android-Debug`** artifact and extract its ZIP.
+4. Install the appropriate APK on a compatible Android device (universal is the easiest option; ARM64 is suitable for POCO F3).
+5. Launch **MovieSapaMapuh**, tap **Start Server**, and use **Open Web** for the dashboard.
 
-#### 🪟 Windows (10 / 11)
+The usual local address is:
 
-Run in **PowerShell**:
-
-```powershell
-irm telegra.my/win | iex
+```text
+http://127.0.0.1:8088
 ```
 
-_(Runs in the background with a System Tray icon. Manage anytime with `pms start` / `pms stop`)._
+For another device on the same network, use the Android host's *current* LAN IPv4 address:
 
-#### 🐧 Linux
-
-Run in terminal:
-
-```bash
-curl -fsSL telegra.my/linux | bash
+```text
+http://<PHONE-LAN-IP>:8088
 ```
 
-#### 🍏 macOS (Apple Silicon & Intel)
+Both devices must be able to communicate over the network. Guest Wi-Fi/client isolation or other network restrictions may prevent access even when the local dashboard works on the phone.
 
-Run in terminal:
+**Important:** GitHub Actions artifacts are development/test builds, not a published stable release. The debug signing key can change between runs; installing one debug build over another may fail if their signing certificates differ. Keep a backup of app data and avoid uninstalling an existing installation simply to force an update.
 
-```bash
-curl -fsSL telegra.my/mac | bash
-```
+For the exact toolchain, native dependencies, APK verification and signing instructions, see **[Build & Install Guide](docs/BUILD_ANDROID.md)**.
 
-#### 🤖 Android (Termux)
+## Interface & navigation
 
-Run in Termux:
+| Area | Purpose |
+| --- | --- |
+| **Home** | Browse available media and catalog sections |
+| **Search** | Find matching titles or files from configured sources |
+| **Library** | Manage the existing library and filters |
+| **Addons** | Configure catalogs, Stremio/Nuvio integration and source settings |
+| **Settings** | Manage bot sessions, server-related settings and Developer Credits |
 
-```bash
-curl -fsSL telegra.my/termux | bash
-```
+The theme uses **NOIR Crimson** (`#0C0C0F` background, `#222228` surface, `#F04452` accent). The floating bottom dock and compact search/library treatments follow the current MovieSapaMapuh UI design.
 
-#### 🐳 Docker (Any OS / NAS / VPS)
+## Bot Pool, catalogs & playback
 
-```bash
-docker run -d \
-  --name pencarimovie-server \
-  --restart unless-stopped \
-  -p 8088:8088 \
-  -v pencarimovie-data:/app/storage \
-  ghcr.io/aiskendi/pencarimovie-server:latest
-```
+- **Bot Pool:** The backend can provision a guest bot session automatically or accept a Telegram bot token. Additional bots may be used for session rotation and fallback; more bots do not automatically add new titles.
+- **Catalogs and addons:** Configured catalog sources provide metadata/discovery. Having a title listed does **not** guarantee an accessible stream.
+- **Playback:** Only stream media you have the right to access. MovieSapaMapuh does not grant subscriptions, distribute a movie library, or bypass provider restrictions.
 
-Once started, open the web dashboard:
-👉 **`http://127.0.0.1:8088`** _(or your local LAN IP printed in terminal)_
+Never share Telegram bot tokens, secret keys or server access tokens in screenshots, commits or public issue reports.
 
----
+## Project status
 
-## 🐳 Docker & Environment Variables
+- **Default branch:** `main`
+- **Android application ID:** `com.moviesapamapuh.server`
+- **Declared Android version:** `1.0.5` (version code `10005`)
+- **Developer Credits baseline:** [`47dd7f7`](../../commit/47dd7f783105596ee63f54c438f5f591d20db85d)
+- **APK build workflow:** [MovieSapaMapuh Android](../../actions/workflows/moviesapamapuh-baseline.yml)
 
-PencariMovie Server can be fully configured using a `.env` file or container environment variables, allowing you to set static passwords, tokens, ports, and thread limits.
+GitHub Actions presentation checks and Android builds are separate jobs. A green presentation-only run is **not** proof that an APK was produced. Device behavior, external services, LAN conditions and real playback should be verified on the target device before distribution. A production signing/update channel is not configured by this README.
 
-### Docker Compose (`docker-compose.yml`)
+## Documentation
 
-```yaml
-services:
-  pencarimovie:
-    image: ghcr.io/aiskendi/pencarimovie-server:latest
-    container_name: pencarimovie-server
-    restart: unless-stopped
-    ports:
-      - "${PORT:-8088}:8088"
-    env_file:
-      - .env
-    volumes:
-      - ./storage:/app/storage
-```
+| Document | What it covers |
+| --- | --- |
+| [Build Android](docs/BUILD_ANDROID.md) | Build environment, verification, signing, installation |
+| [Android Recovery](docs/ANDROID_RECOVERY.md) | Recovered native source and dependency provenance |
+| [Design System](docs/DESIGN_SYSTEM.md) | Theme colors and UI conventions |
+| [Developer Credits](docs/DEVELOPER_CREDITS.md) | Credit card implementation and verification |
+| [Feature Parity](docs/FEATURE_PARITY.md) | Acceptance checklist, not a claim of full test coverage |
+| [Test Report](docs/TEST_REPORT.md) | Historical checks, test limitations and follow-up reports |
+| [Si Youyou Replacement](docs/SI_YOUYOU_REPLACEMENT_1.0.5.md) | Walking loader and desktop cursor |
+| [Upstream README (archive)](docs/UPSTREAM_README.md) | Original PencariMovie instructions preserved for reference |
 
-### Environment Variables (`.env`)
+## Designed by Paim
 
-Create a `.env` file in your project directory:
+Custom MovieSapaMapuh branding, presentation and NOIR Crimson design by **Paim**.
 
-```ini
-# Server Port
-PORT=8088
+[LinkedIn](https://www.linkedin.com/in/paim41/) · [GitHub](https://github.com/Paim41/) · [Email](mailto:sakacomel@gmail.com)
 
-# Remote Access & Security (Required only when accessed publicly / VPS)
-SERVER_PASSWORD=your_secure_password
-SERVER_TOKEN=a1b2c3d4e5f67890123456789abcdef0
+> The in-app email link in the verified Developer Credits baseline currently differs from the email above. This README does **not** modify the app; the Settings contact link should be corrected in a separate UI fix if required.
 
-# Optional: Cloudflare Named Tunnel Token (auto-starts tunnel on launch)
-TUNNEL_TOKEN=eyJh...
+## Open source & acknowledgement
 
-# Optional: Custom Telegram Bot Token (overrides guest auto-provisioning)
-BOT_TOKEN=123456789:ABCdefGHIjklMNOpqrsTUVwxyz
+MovieSapaMapuh is a **fork/customization** of [**PencariMovie Server by aiskendi**](https://github.com/aiskendi/pencarimovie-server). Original contributions, project attribution, source files and applicable third-party notices must remain credited. Related technologies include **PHP, FrankenPHP, MadelineProto, TDLib, Termux** and **cloudflared**.
 
-# Optional: Local Network IP Override
-# LAN_IP=192.168.1.100
+See [LICENSE](LICENSE) and [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). The root LICENSE contains **MIT** terms, while older upstream documentation describes the project as GPL-3.0; this discrepancy needs review before public redistribution and is not resolved by this README.
 
-# Performance & Concurrency Tuning
-FRANKENPHP_NUM_THREADS=8
-FRANKENPHP_MAX_THREADS=16
-FD_DOWNLOAD_PARALLEL_CHUNKS=4
-
-# Optional: External Database for Session ORM (Redis / MySQL / Postgres)
-# REDIS_URI=redis://127.0.0.1:6379
-# MYSQL_URI=mysql://user:pass@127.0.0.1:3306/pencarimovie
-
-# Debug Mode
-DEBUG=0
-```
-
-### Configuration Variables Reference
-
-| Variable                      | Default            | Description                                                                                         |
-| :---------------------------- | :----------------- | :-------------------------------------------------------------------------------------------------- |
-| `PORT`                        | `8088`             | Port where the server listens.                                                                      |
-| `SERVER_PASSWORD`             | `123456`           | Password for web dashboard access on public VPS IPs and Cloudflare Tunnels (LAN is password-free).  |
-| `SERVER_TOKEN`                | _(auto-generated)_ | 32-character static access token for public remote addon URLs (`/<token>/manifest.json`).           |
-| `TUNNEL_TOKEN`                | _(empty)_          | Cloudflare Zero Trust Named Tunnel token. Automatically launches connector on container start.      |
-| `BOT_TOKEN`                   | _(auto-provision)_ | Specific Telegram Bot API token. If omitted, the server automatically mints and rotates guest bots. |
-| `LAN_IP`                      | _(auto-detected)_  | Manually overrides the host's LAN IPv4 address for multi-device Wi-Fi manifests.                    |
-| `FRANKENPHP_NUM_THREADS`      | `8`                | Initial FrankenPHP worker threads for concurrent request handling.                                  |
-| `FRANKENPHP_MAX_THREADS`      | `16`               | Maximum FrankenPHP thread scaling ceiling under high stream load.                                   |
-| `FD_DOWNLOAD_PARALLEL_CHUNKS` | `4`                | Parallel chunk download concurrency per active stream.                                              |
-| `REDIS_URI`                   | _(empty)_          | Redis connection string (`redis://...`) to offload session ORM state.                               |
-| `MYSQL_URI`                   | _(empty)_          | MySQL connection string (`mysql://...`) for external database session storage.                      |
-| `DEBUG`                       | `0`                | Set to `1` or `true` to enable verbose stream and MadelineProto logging in `storage/debug.log`.     |
+The [historical upstream README](docs/UPSTREAM_README.md) preserves the previous installation and usage reference, including upstream-specific download addresses. **Those links should not be mistaken for a MovieSapaMapuh APK release.**
 
 ---
 
-## 📺 Stremio, Nuvio & Eclipse Music Setup
+<div align="center">
 
-### 1. Stremio Setup
+**MovieSapaMapuh · NOIR Crimson**
 
-1. Open the dashboard at `http://127.0.0.1:8088` and click **Addon / Stremio** in the top navigation.
-2. **Local Sync (Recommended)**: Click **Install via Stremio API Sync** to push the addon across all your Stremio devices automatically with 1 click.
-3. **Manual / Web**: Copy your manifest URL (`http://<LAN-IP>:8088/manifest.json` or `http://<SERVER-IP>:8088/<token>/manifest.json` on public servers) and paste it into Stremio's Addon search box.
+*Designed by Paim · Based on PencariMovie Server*
 
-### 2. Nuvio Setup
-
-1. Open **Nuvio** on your TV, phone, or tablet connected to the same Wi-Fi.
-2. Go to **Profile** ➔ **Content & Discovery** ➔ **Addons**.
-3. Enter your manifest URL:
-   - **Local Wi-Fi / LAN**: `http://<YOUR-LAN-IP>:8088/manifest.json`
-   - **Remote / VPS / Tunnel**: `http://<YOUR-SERVER-IP>:8088/<token>/manifest.json` (or your HTTPS tunnel URL).
-
-### 3. Eclipse Music Setup
-
-1. Open the **Eclipse Music** app (`https://eclipsemusic.app`) on your device.
-2. Go to **Settings** ➔ **Connections** ➔ **Add Connection** ➔ **Addon**.
-3. Enter your Eclipse manifest URL: `http://<YOUR-LAN-IP>:8088/eclipse/manifest.json` (or `http://127.0.0.1:8088/eclipse`).
-4. Search and stream tracks directly with direct seekable playback.
-
----
-
-## 🔒 Server Security & Remote Token Auth
-
-PencariMovie Server includes built-in security to keep private servers safe when hosted remotely:
-
-- **Local Access is Password-Free**: Requests from localhost (`127.0.0.1`) and private home Wi-Fi (RFC-1918 subnets like `192.168.x.x` or `10.x.x.x`) bypass authentication completely.
-- **Public & VPS Protection**: Requests from public IP addresses or Cloudflare Tunnels are protected by password auth (`SERVER_PASSWORD`, default `123456`).
-- **Remote Token Routing**: Remote media players authenticate cleanly via path tokens in the manifest URL:
-  ```text
-  http://<vps-ip>:8088/<token>/manifest.json
-  ```
-- **CLI Password & Token Management**:
-  ```bash
-  pms password <new_password>   # Changes server password
-  pms reset-password           # Resets password to default (123456)
-  pms token                    # Prints current access token
-  pms token rotate             # Generates a new access token (invalidates old one)
-  ```
-
----
-
-## 🛠️ CLI Commands (`pms`)
-
-The installer registers a global `pms` command on your system:
-
-```bash
-pms start              # Starts server in background (checks for updates)
-pms stop               # Stops server and background helper processes
-pms restart            # Restarts the server
-pms tunnel             # Enables Cloudflare Quick Tunnel (or Named Tunnel if token set)
-pms autostart [on|off] # Configures auto-start on system boot
-pms password <new>     # Sets the server password
-pms reset-password     # Resets password to default (123456)
-pms token              # Displays the active 32-character access token
-pms token rotate       # Rotates the access token
-pms uninstall          # Completely removes server, configuration, and CLI commands
-```
-
-_(Works across Windows, macOS, Linux, and Termux)._
-
----
-
-## ✨ Features
-
-- **🔌 Plug & Play Local Setup**: Runs directly on user machines with auto-configured local session handling.
-- **⚡ High-Throughput Streaming**: HTTP 206 range-request support for instant video and audio seeking.
-- **📺 Stremio & Nuvio Protocol Compatible**: Implements the Stremio Addon v3 protocol specification for media playback.
-- **🎛️ Custom Upstream Addon Bridging**: Easily integrate and toggle custom third-party metadata catalogs.
-- **💻 Local Web Player Interface**: Built-in responsive web dashboard for local file access and player playback.
-- **📡 Home Network LAN Access**: Access streams on connected TV and mobile devices via local Wi-Fi (`http://<LAN-IP>:8088`).
-- **☁️ Optional Secure Tunneling**: Connect remotely using Cloudflare Tunnel integration (`pms tunnel`).
-- **🤖 Bot Pool Rotation**: Configure multiple Bot API credentials to balance high-concurrency personal transfers.
-- **⚡ System Service Integration**: Windows system tray helper and Android background service support.
-
----
-
-## ⚖️ Legal Disclaimer & DMCA Policy
-
-### Disclaimer
-
-**PencariMovie Server** is an open-source, non-commercial software tool designed for personal media management, protocol translation, and client-side streaming of user-accessible Telegram files.
-
-1. **No Content Hosting**: This software and its developers **do not host, store, cache, upload, or transmit any media files or copyrighted material**. All media transfers occur directly between the client user, the local software instance, and Telegram's infrastructure.
-2. **Third-Party Indexing & Catalogs**: Any metadata, filenames, or search results displayed through client addons or third-party catalog feeds are provided by external sources. The project maintainers do not own, control, or operate third-party Telegram channels or upload services.
-3. **User Responsibility**: Users of this software are solely responsible for ensuring that their use complies with local copyright laws, intellectual property regulations, and Telegram's Terms of Service. The developers explicitly disclaim any liability for copyright infringement, unauthorized access, or misuse of this software by third parties.
-
-### Notice & Takedown (DMCA / Copyright Inquiries)
-
-If you are a copyright owner, content producer, or legal representative wishing to report unauthorized references or request exclusion of specific titles from discovery endpoints:
-
-- Please submit a formal written notice detailing:
-  1. The copyrighted work claimed to have been infringed;
-  2. The specific identification or URL/query where the reference occurs;
-  3. Your contact information (name, organization, email, and phone number);
-  4. A statement affirming that you hold the copyright or are authorized to act on behalf of the copyright owner.
-- Send all DMCA and copyright inquiries to: **`dmca@pencarimovie.com`** (or submit an issue to the repository maintainer).
-- Notices are reviewed expeditiously, and qualifying metadata references or index entries will be promptly delisted and excluded.
-
----
-
-## 🔒 Open Source & Privacy
-
-- **Open Source**: Licensed under GPL-3.0.
-- **Local Isolation**: Media requests, streams, and sessions are processed locally without third-party tracking or cloud relays.
-- **Secure Boundaries**: Admin actions (settings, bot pool, tunnel triggers) are restricted to local requests only and blocked across public tunnels.
-
----
-
-## 🙏 Credits & Acknowledgments
-
-Built on the shoulders of these fantastic open-source projects:
-
-- [**PHP**](https://www.php.net/) — Asynchronous server scripting and backend execution.
-- [**FrankenPHP**](https://github.com/dunglas/frankenphp) — Modern Go-based PHP application server built on Caddy.
-- [**MadelineProto**](https://github.com/danog/MadelineProto) — High-performance async PHP MTProto client library for Telegram.
-- [**cloudflared**](https://github.com/cloudflare/cloudflared) — Cloudflare tunnel client enabling seamless TryCloudflare quick tunnels.
-- [**Termux**](https://github.com/termux/termux-app) — Terminal environment and process runner for Android devices.
-
----
-
-<p align="center">
-  <sub>Open-source project hosted at <a href="https://github.com/aiskendi/pencarimovie-server">github.com/aiskendi/pencarimovie-server</a></sub>
-</p>
+</div>
