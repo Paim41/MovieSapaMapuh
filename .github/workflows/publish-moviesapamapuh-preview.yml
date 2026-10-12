@@ -1,12 +1,26 @@
 name: MovieSapaMapuh - Publish APK Preview
 
-# One-off initial publish on workflow creation; future preview releases are manual.
+# Manually publish a previously verified MovieSapaMapuh Android artifact.
+# Requires explicit version/tag, workflow run, artifact and exact source commit.
 on:
-  push:
-    branches: [main]
-    paths:
-      - '.github/workflows/publish-moviesapamapuh-preview.yml'
   workflow_dispatch:
+    inputs:
+      release_tag:
+        description: "New preview tag, e.g. v1.0.6-preview.1"
+        required: true
+        type: string
+      artifact_id:
+        description: "Artifact ID from a successful MovieSapaMapuh Android workflow run"
+        required: true
+        type: string
+      build_run_id:
+        description: "GitHub Actions run ID that produced the artifact"
+        required: true
+        type: string
+      build_commit:
+        description: "Exact full commit SHA used for the APK build"
+        required: true
+        type: string
 
 permissions:
   contents: write
@@ -18,116 +32,92 @@ concurrency:
 
 jobs:
   publish:
-    if: github.repository == 'Paim41/pencarimovie-server'
+    if: github.repository_owner == 'Paim41'
     runs-on: ubuntu-latest
     timeout-minutes: 25
     env:
-      TAG: v1.0.5-preview.1
-      BUILD_COMMIT: 47dd7f783105596ee63f54c438f5f591d20db85d
-      ARTIFACT_ID: '11738110851'
       GH_TOKEN: ${{ github.token }}
+      TAG: ${{ inputs.release_tag }}
+      ARTIFACT_ID: ${{ inputs.artifact_id }}
+      RUN_ID: ${{ inputs.build_run_id }}
+      BUILD_COMMIT: ${{ inputs.build_commit }}
     steps:
-      - name: Check out MovieSapaMapuh main
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-
-      - name: Confirm Developer Credits build and no playlist implementation
+      - name: Verify release arguments and source provenance
         shell: bash
         run: |
           set -euo pipefail
+          [[ "$TAG" =~ ^v[0-9]+\.[0-9]+\.[0-9]+-preview\.[0-9]+$ ]] || { echo "::error::Use a new preview tag"; exit 1; }
+          [[ "$ARTIFACT_ID" =~ ^[0-9]+$ && "$RUN_ID" =~ ^[0-9]+$ ]] || exit 1
+          [[ "$BUILD_COMMIT" =~ ^[0-9a-f]{40}$ ]] || exit 1
           git merge-base --is-ancestor "$BUILD_COMMIT" HEAD
-          grep -Fq 'Designed by <span>Paim</span>' public/index.html
-          if git ls-tree -r --name-only HEAD | grep -E '(^|/)youtube-playlists\.(js|css)$|(^|/)YouTubePlaylists\.(php|kt)$'; then
-            echo "::error::YouTube Playlist integration was found on main. Publication stopped."
-            exit 1
-          fi
           if gh release view "$TAG" >/dev/null 2>&1; then
-            echo "::error::Release $TAG already exists. Never overwrite published APKs."
+            echo "::error::Release tag already exists; do not overwrite versions."
             exit 1
           fi
-
-      - name: Download the verified GitHub Actions APK artifact
+          run_json="$(gh api "repos/$GITHUB_REPOSITORY/actions/runs/$RUN_ID")"
+          echo "$run_json" | jq -e --arg sha "$BUILD_COMMIT" '.conclusion == "success" and .head_sha == $sha and .name == "MovieSapaMapuh Android"' >/dev/null
+          art_json="$(gh api "repos/$GITHUB_REPOSITORY/actions/artifacts/$ARTIFACT_ID")"
+          echo "$art_json" | jq -e --argjson id "$RUN_ID" '.expired == false and .name == "MovieSapaMapuh-Android-Debug" and .workflow_run.id == $id' >/dev/null
+          git show "$BUILD_COMMIT:public/index.html" | grep -Fq 'Designed by <span>Paim</span>'
+          if git ls-tree -r --name-only "$BUILD_COMMIT" | grep -E '(^|/)youtube-playlists\.(js|css)$|(^|/)YouTubePlaylists\.(php|kt)$'; then
+            echo "::error::Unsupported playlist implementation found."
+            exit 1
+          fi
+      - name: Download verified APK artifact
         shell: bash
         run: |
           set -euo pipefail
-          mkdir -p "$RUNNER_TEMP/apk-artifact" "$RUNNER_TEMP/apk-unpacked"
-          curl --fail --location --retry 3 \
-            --header "Authorization: Bearer $GH_TOKEN" \
-            --header "Accept: application/vnd.github+json" \
-            "https://api.github.com/repos/$GITHUB_REPOSITORY/actions/artifacts/$ARTIFACT_ID/zip" \
-            --output "$RUNNER_TEMP/apk-artifact/artifact.zip"
-          unzip -tq "$RUNNER_TEMP/apk-artifact/artifact.zip" > /dev/null
-          unzip -q "$RUNNER_TEMP/apk-artifact/artifact.zip" -d "$RUNNER_TEMP/apk-unpacked"
-          mapfile -d '' -t universal < <(find "$RUNNER_TEMP/apk-unpacked" -type f -iname '*universal*.apk' -print0)
-          if [ "${#universal[@]}" -ne 1 ]; then
-            echo "::error::Expected one universal MovieSapaMapuh APK, found ${#universal[@]}."
-            exit 1
-          fi
-          APK="${universal[0]}"
-          test -f "$APK.sha256"
-          expected="$(awk '{print $1}' "$APK.sha256" | head -n 1)"
-          actual="$(sha256sum "$APK" | awk '{print $1}')"
-          test -n "$expected"
-          if [ "$expected" != "$actual" ]; then
-            echo "::error::APK checksum mismatch."
-            exit 1
-          fi
-          unzip -Z1 "$APK" | grep -Fq 'developer-credits.css'
-          if unzip -Z1 "$APK" | grep -E '(^|/)youtube-playlists\.(js|css)$'; then
-            echo "::error::Playlist files found in the APK."
-            exit 1
-          fi
-          mkdir -p release-assets
-          cp "$APK" release-assets/MovieSapaMapuh-v1.0.5-preview-universal.apk
-          (cd release-assets && sha256sum MovieSapaMapuh-v1.0.5-preview-universal.apk > MovieSapaMapuh-v1.0.5-preview-universal.apk.sha256)
-          echo "APK verified against uploaded checksum: $actual"
-
-      - name: Install Android build-tools to verify signature and package name
+          mkdir -p "$RUNNER_TEMP/apk" release-assets
+          curl --fail --location --retry 3 -H "Authorization: Bearer $GH_TOKEN" -H "Accept: application/vnd.github+json" "https://api.github.com/repos/$GITHUB_REPOSITORY/actions/artifacts/$ARTIFACT_ID/zip" -o "$RUNNER_TEMP/artifact.zip"
+          unzip -tq "$RUNNER_TEMP/artifact.zip"
+          unzip -q "$RUNNER_TEMP/artifact.zip" -d "$RUNNER_TEMP/apk"
+          mapfile -d '' -t apks < <(find "$RUNNER_TEMP/apk" -type f -iname '*universal*.apk' -print0)
+          test "${#apks[@]}" -eq 1
+          apk="${apks[0]}"
+          test -f "$apk.sha256"
+          expected="$(awk '{print $1}' "$apk.sha256")"
+          actual="$(sha256sum "$apk" | awk '{print $1}')"
+          test "$actual" = "$expected"
+          unzip -Z1 "$apk" | grep -Fq 'developer-credits.css'
+          if unzip -Z1 "$apk" | grep -E '(^|/)youtube-playlists\.(js|css)$'; then exit 1; fi
+          cp "$apk" "release-assets/MovieSapaMapuh-${TAG}-universal.apk"
+          (cd release-assets && sha256sum *.apk > "MovieSapaMapuh-${TAG}-universal.apk.sha256")
+      - name: Set up Android SDK for APK verification
         uses: android-actions/setup-android@v3
         with:
           packages: 'build-tools;35.0.0'
-
-      - name: Confirm APK is MovieSapaMapuh 1.0.5 and signed
+      - name: Verify signing, package and requested version
         shell: bash
         run: |
           set -euo pipefail
-          apk="release-assets/MovieSapaMapuh-v1.0.5-preview-universal.apk"
+          apk="release-assets/MovieSapaMapuh-${TAG}-universal.apk"
           "$ANDROID_HOME/build-tools/35.0.0/apksigner" verify "$apk"
           info="$("$ANDROID_HOME/build-tools/35.0.0/aapt" dump badging "$apk")"
-          printf '%s\n' "$info" | grep -F "package: name='com.moviesapamapuh.server'"
-          printf '%s\n' "$info" | grep -F "versionName='1.0.5'"
-
-      - name: Publish GitHub Pre-release (debug-signed testing APK)
+          echo "$info" | grep -F "package: name='com.moviesapamapuh.server'"
+          ver="${TAG#v}"
+          ver="${ver%-preview.*}"
+          echo "$info" | grep -F "versionName='$ver'"
+      - name: Publish as testing pre-release
         shell: bash
         run: |
           set -euo pipefail
-          cat > "$RUNNER_TEMP/release-notes.md" <<'NOTES'
-          ## MovieSapaMapuh v1.0.5 — Preview / Testing
+          cat > "$RUNNER_TEMP/notes.md" <<EOF
+          ## MovieSapaMapuh $TAG — Testing Preview
 
-          MovieSapaMapuh NOIR Crimson with **Developer Credits (Designed by Paim)**.
+          Built from source commit \`$BUILD_COMMIT\` using [GitHub Actions run #$RUN_ID](https://github.com/$GITHUB_REPOSITORY/actions/runs/$RUN_ID).
 
-          - Includes Home, Search, Library, Addons, Settings, Telegram-connected streaming and Si Youyou walking loader/desktop cursor.
-          - Built from source commit `47dd7f7` using successful GitHub Actions run [#12](https://github.com/Paim41/pencarimovie-server/actions/runs/38224307281).
-          - **Does not include the experimental YouTube Playlist Integration.**
-          - Download **MovieSapaMapuh-v1.0.5-preview-universal.apk** below, and install it on a compatible Android phone.
+          - Developer Credits: **Designed by Paim**.
+          - Does not include YouTube Playlist Integration.
+          - APK is **debug-signed**; it is not a stable production release.
+          - May not update an already installed APK due to a signing mismatch; back up local application data before reinstalling.
+          - Playback, account setup and LAN accessibility require device/network checks.
+          - Based on [PencariMovie](https://github.com/aiskendi/pencarimovie-server), with third-party notices retained.
 
-          ### Important testing limitations
-
-          This is a **debug-signed APK**, not a stable production release. Its signing key may differ from another APK build, so updating over an existing installation can fail with a signing mismatch. Do not uninstall an existing installation without first backing up your local data. A stable release needs consistent private release signing and physical-device validation.
-
-          Use media you are authorized to access. LAN access depends on your router/network configuration. This APK does not include third-party media or bypass DRM.
-
-          SHA-256 checksum is included alongside the APK. Based on [PencariMovie Server](https://github.com/aiskendi/pencarimovie-server); third-party licenses and notices are retained.
-          NOTES
-          gh release create "$TAG" release-assets/MovieSapaMapuh-v1.0.5-preview-universal.apk release-assets/MovieSapaMapuh-v1.0.5-preview-universal.apk.sha256 \
-            --target "$GITHUB_SHA" \
-            --title "MovieSapaMapuh v1.0.5 — Preview (Developer Credits)" \
-            --notes-file "$RUNNER_TEMP/release-notes.md" \
-            --prerelease
-
-      - name: Release link
-        if: success()
-        run: |
-          echo "### MovieSapaMapuh APK Preview" >> "$GITHUB_STEP_SUMMARY"
-          echo "https://github.com/$GITHUB_REPOSITORY/releases/tag/$TAG" >> "$GITHUB_STEP_SUMMARY"
+          Verify the downloaded APK using its accompanying SHA-256 file.
+          EOF
+          gh release create "$TAG" release-assets/*.apk release-assets/*.sha256 --target "$BUILD_COMMIT" --title "MovieSapaMapuh $TAG (Testing)" --notes-file "$RUNNER_TEMP/notes.md" --prerelease
+      - name: Show published download page
+        run: echo "https://github.com/$GITHUB_REPOSITORY/releases/tag/$TAG" >> "$GITHUB_STEP_SUMMARY"
