@@ -37,7 +37,17 @@ The fork retains the existing Kotlin/TDLib and PHP/FrankenPHP implementations ra
 
 > **Current feature scope:** The active `main` branch includes Developer Credits and **does not include the experimental YouTube Playlist Integration**. The previous interactive pet and its settings were also removed; only the loading/cursor assets remain.
 
+## Download APK
+
+**[Download MovieSapaMapuh v1.0.5 Preview (Universal APK)](https://github.com/Paim41/pencarimovie-server/releases/download/v1.0.5-preview.1/MovieSapaMapuh-v1.0.5-preview-universal.apk)**
+
+[View GitHub Release](https://github.com/Paim41/pencarimovie-server/releases/tag/v1.0.5-preview.1) · [SHA-256 checksum](https://github.com/Paim41/pencarimovie-server/releases/download/v1.0.5-preview.1/MovieSapaMapuh-v1.0.5-preview-universal.apk.sha256)
+
+This is a **debug-signed testing pre-release**, not a stable production update. Back up app data before changing installations; debug signatures from other builds may be incompatible.
+
 ## Run on Android
+
+For a fresh installation, use the **Download APK** link above, then install the universal APK and tap **Start Server**. If you want to build the APK yourself:
 
 1. Open **[Actions → MovieSapaMapuh Android](https://github.com/Paim41/pencarimovie-server/actions/workflows/moviesapamapuh-baseline.yml)**.
 2. Choose **Run workflow**, select **`main`**, keep **`signed_release` unchecked** for a debug build, and start the workflow.
