@@ -39,11 +39,11 @@ The fork retains the existing Kotlin/TDLib and PHP/FrankenPHP implementations ra
 
 ## Download APK
 
-> **Repository rename pending:** Links below use the planned `Paim41/MovieSapaMapuh` name and will work after the GitHub repository is renamed. Until then, use the [current repository Releases](https://github.com/Paim41/pencarimovie-server/releases).
+> **Repository rename pending:** Links below currently point to `Paim41/pencarimovie-server` so they work now. GitHub normally redirects those repository links after rename; update them to the new name afterward.
 
-**[Download MovieSapaMapuh v1.0.5 Preview (Universal APK)](https://github.com/Paim41/MovieSapaMapuh/releases/download/v1.0.5-preview.1/MovieSapaMapuh-v1.0.5-preview-universal.apk)**
+**[Download MovieSapaMapuh v1.0.5 Preview (Universal APK)](https://github.com/Paim41/pencarimovie-server/releases/download/v1.0.5-preview.1/MovieSapaMapuh-v1.0.5-preview-universal.apk)**
 
-[View GitHub Release](https://github.com/Paim41/MovieSapaMapuh/releases/tag/v1.0.5-preview.1) · [SHA-256 checksum](https://github.com/Paim41/MovieSapaMapuh/releases/download/v1.0.5-preview.1/MovieSapaMapuh-v1.0.5-preview-universal.apk.sha256)
+[View GitHub Release](https://github.com/Paim41/pencarimovie-server/releases/tag/v1.0.5-preview.1) · [SHA-256 checksum](https://github.com/Paim41/pencarimovie-server/releases/download/v1.0.5-preview.1/MovieSapaMapuh-v1.0.5-preview-universal.apk.sha256)
 
 This is a **debug-signed testing pre-release**, not a stable production update. Back up app data before changing installations; debug signatures from other builds may be incompatible.
 
@@ -51,7 +51,7 @@ This is a **debug-signed testing pre-release**, not a stable production update. 
 
 For a fresh installation, use the **Download APK** link above, then install the universal APK and tap **Start Server**. If you want to build the APK yourself:
 
-1. Open **[Actions → MovieSapaMapuh Android](https://github.com/Paim41/MovieSapaMapuh/actions/workflows/moviesapamapuh-baseline.yml)**.
+1. Open **[Actions → MovieSapaMapuh Android](https://github.com/Paim41/pencarimovie-server/actions/workflows/moviesapamapuh-baseline.yml)**.
 2. Choose **Run workflow**, select **`main`**, keep **`signed_release` unchecked** for a debug build, and start the workflow.
 3. When the run succeeds, download the **`MovieSapaMapuh-Android-Debug`** artifact and extract its ZIP.
 4. Install the appropriate APK on a compatible Android device (universal is the easiest option; ARM64 is suitable for POCO F3).
@@ -100,8 +100,8 @@ Never share Telegram bot tokens, secret keys or server access tokens in screensh
 - **Default branch:** `main`
 - **Android application ID:** `com.moviesapamapuh.server`
 - **Declared Android version:** `1.0.5` (version code `10005`)
-- **Developer Credits baseline:** [`47dd7f7`](https://github.com/Paim41/MovieSapaMapuh/commit/47dd7f783105596ee63f54c438f5f591d20db85d)
-- **APK build workflow:** [MovieSapaMapuh Android](https://github.com/Paim41/MovieSapaMapuh/actions/workflows/moviesapamapuh-baseline.yml)
+- **Developer Credits baseline:** [`47dd7f7`](https://github.com/Paim41/pencarimovie-server/commit/47dd7f783105596ee63f54c438f5f591d20db85d)
+- **APK build workflow:** [MovieSapaMapuh Android](https://github.com/Paim41/pencarimovie-server/actions/workflows/moviesapamapuh-baseline.yml)
 
 GitHub Actions presentation checks and Android builds are separate jobs. A green presentation-only run is **not** proof that an APK was produced. Device behavior, external services, LAN conditions and real playback should be verified on the target device before distribution. A production signing/update channel is not configured by this README.
 
