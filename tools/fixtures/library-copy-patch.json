@@ -1,0 +1,10 @@
+[
+  {
+    "before": "n(this.controller.getEmptyStateTitle())",
+    "after": "n(window.MovieSapaMapuhLibrary ? window.MovieSapaMapuhLibrary(this.controller.getState(),this.controller.getEmptyStateTitle(),\"title\") : this.controller.getEmptyStateTitle())"
+  },
+  {
+    "before": "n(this.controller.getEmptyStateSubtitle())",
+    "after": "n(window.MovieSapaMapuhLibrary ? window.MovieSapaMapuhLibrary(this.controller.getState(),this.controller.getEmptyStateSubtitle(),\"subtitle\") : this.controller.getEmptyStateSubtitle())"
+  }
+]

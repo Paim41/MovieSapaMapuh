@@ -59,7 +59,7 @@ class PencariMovieApp {
     // ── Config ──
     this.localApiBase = window.location.origin;
     this.wpApiBase = 'https://pencarimovie.com/wp-json/pencarimovie-server/v1';
-    this.siteName = 'PencariMovie';
+    this.siteName = 'MovieSapaMapuh';
 
     // ── State ──
     this.categories = [];
@@ -2399,7 +2399,7 @@ class PencariMovieApp {
         if (this._provisionPollCount > 20) {
           // ~50s of polling with no session — stop and surface the gate.
           this._provisionPollCount = 0;
-          this.provisionError = 'Provisioning is taking longer than expected. Please restart the PencariMovie Server, or enter your Telegram bot token below.';
+          this.provisionError = 'Provisioning is taking longer than expected. Please restart the MovieSapaMapuh, or enter your Telegram bot token below.';
           this._clearCachedSession();
           this.showSettingsGate({ forceToken: true, message: this.provisionError, messageType: 'error' });
           return;
@@ -2433,7 +2433,7 @@ class PencariMovieApp {
             const dir = Number(clock.offset_seconds) > 0 ? 'ahead of' : 'behind';
             this.provisionError =
               `Device clock out of sync!\nYour clock is ${human} ${dir} Telegram's server time.\n\n` +
-              `Enable 'Set time automatically' (Automatic date and time / NTP) in your device Settings, then restart the PencariMovie Server.`;
+              `Enable 'Set time automatically' (Automatic date and time / NTP) in your device Settings, then restart the MovieSapaMapuh.`;
             this._clearCachedSession();
             return;
           }
@@ -4818,7 +4818,7 @@ class PencariMovieApp {
           <h3 style="color: #fff; margin-bottom: 8px;">Catalogs are currently disabled</h3>
           <p style="max-width: 480px; margin: 0 auto; font-size: 0.88rem; line-height: 1.5;">
             ${upstreamOnly
-              ? 'PencariMovie catalogs are off. Upstream addon catalogs are still bridged for Stremio/Nuvio, but they are not shown here. Enable PencariMovie catalogs in Addon Settings to browse them on this page.'
+              ? 'MovieSapaMapuh catalogs are off. Upstream addon catalogs are still bridged for Stremio/Nuvio, but they are not shown here. Enable MovieSapaMapuh catalogs in Addon Settings to browse them on this page.'
               : 'Addon is configured for streams only via Streams matched by ID (IMDb, TMDB, Kitsu, and more). You can search files or enable catalogs in Addon Settings.'}
           </p>
         </div>

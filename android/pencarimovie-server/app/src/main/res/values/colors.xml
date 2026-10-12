@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- NOIR Crimson shared palette; existing resource identifiers are preserved. -->
+    <color name="primary">#F04452</color>
+    <color name="primary_dark">#CD3341</color>
+    <color name="secondary">#AFAFB9</color>
+    <color name="secondary_dark">#767681</color>
+    <color name="white">#F7F7F8</color>
+    <color name="black">#0C0C0F</color>
+    <color name="glass_bg">#0C0C0F</color>
+    <color name="glass_surface">#222228</color>
+    <color name="glass_surface_strong">#2A2A32</color>
+    <color name="glass_border">#3A3A44</color>
+    <color name="glass_text">#F7F7F8</color>
+    <color name="glass_text_dim">#AFAFB9</color>
+    <color name="glass_accent">#F04452</color>
+    <color name="glass_accent_pressed">#CD3341</color>
+    <color name="glass_on_accent">#0C0C0F</color>
+    <color name="glass_warn">#F3C879</color>
+    <color name="glass_error">#F04452</color>
+    <color name="glass_ok">#66D0A0</color>
+</resources>

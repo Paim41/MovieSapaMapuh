@@ -1,0 +1,1495 @@
+{
+  "commit": "6e278427e3e4f5e2f5868df7c4f6211905298ca5",
+  "files": [
+    {
+      "path": ".dockerignore",
+      "bytes": 200,
+      "sha256": "70bdaa06cae2dee88a3fa0b6beb45c744fd51697519c2c804bf4846cfa7b75be"
+    },
+    {
+      "path": ".gitattributes",
+      "bytes": 103,
+      "sha256": "fcefe1743f61b36a929233443c71fb01538c2b7e92637d9d7609ea938cdb1d4a"
+    },
+    {
+      "path": ".github/workflows/android-apk.yml",
+      "bytes": 10643,
+      "sha256": "40e05c7b5e02aedc5ecbe245dfc6b6ad7a7d7734a7e0cdb23c6c64ab83b05a1c"
+    },
+    {
+      "path": ".github/workflows/release.yml",
+      "bytes": 12114,
+      "sha256": "383b548304115f1ccec4105c8e194a61663e95a77acb639641d28ba738a296a1"
+    },
+    {
+      "path": ".github/workflows/test-build.yml",
+      "bytes": 1877,
+      "sha256": "05ec3434dc7a7119fcf280e6ae86837123b8e7b7a2caf01be08ad7d75f2bf9fe"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 8206,
+      "sha256": "d2abf232c7cb25606d22c01f2b9242db73c495e3f313a6adfda1c08e97f81d6a"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "bytes": 9069,
+      "sha256": "559a7f5cb933ab2eafd2326a81f03c81223b9d95ba459f7dea74f5ec6b5f35f3"
+    },
+    {
+      "path": "CNAME",
+      "bytes": 10,
+      "sha256": "d0b807d6b7476a7d53165b1d3c5af81aba8bba431b55dc830bab964283c44d3d"
+    },
+    {
+      "path": "Caddyfile",
+      "bytes": 3709,
+      "sha256": "31676573bf697f8d7b99e2486b0c2bbacb1432883233ff69cf87cc8047734448"
+    },
+    {
+      "path": "Dockerfile",
+      "bytes": 5240,
+      "sha256": "28ea798a7368fa24afa53945362084b983fe793c5f2e74c95f55011d7737269e"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1093,
+      "sha256": "cfda183e3986c84193931eae2c4d0dbb93af883821b241512b323c39e9e431c4"
+    },
+    {
+      "path": "README.md",
+      "bytes": 14114,
+      "sha256": "b6cc59673863aad12c55609bca70a3999118f096323b50d25412ecd5170b28eb"
+    },
+    {
+      "path": "RELEASE.md",
+      "bytes": 7380,
+      "sha256": "cff3daf3601469349f9e63915cff94d6705d6067cc8690c99c8d03bc38967e40"
+    },
+    {
+      "path": "SECURITY.md",
+      "bytes": 2026,
+      "sha256": "be1033a20bb09ca20fda01ac35d636e40d13a051f36f2ae63ac8253a77825b14"
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "bytes": 1712,
+      "sha256": "7951f51a026e6db1a399ffb22bac4acf396926ee399f1095ef5d475ffdb34d15"
+    },
+    {
+      "path": "android/termux-app-fork-x86_64/app/build.gradle",
+      "bytes": 10113,
+      "sha256": "dee2b058810ad547242b3553319a2da03e3a0ddfb49f02483aec9d5d0f428d32"
+    },
+    {
+      "path": "android/termux-app-fork-x86_64/app/main/AndroidManifest.xml",
+      "bytes": 3748,
+      "sha256": "94cdfd3c30d33cd1c6dcff8683efccfb561be70096f0c13e6acfa2dd72a04ec8"
+    },
+    {
+      "path": "android/termux-app-fork-x86_64/app/main/assets/bootstrap-x86_64.zip",
+      "bytes": 12984408,
+      "sha256": "19396133c96214c07f03a5bb798a7695b39c6c763c82faa36537d5786d3f63a7"
+    },
+    {
+      "path": "android/termux-app-fork-x86_64/app/main/cpp/Android.mk",
+      "bytes": 185,
+      "sha256": "17f0bc8b8cc8cba0c4f06e304ea6703010429f890a0b715541fa09436da16f80"
+    },
+    {
+      "path": "android/termux-app-fork-x86_64/app/main/cpp/termux-bootstrap-zip.S",
+      "bytes": 385,
+      "sha256": "edd3d2bf847f64c2ac5eb1387952be51b2fac49bfbee4287303b297c4dc372cc"
+    },
+    {
+      "path": "android/termux-app-fork-x86_64/app/main/cpp/termux-bootstrap.c",
+      "bytes": 343,
+      "sha256": "979ff058df0c4ce46ba3973dc6974f13fd306ba56578f4bd7865bee32635a236"
+    },
+    {
+      "path": "android/termux-app-fork-x86_64/app/main/ic_launcher-playstore.png",
+      "bytes": 55542,
+      "sha256": "65cdd01e959b33a3570ed5c41ddfea207ae62cfcc272f78b8daec077429fd77a"
+    },
+    {
+      "path": "android/termux-app-fork-x86_64/app/main/java/com/pencarimovie/downloader/BootReceiver.kt",
+      "bytes": 1493,
+      "sha256": "3775367ae6f21e64f3dbe8cf713e0e2821d74ca0cad4ecb51ffbc84da4696085"
+    },
+    {
+      "path": "android/termux-app-fork-x86_64/app/main/java/com/pencarimovie/downloader/MainActivity.kt",
+      "bytes": 28586,
+      "sha256": "19dcb9444b30adaaa9edc4bf46c4308f54ce0c2c1969a68b3eee2ab7d99831f9"
+    },
+    {
+      "path": "android/termux-app-fork-x86_64/app/main/java/com/pencarimovie/downloader/NativeRunner.kt",
+      "bytes": 55891,
+      "sha256": "7e1fe5990e1b83d5ec7e9d2f65ca72d0f508d6ad29898d9cffcb4ff20df3534d"
+    },
+    {
+      "path": "android/termux-app-fork-x86_64/app/main/java/com/pencarimovie/downloader/ServerApplication.java",
+      "bytes": 363,
+      "sha256": "33fee2e68f6306f9dad243f58ff57b84fcd92e88053e81f0070805299920d7ce"
+    },
+    {
+      "path": "android/termux-app-fork-x86_64/app/main/java/com/pencarimovie/downloader/ServerService.kt",
+      "bytes": 29148,
+      "sha256": "eeb5ba161d821bff0c92f54d5fd647509cdb51d8491f4ac2b92e0ecaac272f77"
+    },
+    {
+      "path": "android/termux-app-fork-x86_64/app/main/java/com/pencarimovie/downloader/ServerState.kt",
+      "bytes": 471,
+      "sha256": "badff940030a68cd5a683b738d4dd627691e85f48a68751c9ed1ab9a1fedbb55"
+    },
+    {
+      "path": "android/termux-app-fork-x86_64/app/main/java/com/pencarimovie/downloader/TermuxInstaller.java",
+      "bytes": 16350,
+      "sha256": "88bf630dab59ebaedcf7bc2d7a00de8fa5d9c55fec331d9e1f461a529d3598e7"
+    },
+    {
+      "path": "android/termux-app-fork-x86_64/app/main/java/com/pencarimovie/downloader/UpdateChecker.kt",
+      "bytes": 12291,
+      "sha256": "2ac179a3401010f88513b34a6a3bd4d333c716175710049d0785a95c34c0012d"
+    },
+    {
+      "path": "android/termux-app-fork-x86_64/app/main/java/com/pencarimovie/downloader/WebActivity.kt",
+      "bytes": 7919,
+      "sha256": "002079da6a03d1896efc5ef1ec832362c40bd126bddc8b1b45eeeff0379dc798"
+    },
+    {
+      "path": "android/termux-app-fork-x86_64/app/main/res/drawable/glass_card.xml",
+      "bytes": 514,
+      "sha256": "c5600c0da58422bfd6132a49e6a98ff65f60223b6a251ceccd7fa61298c87ccf"
+    },
+    {
+      "path": "android/termux-app-fork-x86_64/app/main/res/drawable/ic_arrow_back.xml",
+      "bytes": 378,
+      "sha256": "ea50343d3ae5008a729ce5fb05285c868a07782823a9ccd7b15899150422c9d9"
+    },
+    {
+      "path": "android/termux-app-fork-x86_64/app/main/res/drawable/ic_launcher_background.xml",
+      "bytes": 330,
+      "sha256": "5700f73b62f81fa1e4a3c1551c781b137b7c274d77fd90ec3bcaccc221af61b0"
+    },
+    {
+      "path": "android/termux-app-fork-x86_64/app/main/res/drawable/ic_launcher_foreground.xml",
+      "bytes": 727,
+      "sha256": "ce09ea8c50d4b4d1aeb4f63a8e9771028bc421077de06b193541817ee3e14b69"
+    },
+    {
+      "path": "android/termux-app-fork-x86_64/app/main/res/drawable/ic_refresh.xml",
+      "bytes": 534,
+      "sha256": "e16f09f3f5d0b2d254b35a1f48248ab9e4bcf17f74f9592861a471e10b3e89a9"
+    },
+    {
+      "path": "android/termux-app-fork-x86_64/app/main/res/layout/activity_main.xml",
+      "bytes": 13147,
+      "sha256": "b22b2e7c47e6efd008872668300c7c8d57f0a5d9854559031cb67e9f3c61d4d6"
+    },
+    {
+      "path": "android/termux-app-fork-x86_64/app/main/res/layout/activity_web.xml",
+      "bytes": 1564,
+      "sha256": "86a734f2ab7e203c6ec38b855c66f5c78b308de46de584a37d31a9de0b454080"
+    },
+    {
+      "path": "android/termux-app-fork-x86_64/app/main/res/menu/menu_web.xml",
+      "bytes": 525,
+      "sha256": "009d7ce5cdd660e6404937c2a9431634c62772f6f4e36fc716f7d8827945a15f"
+    },
+    {
+      "path": "android/termux-app-fork-x86_64/app/main/res/mipmap-anydpi-v26/ic_launcher.xml",
+      "bytes": 969,
+      "sha256": "7b770b6f7ac673cf4ebe0130818866cc8f3a79f51fefd91ca45434f734db1858"
+    },
+    {
+      "path": "android/termux-app-fork-x86_64/app/main/res/mipmap-anydpi-v26/ic_launcher_round.xml",
+      "bytes": 969,
+      "sha256": "7b770b6f7ac673cf4ebe0130818866cc8f3a79f51fefd91ca45434f734db1858"
+    },
+    {
+      "path": "android/termux-app-fork-x86_64/app/main/res/mipmap-hdpi/ic_launcher.webp",
+      "bytes": 2478,
+      "sha256": "bd154f9b8c7dc7575c0e44e28b2c4333b0df3bf7dd96a5e58c64c92d53153d46"
+    },
+    {
+      "path": "android/termux-app-fork-x86_64/app/main/res/mipmap-hdpi/ic_launcher_foreground.webp",
+      "bytes": 8592,
+      "sha256": "74cbcac95468c414cbf42ef0d2f3e89575cff9caf12a31cc7c5b9ecc727314b9"
+    },
+    {
+      "path": "android/termux-app-fork-x86_64/app/main/res/mipmap-hdpi/ic_launcher_round.webp",
+      "bytes": 2976,
+      "sha256": "3e67f9f1f0acd5cf89cc8bc26c95bde79b524f167dda03ec88bc3329b4d17fd5"
+    },
+    {
+      "path": "android/termux-app-fork-x86_64/app/main/res/mipmap-mdpi/ic_launcher.webp",
+      "bytes": 1676,
+      "sha256": "127ade0bb4c52003c404862de0c1f4523809ee8ffe3c34155e2a82830d75b2fd"
+    },
+    {
+      "path": "android/termux-app-fork-x86_64/app/main/res/mipmap-mdpi/ic_launcher_foreground.webp",
+      "bytes": 5208,
+      "sha256": "2e0f55b30c70b8c7dd3815bb10bee1ed0a6135613f7cb396dbd1f6a932f57b4e"
+    },
+    {
+      "path": "android/termux-app-fork-x86_64/app/main/res/mipmap-mdpi/ic_launcher_round.webp",
+      "bytes": 1830,
+      "sha256": "fd8a4ceabe69cc9419fd41a0a914bfdeb48aa1c95c2e4d729d022d72ede39ddb"
+    },
+    {
+      "path": "android/termux-app-fork-x86_64/app/main/res/mipmap-xhdpi/ic_launcher.webp",
+      "bytes": 3580,
+      "sha256": "b99273a99dc9dd1ba619299d00922febf143bf0e5d8817fdb1f3fb513d8eac52"
+    },
+    {
+      "path": "android/termux-app-fork-x86_64/app/main/res/mipmap-xhdpi/ic_launcher_foreground.webp",
+      "bytes": 12314,
+      "sha256": "d5c5c701a6c37e30f9172fe80c905fabe5afa480218b14ef5af63967ab3cd9d8"
+    },
+    {
+      "path": "android/termux-app-fork-x86_64/app/main/res/mipmap-xhdpi/ic_launcher_round.webp",
+      "bytes": 4272,
+      "sha256": "700571e301765727237d37183fcd05ee12f700c407d4ce5a0d85e36fc58c8f74"
+    },
+    {
+      "path": "android/termux-app-fork-x86_64/app/main/res/mipmap-xxhdpi/ic_launcher.webp",
+      "bytes": 5542,
+      "sha256": "233d28a2727e11cf0902a1d62fa4db397dd50dd349b670cb649d2df527d2cebd"
+    },
+    {
+      "path": "android/termux-app-fork-x86_64/app/main/res/mipmap-xxhdpi/ic_launcher_foreground.webp",
+      "bytes": 20698,
+      "sha256": "2f6d80a466b180bfed410e0966a6c678340070f476488f9b1ba2b02260067b10"
+    },
+    {
+      "path": "android/termux-app-fork-x86_64/app/main/res/mipmap-xxhdpi/ic_launcher_round.webp",
+      "bytes": 7192,
+      "sha256": "4545517387134aa7b1121bef84c3a4d450498f76b7e3c7e1f8986a3bb77dad2b"
+    },
+    {
+      "path": "android/termux-app-fork-x86_64/app/main/res/mipmap-xxxhdpi/ic_launcher.webp",
+      "bytes": 7320,
+      "sha256": "61d2f449c27d617bcbfbab22f764a56d7d4ab26e21866c438b3cd68d5dcb9873"
+    },
+    {
+      "path": "android/termux-app-fork-x86_64/app/main/res/mipmap-xxxhdpi/ic_launcher_foreground.webp",
+      "bytes": 30364,
+      "sha256": "69daa250db7ce8cf8e8ac4020c29a493d34bbd7334c82c6e3785168cd8d304f9"
+    },
+    {
+      "path": "android/termux-app-fork-x86_64/app/main/res/mipmap-xxxhdpi/ic_launcher_round.webp",
+      "bytes": 10468,
+      "sha256": "620326c13f475cb6b5763163a730e2b0fd7207940c60863a393da6c8e70ddf18"
+    },
+    {
+      "path": "android/termux-app-fork-x86_64/app/main/res/values/colors.xml",
+      "bytes": 1404,
+      "sha256": "27301855c96a4a69dc7c98ff6dcd8b63b63927fc2c6b3c9894d33860bd4f46cc"
+    },
+    {
+      "path": "android/termux-app-fork-x86_64/app/main/res/values/ic_launcher_background.xml",
+      "bytes": 756,
+      "sha256": "04c2dba6c6fcbe3fe141746f0217cf9391923918e42cf934922bfb94375cda7a"
+    },
+    {
+      "path": "android/termux-app-fork-x86_64/app/main/res/values/strings.xml",
+      "bytes": 1852,
+      "sha256": "c816792172dfbc94db95484cd38d1a1e4d3d37eb3d87412373112fb53c8c5edb"
+    },
+    {
+      "path": "android/termux-app-fork-x86_64/app/main/res/values/themes.xml",
+      "bytes": 1928,
+      "sha256": "7d9e551d9522ca6009b4edc50c3fa906f0450c5e61c7c728cb8fa0893b667108"
+    },
+    {
+      "path": "android/termux-app-fork-x86_64/app/main/res/xml/file_paths.xml",
+      "bytes": 413,
+      "sha256": "e6fc4c7f7fbb66587678dd27f2a4ae3e45897c5febc1a0bddccda988f58e1646"
+    },
+    {
+      "path": "android/termux-app-fork-x86_64/app/proguard-rules.pro",
+      "bytes": 462,
+      "sha256": "e3d3cbae7b51fd7cbffffce178641c72766c63f29b967bd648977c1101e8ea95"
+    },
+    {
+      "path": "android/termux-app-fork-x86_64/app/release-key.jks",
+      "bytes": 2794,
+      "sha256": "c46cb8280f3b6f2b97d00fd07157ffb6125dc6f2244c8d46185532cd71596533"
+    },
+    {
+      "path": "android/termux-app-fork-x86_64/app/testkey_untrusted.jks",
+      "bytes": 2097,
+      "sha256": "a2ba19f2417de94dd3bdfb6ceece070cdc5f9b492af09cd5900058e860b18c7d"
+    },
+    {
+      "path": "android/termux-app-fork-x86_64/build.gradle",
+      "bytes": 357,
+      "sha256": "5a77bf4ed25dc333bf48ec1ef76ec3472b6be7812a7cf17e4252a46b0a79b301"
+    },
+    {
+      "path": "android/termux-app-fork-x86_64/gradle.properties",
+      "bytes": 863,
+      "sha256": "a109b12d4c0223c45364e20540d17a9c51a5374f45cec41ed8eacc3d64ff60f3"
+    },
+    {
+      "path": "android/termux-app-fork-x86_64/gradle/gradle-daemon-jvm.properties",
+      "bytes": 1138,
+      "sha256": "231649d2f8e8dc24310f18c921e3ae33fd2715b7f48a7ddcaf27a85003e0729a"
+    },
+    {
+      "path": "android/termux-app-fork-x86_64/gradle/wrapper/gradle-wrapper.jar",
+      "bytes": 45633,
+      "sha256": "423cb469ccc0ecc31f0e4e1c309976198ccb734cdcbb7029d4bda0f18f57e8d9"
+    },
+    {
+      "path": "android/termux-app-fork-x86_64/gradle/wrapper/gradle-wrapper.properties",
+      "bytes": 252,
+      "sha256": "9efd7948359a68d9c80aa8d5df1717af1415c440b59d493040d3cfbd13885383"
+    },
+    {
+      "path": "android/termux-app-fork-x86_64/gradlew",
+      "bytes": 8618,
+      "sha256": "fb68debc1b1acf8ec55dc0d5e5495e1dedd0bd6b61f304bee61613eeb2bd9b92"
+    },
+    {
+      "path": "android/termux-app-fork-x86_64/gradlew.bat",
+      "bytes": 2803,
+      "sha256": "9ca26d733ada3a45f27b2151288f54e75c9f95b287d1f82ef942ec5cc2d4f006"
+    },
+    {
+      "path": "android/termux-app-fork-x86_64/settings.gradle",
+      "bytes": 15,
+      "sha256": "4b919cfffaed71637d1ee9c89f21f4247273e14eb8433afdcd0672eba906b41f"
+    },
+    {
+      "path": "android/termux-app-fork/app/build.gradle",
+      "bytes": 10291,
+      "sha256": "5ac4a826da471f7c936d874e0b736886786098d67536fb9e6dd0bb79cf5560be"
+    },
+    {
+      "path": "android/termux-app-fork/app/main/AndroidManifest.xml",
+      "bytes": 3748,
+      "sha256": "94cdfd3c30d33cd1c6dcff8683efccfb561be70096f0c13e6acfa2dd72a04ec8"
+    },
+    {
+      "path": "android/termux-app-fork/app/main/assets/bootstrap-aarch64.zip",
+      "bytes": 13217204,
+      "sha256": "7bf4ad9abe831d27d9fa26ef48edbda897a2ecfbc2e68c30fdc5c6e8e8fa3c5d"
+    },
+    {
+      "path": "android/termux-app-fork/app/main/cpp/Android.mk",
+      "bytes": 185,
+      "sha256": "17f0bc8b8cc8cba0c4f06e304ea6703010429f890a0b715541fa09436da16f80"
+    },
+    {
+      "path": "android/termux-app-fork/app/main/cpp/termux-bootstrap-zip.S",
+      "bytes": 385,
+      "sha256": "edd3d2bf847f64c2ac5eb1387952be51b2fac49bfbee4287303b297c4dc372cc"
+    },
+    {
+      "path": "android/termux-app-fork/app/main/cpp/termux-bootstrap.c",
+      "bytes": 343,
+      "sha256": "979ff058df0c4ce46ba3973dc6974f13fd306ba56578f4bd7865bee32635a236"
+    },
+    {
+      "path": "android/termux-app-fork/app/main/ic_launcher-playstore.png",
+      "bytes": 55542,
+      "sha256": "65cdd01e959b33a3570ed5c41ddfea207ae62cfcc272f78b8daec077429fd77a"
+    },
+    {
+      "path": "android/termux-app-fork/app/main/java/com/pencarimovie/downloader/BootReceiver.kt",
+      "bytes": 1493,
+      "sha256": "3775367ae6f21e64f3dbe8cf713e0e2821d74ca0cad4ecb51ffbc84da4696085"
+    },
+    {
+      "path": "android/termux-app-fork/app/main/java/com/pencarimovie/downloader/MainActivity.kt",
+      "bytes": 28586,
+      "sha256": "19dcb9444b30adaaa9edc4bf46c4308f54ce0c2c1969a68b3eee2ab7d99831f9"
+    },
+    {
+      "path": "android/termux-app-fork/app/main/java/com/pencarimovie/downloader/NativeRunner.kt",
+      "bytes": 55891,
+      "sha256": "7e1fe5990e1b83d5ec7e9d2f65ca72d0f508d6ad29898d9cffcb4ff20df3534d"
+    },
+    {
+      "path": "android/termux-app-fork/app/main/java/com/pencarimovie/downloader/ServerApplication.java",
+      "bytes": 363,
+      "sha256": "33fee2e68f6306f9dad243f58ff57b84fcd92e88053e81f0070805299920d7ce"
+    },
+    {
+      "path": "android/termux-app-fork/app/main/java/com/pencarimovie/downloader/ServerService.kt",
+      "bytes": 29148,
+      "sha256": "eeb5ba161d821bff0c92f54d5fd647509cdb51d8491f4ac2b92e0ecaac272f77"
+    },
+    {
+      "path": "android/termux-app-fork/app/main/java/com/pencarimovie/downloader/ServerState.kt",
+      "bytes": 471,
+      "sha256": "badff940030a68cd5a683b738d4dd627691e85f48a68751c9ed1ab9a1fedbb55"
+    },
+    {
+      "path": "android/termux-app-fork/app/main/java/com/pencarimovie/downloader/TermuxInstaller.java",
+      "bytes": 16350,
+      "sha256": "88bf630dab59ebaedcf7bc2d7a00de8fa5d9c55fec331d9e1f461a529d3598e7"
+    },
+    {
+      "path": "android/termux-app-fork/app/main/java/com/pencarimovie/downloader/UpdateChecker.kt",
+      "bytes": 12291,
+      "sha256": "2ac179a3401010f88513b34a6a3bd4d333c716175710049d0785a95c34c0012d"
+    },
+    {
+      "path": "android/termux-app-fork/app/main/java/com/pencarimovie/downloader/WebActivity.kt",
+      "bytes": 7919,
+      "sha256": "002079da6a03d1896efc5ef1ec832362c40bd126bddc8b1b45eeeff0379dc798"
+    },
+    {
+      "path": "android/termux-app-fork/app/main/res/drawable/glass_card.xml",
+      "bytes": 514,
+      "sha256": "c5600c0da58422bfd6132a49e6a98ff65f60223b6a251ceccd7fa61298c87ccf"
+    },
+    {
+      "path": "android/termux-app-fork/app/main/res/drawable/ic_arrow_back.xml",
+      "bytes": 378,
+      "sha256": "ea50343d3ae5008a729ce5fb05285c868a07782823a9ccd7b15899150422c9d9"
+    },
+    {
+      "path": "android/termux-app-fork/app/main/res/drawable/ic_launcher_background.xml",
+      "bytes": 330,
+      "sha256": "5700f73b62f81fa1e4a3c1551c781b137b7c274d77fd90ec3bcaccc221af61b0"
+    },
+    {
+      "path": "android/termux-app-fork/app/main/res/drawable/ic_launcher_foreground.xml",
+      "bytes": 727,
+      "sha256": "ce09ea8c50d4b4d1aeb4f63a8e9771028bc421077de06b193541817ee3e14b69"
+    },
+    {
+      "path": "android/termux-app-fork/app/main/res/drawable/ic_refresh.xml",
+      "bytes": 534,
+      "sha256": "e16f09f3f5d0b2d254b35a1f48248ab9e4bcf17f74f9592861a471e10b3e89a9"
+    },
+    {
+      "path": "android/termux-app-fork/app/main/res/layout/activity_main.xml",
+      "bytes": 13147,
+      "sha256": "b22b2e7c47e6efd008872668300c7c8d57f0a5d9854559031cb67e9f3c61d4d6"
+    },
+    {
+      "path": "android/termux-app-fork/app/main/res/layout/activity_web.xml",
+      "bytes": 1564,
+      "sha256": "86a734f2ab7e203c6ec38b855c66f5c78b308de46de584a37d31a9de0b454080"
+    },
+    {
+      "path": "android/termux-app-fork/app/main/res/menu/menu_web.xml",
+      "bytes": 525,
+      "sha256": "009d7ce5cdd660e6404937c2a9431634c62772f6f4e36fc716f7d8827945a15f"
+    },
+    {
+      "path": "android/termux-app-fork/app/main/res/mipmap-anydpi-v26/ic_launcher.xml",
+      "bytes": 969,
+      "sha256": "7b770b6f7ac673cf4ebe0130818866cc8f3a79f51fefd91ca45434f734db1858"
+    },
+    {
+      "path": "android/termux-app-fork/app/main/res/mipmap-anydpi-v26/ic_launcher_round.xml",
+      "bytes": 969,
+      "sha256": "7b770b6f7ac673cf4ebe0130818866cc8f3a79f51fefd91ca45434f734db1858"
+    },
+    {
+      "path": "android/termux-app-fork/app/main/res/mipmap-hdpi/ic_launcher.webp",
+      "bytes": 2478,
+      "sha256": "bd154f9b8c7dc7575c0e44e28b2c4333b0df3bf7dd96a5e58c64c92d53153d46"
+    },
+    {
+      "path": "android/termux-app-fork/app/main/res/mipmap-hdpi/ic_launcher_foreground.webp",
+      "bytes": 8592,
+      "sha256": "74cbcac95468c414cbf42ef0d2f3e89575cff9caf12a31cc7c5b9ecc727314b9"
+    },
+    {
+      "path": "android/termux-app-fork/app/main/res/mipmap-hdpi/ic_launcher_round.webp",
+      "bytes": 2976,
+      "sha256": "3e67f9f1f0acd5cf89cc8bc26c95bde79b524f167dda03ec88bc3329b4d17fd5"
+    },
+    {
+      "path": "android/termux-app-fork/app/main/res/mipmap-mdpi/ic_launcher.webp",
+      "bytes": 1676,
+      "sha256": "127ade0bb4c52003c404862de0c1f4523809ee8ffe3c34155e2a82830d75b2fd"
+    },
+    {
+      "path": "android/termux-app-fork/app/main/res/mipmap-mdpi/ic_launcher_foreground.webp",
+      "bytes": 5208,
+      "sha256": "2e0f55b30c70b8c7dd3815bb10bee1ed0a6135613f7cb396dbd1f6a932f57b4e"
+    },
+    {
+      "path": "android/termux-app-fork/app/main/res/mipmap-mdpi/ic_launcher_round.webp",
+      "bytes": 1830,
+      "sha256": "fd8a4ceabe69cc9419fd41a0a914bfdeb48aa1c95c2e4d729d022d72ede39ddb"
+    },
+    {
+      "path": "android/termux-app-fork/app/main/res/mipmap-xhdpi/ic_launcher.webp",
+      "bytes": 3580,
+      "sha256": "b99273a99dc9dd1ba619299d00922febf143bf0e5d8817fdb1f3fb513d8eac52"
+    },
+    {
+      "path": "android/termux-app-fork/app/main/res/mipmap-xhdpi/ic_launcher_foreground.webp",
+      "bytes": 12314,
+      "sha256": "d5c5c701a6c37e30f9172fe80c905fabe5afa480218b14ef5af63967ab3cd9d8"
+    },
+    {
+      "path": "android/termux-app-fork/app/main/res/mipmap-xhdpi/ic_launcher_round.webp",
+      "bytes": 4272,
+      "sha256": "700571e301765727237d37183fcd05ee12f700c407d4ce5a0d85e36fc58c8f74"
+    },
+    {
+      "path": "android/termux-app-fork/app/main/res/mipmap-xxhdpi/ic_launcher.webp",
+      "bytes": 5542,
+      "sha256": "233d28a2727e11cf0902a1d62fa4db397dd50dd349b670cb649d2df527d2cebd"
+    },
+    {
+      "path": "android/termux-app-fork/app/main/res/mipmap-xxhdpi/ic_launcher_foreground.webp",
+      "bytes": 20698,
+      "sha256": "2f6d80a466b180bfed410e0966a6c678340070f476488f9b1ba2b02260067b10"
+    },
+    {
+      "path": "android/termux-app-fork/app/main/res/mipmap-xxhdpi/ic_launcher_round.webp",
+      "bytes": 7192,
+      "sha256": "4545517387134aa7b1121bef84c3a4d450498f76b7e3c7e1f8986a3bb77dad2b"
+    },
+    {
+      "path": "android/termux-app-fork/app/main/res/mipmap-xxxhdpi/ic_launcher.webp",
+      "bytes": 7320,
+      "sha256": "61d2f449c27d617bcbfbab22f764a56d7d4ab26e21866c438b3cd68d5dcb9873"
+    },
+    {
+      "path": "android/termux-app-fork/app/main/res/mipmap-xxxhdpi/ic_launcher_foreground.webp",
+      "bytes": 30364,
+      "sha256": "69daa250db7ce8cf8e8ac4020c29a493d34bbd7334c82c6e3785168cd8d304f9"
+    },
+    {
+      "path": "android/termux-app-fork/app/main/res/mipmap-xxxhdpi/ic_launcher_round.webp",
+      "bytes": 10468,
+      "sha256": "620326c13f475cb6b5763163a730e2b0fd7207940c60863a393da6c8e70ddf18"
+    },
+    {
+      "path": "android/termux-app-fork/app/main/res/values/colors.xml",
+      "bytes": 1404,
+      "sha256": "27301855c96a4a69dc7c98ff6dcd8b63b63927fc2c6b3c9894d33860bd4f46cc"
+    },
+    {
+      "path": "android/termux-app-fork/app/main/res/values/ic_launcher_background.xml",
+      "bytes": 756,
+      "sha256": "04c2dba6c6fcbe3fe141746f0217cf9391923918e42cf934922bfb94375cda7a"
+    },
+    {
+      "path": "android/termux-app-fork/app/main/res/values/strings.xml",
+      "bytes": 1852,
+      "sha256": "c816792172dfbc94db95484cd38d1a1e4d3d37eb3d87412373112fb53c8c5edb"
+    },
+    {
+      "path": "android/termux-app-fork/app/main/res/values/themes.xml",
+      "bytes": 1928,
+      "sha256": "7d9e551d9522ca6009b4edc50c3fa906f0450c5e61c7c728cb8fa0893b667108"
+    },
+    {
+      "path": "android/termux-app-fork/app/main/res/xml/file_paths.xml",
+      "bytes": 413,
+      "sha256": "e6fc4c7f7fbb66587678dd27f2a4ae3e45897c5febc1a0bddccda988f58e1646"
+    },
+    {
+      "path": "android/termux-app-fork/app/proguard-rules.pro",
+      "bytes": 462,
+      "sha256": "e3d3cbae7b51fd7cbffffce178641c72766c63f29b967bd648977c1101e8ea95"
+    },
+    {
+      "path": "android/termux-app-fork/app/release-key.jks",
+      "bytes": 2794,
+      "sha256": "c46cb8280f3b6f2b97d00fd07157ffb6125dc6f2244c8d46185532cd71596533"
+    },
+    {
+      "path": "android/termux-app-fork/app/testkey_untrusted.jks",
+      "bytes": 2097,
+      "sha256": "a2ba19f2417de94dd3bdfb6ceece070cdc5f9b492af09cd5900058e860b18c7d"
+    },
+    {
+      "path": "android/termux-app-fork/build.gradle",
+      "bytes": 357,
+      "sha256": "5a77bf4ed25dc333bf48ec1ef76ec3472b6be7812a7cf17e4252a46b0a79b301"
+    },
+    {
+      "path": "android/termux-app-fork/gradle.properties",
+      "bytes": 863,
+      "sha256": "a109b12d4c0223c45364e20540d17a9c51a5374f45cec41ed8eacc3d64ff60f3"
+    },
+    {
+      "path": "android/termux-app-fork/gradle/gradle-daemon-jvm.properties",
+      "bytes": 1138,
+      "sha256": "231649d2f8e8dc24310f18c921e3ae33fd2715b7f48a7ddcaf27a85003e0729a"
+    },
+    {
+      "path": "android/termux-app-fork/gradle/wrapper/gradle-wrapper.jar",
+      "bytes": 45633,
+      "sha256": "423cb469ccc0ecc31f0e4e1c309976198ccb734cdcbb7029d4bda0f18f57e8d9"
+    },
+    {
+      "path": "android/termux-app-fork/gradle/wrapper/gradle-wrapper.properties",
+      "bytes": 252,
+      "sha256": "9efd7948359a68d9c80aa8d5df1717af1415c440b59d493040d3cfbd13885383"
+    },
+    {
+      "path": "android/termux-app-fork/gradlew",
+      "bytes": 8618,
+      "sha256": "fb68debc1b1acf8ec55dc0d5e5495e1dedd0bd6b61f304bee61613eeb2bd9b92"
+    },
+    {
+      "path": "android/termux-app-fork/gradlew.bat",
+      "bytes": 2803,
+      "sha256": "9ca26d733ada3a45f27b2151288f54e75c9f95b287d1f82ef942ec5cc2d4f006"
+    },
+    {
+      "path": "android/termux-app-fork/scripts/build-bash-proot-bootstrap.sh",
+      "bytes": 12805,
+      "sha256": "e3ce9b72d97bad62d1fc866ee67c985c350391ef81dc14eca623ac925b1b3760"
+    },
+    {
+      "path": "android/termux-app-fork/settings.gradle",
+      "bytes": 15,
+      "sha256": "4b919cfffaed71637d1ee9c89f21f4247273e14eb8433afdcd0672eba906b41f"
+    },
+    {
+      "path": "app.json",
+      "bytes": 324,
+      "sha256": "c9f90f558c02fe9d2b5de5d17a271165e4cd1ebc53979b37fc9d6e7375bb7842"
+    },
+    {
+      "path": "auth-write.ps1",
+      "bytes": 1248,
+      "sha256": "63014f15435f2a42918f28095dfd183f833d874363083f647fe67f06db952783"
+    },
+    {
+      "path": "backend.php",
+      "bytes": 665002,
+      "sha256": "c037068e25794c575c3b2ea9ac20bad55d93142311d8436f5da418616f8ec13a"
+    },
+    {
+      "path": "bin/.gitkeep",
+      "bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "path": "bin/README.md",
+      "bytes": 5194,
+      "sha256": "ca16eef140d5c441c3bafc0b2a44995e70750db9677a64936fb9b23686a5552d"
+    },
+    {
+      "path": "bin/phar.phar.bat",
+      "bytes": 42,
+      "sha256": "3d99a5b6f205c6d1167ba4496a38fddf969b12fb6e39d30c84df536204b634f4"
+    },
+    {
+      "path": "bin/php",
+      "bytes": 2857,
+      "sha256": "0cf7f57a2fc488eb23515bba3144161553f4b3a0a2769812eec591d422945d82"
+    },
+    {
+      "path": "bin/php.ini",
+      "bytes": 604,
+      "sha256": "24377a61dfd342cb65b268f1778a29f13e409c5016de775992443dd8459bfced"
+    },
+    {
+      "path": "bin/php.ini-development",
+      "bytes": 70173,
+      "sha256": "218f8422b9343f049a41a75d6a22490da1e4d18537498bcb7b2ccacf920a1c19"
+    },
+    {
+      "path": "bin/php.ini-production",
+      "bytes": 70307,
+      "sha256": "40bb01691e2189f6cf1f9e2c4a29aa42f99b97944ba98f7b02036f50d3774116"
+    },
+    {
+      "path": "bin/php.ini.unix",
+      "bytes": 709,
+      "sha256": "e476f240b3266c234131c59163a70c8b31cb7330504083bade97237dcd1d90fb"
+    },
+    {
+      "path": "composer.json",
+      "bytes": 921,
+      "sha256": "2833474f1313ff8713ffec06392862ce59461a4e971bf1cb10492d273444df87"
+    },
+    {
+      "path": "composer.lock",
+      "bytes": 146093,
+      "sha256": "fe130e265649e3b0543eb7c4e798e1bb19ee6f910a60623a6f590f63a1b3de8f"
+    },
+    {
+      "path": "docker-compose.yml",
+      "bytes": 491,
+      "sha256": "fba147cbd061ea6ff493912fe67408e43d15ffdd43f5b8a10b8136464f46a0d0"
+    },
+    {
+      "path": "docker-entrypoint.sh",
+      "bytes": 4945,
+      "sha256": "6b6663d6647017187bf42bf9394648b44ff01920f3e5c941ca8b48409ada8c73"
+    },
+    {
+      "path": "heroku.yml",
+      "bytes": 85,
+      "sha256": "3480259430106cff56f4583a1bc198413669bf6dd5f72749751c2bb06e7a2167"
+    },
+    {
+      "path": "index.php",
+      "bytes": 67,
+      "sha256": "f2ccdfa8c2d38718914602fa1f22af28d28029ab82da207d5c21645ef918ce20"
+    },
+    {
+      "path": "install-termux.sh",
+      "bytes": 1277,
+      "sha256": "8d42c35795a282509a5b09980e7282781515ddc533cd7c6775a06c4c20f44e3e"
+    },
+    {
+      "path": "install.bat",
+      "bytes": 726,
+      "sha256": "5a3daa5be6767145840f364f6dfd9e5d833987587a62163a28dd4e217dd85b5e"
+    },
+    {
+      "path": "install.sh",
+      "bytes": 2321,
+      "sha256": "c9055958358bb5b1af286233d2ae0ba3aebaba697fac9dfa5fbba37b0455a534"
+    },
+    {
+      "path": "package.json",
+      "bytes": 585,
+      "sha256": "7f521c0440dec26000e70a6ffe6f1979585bd9ef32b2e3ed97824bfaa0eb26ef"
+    },
+    {
+      "path": "patches/async-orm-memory-limit.patch",
+      "bytes": 548,
+      "sha256": "c2b13c5cfe3d6ee8d890de1dc7e6ab1c6be06f6d9fc64ea5427f0813b27cce6b"
+    },
+    {
+      "path": "patches/ipc-tcp-default.patch",
+      "bytes": 1136,
+      "sha256": "56255141f098da491ce914a9ec0e3d9e6af5adfe253fac84f9ea010ca8be2e9e"
+    },
+    {
+      "path": "patches/madelineproto-windows-ipc.patch",
+      "bytes": 28801,
+      "sha256": "eb28c45d18654617db78f9f7c6521940d9f7228ae7b437a08a42138c94cb90dc"
+    },
+    {
+      "path": "pencarimovie-docker.sh",
+      "bytes": 8277,
+      "sha256": "b7c53499c5e67b6348858f87df39208e8d0c12a45349651350010a2236f1a18c"
+    },
+    {
+      "path": "pencarimovie-linux.sh",
+      "bytes": 26806,
+      "sha256": "58280f9d34e4868d66865b477cef3dd994f2f4cf7c003ffde5e228499b5ad37f"
+    },
+    {
+      "path": "pencarimovie-termux.sh",
+      "bytes": 27601,
+      "sha256": "dbf8c5e19236bebe05f09bb651baf7f68b42ebc8102a5d5f8a3f9a1312448150"
+    },
+    {
+      "path": "pencarimovie-windows.bat",
+      "bytes": 18252,
+      "sha256": "29ec201c3258226fffbc1e083399a0c9d6d4a9cc789c9a862921dc39bd15f5d3"
+    },
+    {
+      "path": "public/app.bundle.js",
+      "bytes": 3140262,
+      "sha256": "0b3c7c137b54c368103b104bc9e550544db8af9d0aa6e0d2c3fbc707be3c4b8b"
+    },
+    {
+      "path": "public/app.js",
+      "bytes": 246824,
+      "sha256": "f818a3267ef814ba23dce6b18aa291a1bac1ad9cdfb96d80196285166f287b46"
+    },
+    {
+      "path": "public/appinfo.json",
+      "bytes": 802,
+      "sha256": "cab07fd3d703eb268d6d0e4484852ddcbccc225ff4fc75882541b2682d4573c0"
+    },
+    {
+      "path": "public/assets/brand/app_logo_mark.png",
+      "bytes": 73029,
+      "sha256": "cb8a9cc9b1d891724f7124cdd84cee107bf6ceeb92f7b95763a30dc2462ac994"
+    },
+    {
+      "path": "public/assets/brand/app_logo_wordmark.png",
+      "bytes": 52070,
+      "sha256": "b03339a92401a0e5b5d1eaabed87f76b49c4481438a667a502888c3d2ba03407"
+    },
+    {
+      "path": "public/assets/brand/app_logo_wordmark_arctic_blue.png",
+      "bytes": 59272,
+      "sha256": "a64120c10e190281f75eb58104427e310214d60f4cb6f30c1d48d1bb8aceab89"
+    },
+    {
+      "path": "public/assets/brand/app_logo_wordmark_gold.png",
+      "bytes": 66923,
+      "sha256": "ee7b7921fae7385b38876259cd1b3233a9b2d3e4577deee7fb8fe26d3ab4cab6"
+    },
+    {
+      "path": "public/assets/brand/app_logo_wordmark_graphite.png",
+      "bytes": 45837,
+      "sha256": "8c3798fcc47ceb2b57f628e318a31fbbf25c5a626eaa78c8ea1fbb6a9414a7ab"
+    },
+    {
+      "path": "public/assets/brand/app_logo_wordmark_jade.png",
+      "bytes": 58359,
+      "sha256": "20e9cc2df48e01057a42817567db9d9c908933c8d764d8126dbb1faf779f4ef0"
+    },
+    {
+      "path": "public/assets/brand/app_logo_wordmark_rose_gold.png",
+      "bytes": 62377,
+      "sha256": "980f3d5647151a842dc68214baf554e701c35116e4aabaa4448d2cf2ee6ec29a"
+    },
+    {
+      "path": "public/assets/icons/discover_compass.svg",
+      "bytes": 363,
+      "sha256": "d7e8682d135d7e0b98d97b76adba387c4e388213330aa8f0cf591e5539c19ea0"
+    },
+    {
+      "path": "public/assets/icons/ic_chevron_compact_left.png",
+      "bytes": 538,
+      "sha256": "fa99b2ca4d2162f32cfb85a4d5fe164486c17cc26d1a4645044717bd0ed65ec3"
+    },
+    {
+      "path": "public/assets/icons/ic_player_aspect_ratio.svg",
+      "bytes": 1471,
+      "sha256": "a338b833757947bb2f45f31c5bd736d9e339923534d041b32aa2eb169bfb8d4c"
+    },
+    {
+      "path": "public/assets/icons/ic_player_audio_filled.svg",
+      "bytes": 1238,
+      "sha256": "7074637cf7039805f1bde6de64c2691555e0152f46e8358dd7dd15f0b0c53fbf"
+    },
+    {
+      "path": "public/assets/icons/ic_player_audio_outline.svg",
+      "bytes": 897,
+      "sha256": "67a8a6f8f8cb6f605ddfee42963252dc8bca8257cb4c1f6b107ed986bbe0f44d"
+    },
+    {
+      "path": "public/assets/icons/ic_player_episodes.svg",
+      "bytes": 779,
+      "sha256": "e9076904f34cc460abe3911c15ad08e9e8ffe2cca06a19291556a5180e4e925b"
+    },
+    {
+      "path": "public/assets/icons/ic_player_pause.svg",
+      "bytes": 808,
+      "sha256": "e258831897eefacb2edb8bac34e3180a6c23e02052049f2582fb71260c99d056"
+    },
+    {
+      "path": "public/assets/icons/ic_player_play.svg",
+      "bytes": 433,
+      "sha256": "740525465cf82de43f446f76d952318028525125ec2db326492f9a24e1333e7e"
+    },
+    {
+      "path": "public/assets/icons/ic_player_skip_next.svg",
+      "bytes": 236,
+      "sha256": "8106d18d2d8e6bff8966a538dd311ff8ff2b3ef1fda4fb663d29bcef304e0ebc"
+    },
+    {
+      "path": "public/assets/icons/ic_player_source.svg",
+      "bytes": 534,
+      "sha256": "0ab0d83096842bf8de7b1fcf95bf10234b74aaee01135987521ee463d07cf26b"
+    },
+    {
+      "path": "public/assets/icons/ic_player_subtitles.svg",
+      "bytes": 988,
+      "sha256": "ac2012b15ae93921e2049122f21eea30c2439b80e098a9af4e4ae6b980f83ba6"
+    },
+    {
+      "path": "public/assets/icons/imdb_logo_2016.svg",
+      "bytes": 4008,
+      "sha256": "27f93b15a075b015e2448eca7949f7a3da03c37fbf26cecf6df3bdab45fda993"
+    },
+    {
+      "path": "public/assets/icons/library_add_plus.svg",
+      "bytes": 337,
+      "sha256": "a8c8f563e0da6a3010f060525e85819d448dca92fea6e1547ab0d116aa416ae2"
+    },
+    {
+      "path": "public/assets/icons/mdblist_audience.png",
+      "bytes": 5239,
+      "sha256": "9cb037f1a35d02cd22c37f53817c0886fed8e956d2383a2fb2845c140c419f1e"
+    },
+    {
+      "path": "public/assets/icons/mdblist_audience_stale.svg",
+      "bytes": 492,
+      "sha256": "3877205dabc842456ec744a960dd9c3bea96825c0c30e25e4d6e568912636d13"
+    },
+    {
+      "path": "public/assets/icons/mdblist_audience_verified_hot.svg",
+      "bytes": 545,
+      "sha256": "83478ac27109a1f61cce6d75ec7c55e5a92690eccd730465c1552f0ea08718f1"
+    },
+    {
+      "path": "public/assets/icons/mdblist_letterboxd.svg",
+      "bytes": 2483,
+      "sha256": "1976ebdb8e0f116e520fa86432413effacd97d3ae39056d5be85faa057e251d4"
+    },
+    {
+      "path": "public/assets/icons/mdblist_mal.svg",
+      "bytes": 627,
+      "sha256": "5db396c3447e99b9d1a593b95b14046bfbcee341b972571304011a60c46f4cae"
+    },
+    {
+      "path": "public/assets/icons/mdblist_metacritic.png",
+      "bytes": 5468,
+      "sha256": "57de3ca127222a545cd1c6c4c23f9e51364d4fe6815aa96577567fbad824f42c"
+    },
+    {
+      "path": "public/assets/icons/mdblist_tmdb.svg",
+      "bytes": 2577,
+      "sha256": "d537fb228cf3ded904ef09b136fe3fec72548ebc1fea3fbbd1ad9e36364db38b"
+    },
+    {
+      "path": "public/assets/icons/mdblist_tomatoes.svg",
+      "bytes": 1423,
+      "sha256": "01aa8a3c3e9db48f0e1c6af25056940986784315bf66f48a8120a7317bf6d75a"
+    },
+    {
+      "path": "public/assets/icons/mdblist_tomatoes_certified.svg",
+      "bytes": 543,
+      "sha256": "182ea16585719676e136f1989b57b2bc1d24d6551362d6e2a143bb8d062e28fd"
+    },
+    {
+      "path": "public/assets/icons/mdblist_tomatoes_rotten.svg",
+      "bytes": 506,
+      "sha256": "9980851c06f68e73ab4a1195718b9ceadbb3e7bdd2b4c82a2c361f796bcef38a"
+    },
+    {
+      "path": "public/assets/icons/mdblist_trakt.svg",
+      "bytes": 896,
+      "sha256": "9892e85077923add0300a6b68557be92a16473a487dfddf8f372a463d1702390"
+    },
+    {
+      "path": "public/assets/icons/sidebar_home.svg",
+      "bytes": 2385,
+      "sha256": "41030150f51afc601f94ccbed3e9f9b3dc9200a89f4ee487e60f368ece444115"
+    },
+    {
+      "path": "public/assets/icons/sidebar_library.svg",
+      "bytes": 1614,
+      "sha256": "f3cf54324f917394d212e0def57777c446ee4dba28f9ce0dfc432b33d3ec2c96"
+    },
+    {
+      "path": "public/assets/icons/sidebar_plugin.svg",
+      "bytes": 3455,
+      "sha256": "a67886f05a00c1a8e02a73d02ccce462c3d817b4b9ea683a9ffff8e356d0dcc5"
+    },
+    {
+      "path": "public/assets/icons/sidebar_search.svg",
+      "bytes": 415,
+      "sha256": "a5ce19554dba8a41d36ba8a04638ca5f0c0d7dcaecd75bf82f1b4a26ad62fad1"
+    },
+    {
+      "path": "public/assets/icons/sidebar_settings.svg",
+      "bytes": 2658,
+      "sha256": "580c443be1bc87f9914cda4044dd67d015b427a2b04156421f18f9e749f1c006"
+    },
+    {
+      "path": "public/assets/icons/simkl_tv_glyph.svg",
+      "bytes": 1938,
+      "sha256": "51d52685b85f24082002a51f3280ad9e7468efd0d2ae7ae852db8ebd707b2bfc"
+    },
+    {
+      "path": "public/assets/icons/trailer_play_button.svg",
+      "bytes": 1810,
+      "sha256": "4be560339a7f01280da8fb456b9fefccc4a7d4398510b09d35dad6a5f0b35cf6"
+    },
+    {
+      "path": "public/assets/icons/trakt_tv_favicon.svg",
+      "bytes": 1660,
+      "sha256": "5a7efddf459a87347842f37f1738c4b541c85de93a008365ff4af47f44b08563"
+    },
+    {
+      "path": "public/assets/icons/trakt_tv_glyph.svg",
+      "bytes": 695,
+      "sha256": "1973f7ecd1f8902094622a7009cb3aef44764c0ba8e1a78811c26b669513a81b"
+    },
+    {
+      "path": "public/assets/icons/visibility.svg",
+      "bytes": 363,
+      "sha256": "ded30d7c0e576f37702c32e08ef9688f107b4927e30fa18b9ffee2202dd27b8a"
+    },
+    {
+      "path": "public/assets/icons/visibility_off.svg",
+      "bytes": 773,
+      "sha256": "ebe8c56241b97aa5450bb9da34b3adf136784a9cb5e86ea1fa264fe4b31191cf"
+    },
+    {
+      "path": "public/assets/images/icon.png",
+      "bytes": 3438,
+      "sha256": "e55fd9d8bb6f54b1c05a81bfcf38a4b6db68778dce1800cd06c984851c28f31b"
+    },
+    {
+      "path": "public/assets/images/largeIcon.png",
+      "bytes": 6326,
+      "sha256": "80eccf534656cbb44474de165708175688bc3bb5c47031b578832a86593fcdfb"
+    },
+    {
+      "path": "public/assets/images/nuviotv.png",
+      "bytes": 52070,
+      "sha256": "b03339a92401a0e5b5d1eaabed87f76b49c4481438a667a502888c3d2ba03407"
+    },
+    {
+      "path": "public/assets/images/splash.png",
+      "bytes": 73447,
+      "sha256": "bc5013d7ca35f872051e0a972c5b0f12644a129eb62f3978b632d1eef0234b38"
+    },
+    {
+      "path": "public/assets/images/tizenIcon.png",
+      "bytes": 73029,
+      "sha256": "cb8a9cc9b1d891724f7124cdd84cee107bf6ceeb92f7b95763a30dc2462ac994"
+    },
+    {
+      "path": "public/assets/libs/ass.min.js",
+      "bytes": 35919,
+      "sha256": "edf03e329ac2ad9c861da267290f42af4de51de7abd441fc7fdfede99c9bdeab"
+    },
+    {
+      "path": "public/assets/libs/assjs.LICENSE",
+      "bytes": 1076,
+      "sha256": "974299957766f1c4a9d17931bff936598e7f8a03d6aacf861771400a4f4850a0"
+    },
+    {
+      "path": "public/assets/libs/crypto-js.LICENSE",
+      "bytes": 1169,
+      "sha256": "f729d14b7e1bf8adca0dcc38b93b929d14d53fcd5db56c3d1c9b2daa7aa69396"
+    },
+    {
+      "path": "public/assets/libs/dash.all.min.js",
+      "bytes": 1037056,
+      "sha256": "c74460874ff86eb71736df4d540082be7459019ebea7a501fb6162566a4d7110"
+    },
+    {
+      "path": "public/assets/libs/dashjs.LICENSE.md",
+      "bytes": 1785,
+      "sha256": "f7cc4ba24850cc564766c75923d07c3d22fa27f304285f4d25ecffeaec964e28"
+    },
+    {
+      "path": "public/assets/libs/hls.js.LICENSE",
+      "bytes": 1338,
+      "sha256": "ca8773cf798c7ed997d4dd7c8e23c348699f8d5b7462636694cc14de6cda12db"
+    },
+    {
+      "path": "public/assets/libs/hls.min.js",
+      "bytes": 619692,
+      "sha256": "a12e7ee1cd64a69dcdb314157e45dafcba705bfb0b1440b7935cb265d374423e"
+    },
+    {
+      "path": "public/assets/libs/libbitsub.LICENSE",
+      "bytes": 1128,
+      "sha256": "e052a6a20dd3ae7714556dca283e9edadc4bf4d98438581ff9429392cfdf3188"
+    },
+    {
+      "path": "public/assets/libs/libbitsub_bg.wasm",
+      "bytes": 160236,
+      "sha256": "976c06eb5116a7c5aa5feac468ddca010824bfd9028c8cc92b21797f2644fb3e"
+    },
+    {
+      "path": "public/assets/libs/qrcode-generator.js",
+      "bytes": 56769,
+      "sha256": "c828a70a767324cca6f3c48b2e4145fd3bbf54c5596198e7dad0240207a34500"
+    },
+    {
+      "path": "public/assets/libs/quickjs-emscripten.LICENSE",
+      "bytes": 1102,
+      "sha256": "3c6040aa318612a234cc951609b640c0c63d85ae5a98a9330d3116f1553a79db"
+    },
+    {
+      "path": "public/assets/libs/quickjs-emscripten.global.js",
+      "bytes": 2363294,
+      "sha256": "eb1e6237842795d6c262f7eeb8d90353cbf461dfc49af3cdf384b8d1e0fb3ed7"
+    },
+    {
+      "path": "public/assets/libs/webOSTV.js",
+      "bytes": 13818,
+      "sha256": "2e83e028aef8651ef0b79b25a70c7ebc076a36781486a68623634bc0c2162670"
+    },
+    {
+      "path": "public/assets/runtime/legacy-features.js",
+      "bytes": 1454,
+      "sha256": "11692c6001bc101a7223e8ef03d52cfcd3db0fc60a7230020f2514133e8b5367"
+    },
+    {
+      "path": "public/assets/runtime/plugin-worker.js",
+      "bytes": 637926,
+      "sha256": "1b871d1343fe82cebd1391591f8fcba6ca85bdb8dec4d6dee017841b0d8c0250"
+    },
+    {
+      "path": "public/boot-guard.js",
+      "bytes": 26809,
+      "sha256": "3e25140a23cd1e5186092d0d647eb2acab279301e0bb0de8b47b1bca74cfd307"
+    },
+    {
+      "path": "public/core-js.bundle.js",
+      "bytes": 165129,
+      "sha256": "b112fa54c467fa02278aedbd799aa67236afc6b368f3ec6cd94c45e8f14d2c6e"
+    },
+    {
+      "path": "public/css/bundle.css",
+      "bytes": 559602,
+      "sha256": "53114750467a416b752fa1b4ec7746bcbc1606868a1ff4efc114fc6381483ab6"
+    },
+    {
+      "path": "public/index.html",
+      "bytes": 58340,
+      "sha256": "d968014cced642886920104f1dedc565e5770bebb437516cb21be912ff05850b"
+    },
+    {
+      "path": "public/logo.png",
+      "bytes": 25013,
+      "sha256": "7e0ca78016e7a6fd0b97f34506f868f44e20e3dd2b9bd2ee70b9827706dfb931"
+    },
+    {
+      "path": "public/nuvio.env.js",
+      "bytes": 1052,
+      "sha256": "6660c2b8fd2ac47d30a312fb983c53d82ea03066363d03e6836384ffc1d12ad7"
+    },
+    {
+      "path": "public/res/i18n/ar.json",
+      "bytes": 215891,
+      "sha256": "4df8acb09f4d97a3f6afcf9279a23a675f676d638201bf7192085c6e555192c6"
+    },
+    {
+      "path": "public/res/i18n/bg.json",
+      "bytes": 175259,
+      "sha256": "35bb4cb8053af6172f4a376c2c5a83486be1affbf3957fbed002ac9ca33eca32"
+    },
+    {
+      "path": "public/res/i18n/bs.json",
+      "bytes": 180707,
+      "sha256": "d3bed9715ee30ea0e1ae61b57ee21b589becee57fe80b3f8b6dc026166d2d481"
+    },
+    {
+      "path": "public/res/i18n/cs.json",
+      "bytes": 189101,
+      "sha256": "d3239a6e84dcbcdc0d07f51736e190351345776a1624bfcb5aa94db2c970c53c"
+    },
+    {
+      "path": "public/res/i18n/da.json",
+      "bytes": 174955,
+      "sha256": "56ce4ce7fdcb3bcb49943ddff109c8dad08c1a5df0a9fa0f15e7657719b59d4c"
+    },
+    {
+      "path": "public/res/i18n/de.json",
+      "bytes": 186815,
+      "sha256": "2b71efaffa0d2c16ee90e93c8b94f5f979c8435d704c2b78b5da4b86f4648f3b"
+    },
+    {
+      "path": "public/res/i18n/el.json",
+      "bytes": 265448,
+      "sha256": "23e347b4b416c2dc58ce58160a89ffd0ea0d35ee3fd98226460c5fc75464621c"
+    },
+    {
+      "path": "public/res/i18n/en.json",
+      "bytes": 174912,
+      "sha256": "9a93bd7561e9416a747f1f02515f978a3c05abe46056c9e47ae871ca5f8c85cf"
+    },
+    {
+      "path": "public/res/i18n/es-419.json",
+      "bytes": 194743,
+      "sha256": "2e1ed1f190b7cee4cddcf56c86b79ff520093cd516c77f8cacd7509cf8a7c69f"
+    },
+    {
+      "path": "public/res/i18n/es.json",
+      "bytes": 184812,
+      "sha256": "3328e4f5b77099c0f7a3c21fb2e3e66215dc3c2c215b0be7b519c45fc7c85b9e"
+    },
+    {
+      "path": "public/res/i18n/fr.json",
+      "bytes": 196352,
+      "sha256": "1ec9c146a8503c2ff35cbb10617e5086405ee2817c6420aae766cc99cae396e8"
+    },
+    {
+      "path": "public/res/i18n/he.json",
+      "bytes": 196470,
+      "sha256": "40a7dc128c5138a7559591f3da9127ac390569b580ffed4a335fbc5ce432c1a1"
+    },
+    {
+      "path": "public/res/i18n/hi.json",
+      "bytes": 228189,
+      "sha256": "a1b61abe06a2422907319daf2abedd7da53b7fe696650eb49dc26e6b11f4cbc3"
+    },
+    {
+      "path": "public/res/i18n/hu.json",
+      "bytes": 186479,
+      "sha256": "d2aa7ef1150d3a09f56d290c7d9ba00b215987f5a3034394bbd4553bb488eafb"
+    },
+    {
+      "path": "public/res/i18n/id.json",
+      "bytes": 181402,
+      "sha256": "829ac2b357a5584af391a4fc1bdfe93c598e2fc69ba461e34ea091885677d4ad"
+    },
+    {
+      "path": "public/res/i18n/it.json",
+      "bytes": 192544,
+      "sha256": "4244036b775357a1e97f0d083d2c4a8654f62e96c281e68c35d2fcbaf5309a74"
+    },
+    {
+      "path": "public/res/i18n/ja.json",
+      "bytes": 197585,
+      "sha256": "0849ce8fb89faf49b773d6ad74d5b4aacda33cf50bcc49435f37099b9c0942b0"
+    },
+    {
+      "path": "public/res/i18n/lt.json",
+      "bytes": 182614,
+      "sha256": "de3fc84f3e7ca47caf29feea170f6c84bc09fa77d3d5ecc4050a0643c029c315"
+    },
+    {
+      "path": "public/res/i18n/nl.json",
+      "bytes": 179729,
+      "sha256": "996e78ee172f22462337ba5a31459e29851d8110027178a744cb26d4dd6f082e"
+    },
+    {
+      "path": "public/res/i18n/no.json",
+      "bytes": 178455,
+      "sha256": "41016e0d9b6864807919d37339f5d405905d9b89786a78ad3fa93a9f564f5fe6"
+    },
+    {
+      "path": "public/res/i18n/pl.json",
+      "bytes": 188598,
+      "sha256": "6041e5265eefeeed5874f136b8580135880aa45dbb157b7314f5c476ff043407"
+    },
+    {
+      "path": "public/res/i18n/pt-br.json",
+      "bytes": 186358,
+      "sha256": "7b0f7b8ea3a06186a51cfcd47057703770713e4ede47aca0953880811aa14122"
+    },
+    {
+      "path": "public/res/i18n/pt-pt.json",
+      "bytes": 196024,
+      "sha256": "530c002d6eb6c505d7918815035b9b0a1b116ab233b2bb7f302de3445226d337"
+    },
+    {
+      "path": "public/res/i18n/ro.json",
+      "bytes": 182284,
+      "sha256": "03fca9b5658f81f806fc02b93734e5bf9628c3367e8860d6b3187dfd6ac4fbca"
+    },
+    {
+      "path": "public/res/i18n/ru.json",
+      "bytes": 244430,
+      "sha256": "300d3cac2ef72210741f62e122f00f5c5c9c9a98da037603e920bc167b778320"
+    },
+    {
+      "path": "public/res/i18n/sk.json",
+      "bytes": 192416,
+      "sha256": "8d7988c3adbb819709756c07b7e6023b0780897c1ba11ad400d9aaca6b97337a"
+    },
+    {
+      "path": "public/res/i18n/sl.json",
+      "bytes": 186057,
+      "sha256": "084d787991beaa50146855395837d30791295f6b8a28d716da28745387796f0b"
+    },
+    {
+      "path": "public/res/i18n/sq.json",
+      "bytes": 208304,
+      "sha256": "e88261314fe9d358b5a2d48f495c9845ae89636b253c7a2d7393d2ac05ccf822"
+    },
+    {
+      "path": "public/res/i18n/sr-latn.json",
+      "bytes": 175295,
+      "sha256": "573c330848a254565dbf5dc8e5677c9db97f0cb36fea56f69b2e65ec8ec645ab"
+    },
+    {
+      "path": "public/res/i18n/sv.json",
+      "bytes": 179919,
+      "sha256": "dfd4894cfe90d8b8fa70d36d4b2bf53f85f47142db2d246e176bc31ee7b6d7bd"
+    },
+    {
+      "path": "public/res/i18n/ta.json",
+      "bytes": 322699,
+      "sha256": "8025a32cbfbd944f909bfd05832f3362e66c3d88cb9efeb39d89a231a623d2e2"
+    },
+    {
+      "path": "public/res/i18n/tr.json",
+      "bytes": 191848,
+      "sha256": "98bb1b01b8c15c34151ca53051be619be43c02e844bda650f1cc5ab953563b5c"
+    },
+    {
+      "path": "public/res/i18n/uk.json",
+      "bytes": 175304,
+      "sha256": "2137e212e165daa5a0e072195bbe64fe6436483bbc8fdaf714b44c28fa872ade"
+    },
+    {
+      "path": "public/res/i18n/vi.json",
+      "bytes": 186939,
+      "sha256": "ea64e2571baa9bdd6067a7ac30fa3ba4c05f101f09e8dad9b50c492c60860244"
+    },
+    {
+      "path": "public/res/i18n/zh-cn.json",
+      "bytes": 169673,
+      "sha256": "781574ee5d7741bf82baa953df41c0af9a95a8f2b7abc91fe9a055f58f005891"
+    },
+    {
+      "path": "public/res/i18n/zh-tw.json",
+      "bytes": 174872,
+      "sha256": "b1856933b2c761bc72456dc0f956f2f4f205599afdbec1a2d3dac15e868697a9"
+    },
+    {
+      "path": "public/res/values/colors.xml",
+      "bytes": 116,
+      "sha256": "e300c2055d5e29495a3b3d1dedc199c3886a9413a4fac65d3e3a029ce88279f0"
+    },
+    {
+      "path": "public/res/values/strings.xml",
+      "bytes": 246115,
+      "sha256": "c9565e10ca5cb9b99c7b75b146940415eff1c121a7cd0ef5f1cdda901330af6a"
+    },
+    {
+      "path": "public/res/values/themes.xml",
+      "bytes": 292,
+      "sha256": "5eb4ae8c484c092fc592e9bcc6b6816237ef8052a6924cff32efb93b6397c308"
+    },
+    {
+      "path": "public/stream-theme.css",
+      "bytes": 29653,
+      "sha256": "b02816624aecea214710ffbd7e05ea33cc818a7c310b2ae4616d2bc0c9a53478"
+    },
+    {
+      "path": "public/styles.css",
+      "bytes": 39563,
+      "sha256": "9943e445b78165a2056f81b47370403701b0a79b4b0e46005636d51dc2ab47a1"
+    },
+    {
+      "path": "public/youtube-proxy.html",
+      "bytes": 13615,
+      "sha256": "b82b3e8dde63ffae7a530d285e4b9fd81b5e70bf38055e83a92d82e40f3b96c9"
+    },
+    {
+      "path": "render.yaml",
+      "bytes": 385,
+      "sha256": "f6694aa7b8ef924b3c27f98cc97118e171f107b34b071d1f3f4dbba0eddc15a8"
+    },
+    {
+      "path": "restart-termux.sh",
+      "bytes": 225,
+      "sha256": "da3d5dfd89b27fbbdc2375aa0f3bb933d514fbd235ee076c0dc7fc164b36c966"
+    },
+    {
+      "path": "restart.bat",
+      "bytes": 112,
+      "sha256": "c0ad95e87f6f1ed76e574ad28574d32b592954873730fb1f97c0d439078b2809"
+    },
+    {
+      "path": "restart.sh",
+      "bytes": 196,
+      "sha256": "7cef009020ae5be891736a154991b5789a75396b8cd42ff41c8dc26788807fad"
+    },
+    {
+      "path": "router.php",
+      "bytes": 41,
+      "sha256": "19208e0a648cfec9d84dab77dfc2ba6717f64abc752d4ddf6bf057c45cdd248f"
+    },
+    {
+      "path": "scripts/build-release.bat",
+      "bytes": 14706,
+      "sha256": "7f1085fe5367c20fca098eec7701fbdf78b0be3c3efaa8c3b3abee5d766ed2d6"
+    },
+    {
+      "path": "scripts/build-release.sh",
+      "bytes": 6717,
+      "sha256": "12ad81b016a1eec3f3d56828fff235a2930e434f20ec9d6048d5fc15254eb196"
+    },
+    {
+      "path": "scripts/download-frankenphp.ps1",
+      "bytes": 3426,
+      "sha256": "837171d44853feebc129d8b8e28f79e764fab1ed3c09d4e4ea02b1b4630526e0"
+    },
+    {
+      "path": "scripts/package-unix.sh",
+      "bytes": 4193,
+      "sha256": "8abadf6633469edc4f8aab2de76576067681da391b75d0320c09d58c1b8d976d"
+    },
+    {
+      "path": "scripts/package-windows.bat",
+      "bytes": 7139,
+      "sha256": "645e7e5bc06f0a98ffd4b00e9049f3f982481da5d97454bdb90c530ace5c447c"
+    },
+    {
+      "path": "scripts/release-apk.bat",
+      "bytes": 1548,
+      "sha256": "e82d14ff00276bb8ae46d78a2c4f4bc5742627ea8483ec4b15c54d0cdfb169ed"
+    },
+    {
+      "path": "src/.gitkeep",
+      "bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "path": "start-hidden.ps1",
+      "bytes": 8932,
+      "sha256": "0f80ff779e0f59ac3f9a5097eb5da4dea84f11a8a32b6b08702927c16d1317fc"
+    },
+    {
+      "path": "start-termux.sh",
+      "bytes": 7791,
+      "sha256": "cb69934503311009d414cdb818f05e48a398e48cb29260219582dd3f36ab9a5d"
+    },
+    {
+      "path": "start.bat",
+      "bytes": 3106,
+      "sha256": "3d9ab0e2c2918d8553d34e27ec6784401b513fa98c1bf280086718f985582c7f"
+    },
+    {
+      "path": "start.sh",
+      "bytes": 5452,
+      "sha256": "30ef9947c42fb591bdd682f684456182d8e5d01ef365402b3a5791abb35056cb"
+    },
+    {
+      "path": "stop.bat",
+      "bytes": 1855,
+      "sha256": "60eebfb0f4718736a35f9f27bbf0c87da0cc66d991fc3a2623bccabe67ed7b44"
+    },
+    {
+      "path": "stop.sh",
+      "bytes": 1860,
+      "sha256": "9b795770004c6a8e25f7c2274c472423c970d8c1be8f271cdc569359d0914d55"
+    },
+    {
+      "path": "storage/.gitkeep",
+      "bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "path": "storage/catalog_settings.json",
+      "bytes": 2251,
+      "sha256": "381fd72ecf3bd13071927d065c457a5b17bfdb3949224e8ac58a8928c497258c"
+    },
+    {
+      "path": "storage/config.example.json",
+      "bytes": 151,
+      "sha256": "d8267cd7c67f6884a90c6b19e48e5a0dc7d68fe055435cd97c7dbc92f8f635f0"
+    },
+    {
+      "path": "storage/index.json",
+      "bytes": 358,
+      "sha256": "9b14aba3d6d6c4c8d81eec26feac238b4402405b5e7f367010ae8d1653d62dd1"
+    },
+    {
+      "path": "tray.ico",
+      "bytes": 38002,
+      "sha256": "9ff6c781064fc1ce0c2adcd9954a010635e7c81671beac25eec6f6fb56f6ceb6"
+    },
+    {
+      "path": "tray.png",
+      "bytes": 25013,
+      "sha256": "7e0ca78016e7a6fd0b97f34506f868f44e20e3dd2b9bd2ee70b9827706dfb931"
+    },
+    {
+      "path": "tray.ps1",
+      "bytes": 20747,
+      "sha256": "afd25fc8622b039d0ac547df541edf80fd3e5d78860b0d29f1b3222b16a3b75f"
+    },
+    {
+      "path": "tunnel-spawn.ps1",
+      "bytes": 2432,
+      "sha256": "5117ae7ea596592c76c9e03cf4998233c1d3f26e35f2e6076886dfe2dd436345"
+    },
+    {
+      "path": "update.ps1",
+      "bytes": 5591,
+      "sha256": "0a81b08d5a3b67536e80693fe59932138f4c2f400f2af4ff7c032faf2489757f"
+    }
+  ]
+}

@@ -1,0 +1,129 @@
+name: MovieSapaMapuh Android
+
+on:
+  push:
+    branches: ['feature/moviesapamapuh']
+    paths:
+      - 'android/pencarimovie-server/**'
+      - 'public/**'
+      - 'backend.php'
+      - 'tools/**'
+      - '.github/workflows/moviesapamapuh-baseline.yml'
+  workflow_dispatch:
+    inputs:
+      signed_release:
+        description: 'Build a release signed with the fork signing secrets (never publish automatically)'
+        type: boolean
+        default: false
+  pull_request:
+    paths:
+      - 'android/pencarimovie-server/**'
+      - 'public/**'
+      - 'tools/**'
+      - '.github/workflows/moviesapamapuh-baseline.yml'
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.head_ref || github.ref_name }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  presentation:
+    if: github.repository == 'Paim41/pencarimovie-server'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Preserve baseline text and handlers
+        run: python3 tools/check-ui-parity.py
+      - name: Test isolated presentation (no real API requests)
+        run: |
+          npm install --prefix "$RUNNER_TEMP/presentation" playwright@1.62.1
+          "$RUNNER_TEMP/presentation/node_modules/.bin/playwright" install --with-deps chromium
+          NODE_PATH="$RUNNER_TEMP/presentation/node_modules" node tools/test-presentation.cjs
+          NODE_PATH="$RUNNER_TEMP/presentation/node_modules" node tools/test-ui-refinement.cjs
+          NODE_PATH="$RUNNER_TEMP/presentation/node_modules" node tools/test-dock-library.cjs
+          NODE_PATH="$RUNNER_TEMP/presentation/node_modules" node tools/test-youyou-loader.cjs
+          NODE_PATH="$RUNNER_TEMP/presentation/node_modules" node tools/test-youyou-cursor.cjs
+      - uses: actions/upload-artifact@v4
+        with:
+          name: MovieSapaMapuh-presentation-fixtures
+          path: |
+            dist/screenshots/
+            dist/refinement-screenshots/
+            dist/dock-library-screenshots/
+            dist/loader-screenshots/
+
+  build:
+    # UI-only commits may defer expensive APK assembly while keeping presentation checks.
+    if: github.repository == 'Paim41/pencarimovie-server' && (github.event_name != 'push' || !contains(github.event.head_commit.message, '[skip apk]'))
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    env:
+      BUILD_TYPE: ${{ github.event_name == 'workflow_dispatch' && inputs.signed_release && 'Release' || 'Debug' }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+      - uses: android-actions/setup-android@v3
+        with:
+          packages: 'platform-tools platforms;android-36 build-tools;35.0.0 ndk;23.2.8568313'
+      - name: Install native build prerequisites
+        run: sudo apt-get update && sudo apt-get install -y cmake ninja-build gperf php-cli make perl g++ libssl-dev zlib1g-dev
+      - uses: gradle/actions/setup-gradle@v4
+      - name: Rebuild pinned TDLib for both ABIs
+        env:
+          MOVIESAPAMAPUH_BUILD_JOBS: '2'
+        run: bash tools/build-tdlib.sh
+      - name: Assemble and lint
+        working-directory: android/pencarimovie-server
+        run: bash gradlew ":app:assemble${BUILD_TYPE}" :app:lintDebug :app:testDebugUnitTest --no-daemon --max-workers=2
+      - name: Sign explicit release build
+        if: env.BUILD_TYPE == 'Release'
+        env:
+          SIGNING_KEY_BASE64: ${{ secrets.MOVIESAPAMAPUH_KEYSTORE_BASE64 }}
+          SIGNING_ALIAS: ${{ secrets.MOVIESAPAMAPUH_KEY_ALIAS }}
+          SIGNING_STORE_PASSWORD: ${{ secrets.MOVIESAPAMAPUH_STORE_PASSWORD }}
+          SIGNING_KEY_PASSWORD: ${{ secrets.MOVIESAPAMAPUH_KEY_PASSWORD }}
+        run: |
+          set -euo pipefail
+          : "${SIGNING_KEY_BASE64:?Missing fork signing key}"
+          : "${SIGNING_ALIAS:?Missing key alias}"
+          : "${SIGNING_STORE_PASSWORD:?Missing store password}"
+          : "${SIGNING_KEY_PASSWORD:?Missing key password}"
+          keyfile="$RUNNER_TEMP/moviesapamapuh-signing.jks"
+          trap 'rm -f "$keyfile"' EXIT
+          umask 077
+          printf '%s' "$SIGNING_KEY_BASE64" | base64 --decode > "$keyfile"
+          for apk in android/pencarimovie-server/app/build/outputs/apk/release/*.apk; do
+            "$ANDROID_HOME/build-tools/35.0.0/zipalign" -f -p 4 "$apk" "$RUNNER_TEMP/aligned.apk"
+            "$ANDROID_HOME/build-tools/35.0.0/apksigner" sign --ks "$keyfile" --ks-key-alias "$SIGNING_ALIAS" --ks-pass env:SIGNING_STORE_PASSWORD --key-pass env:SIGNING_KEY_PASSWORD --out "$apk" "$RUNNER_TEMP/aligned.apk"
+          done
+      - name: Verify bundled libraries, assets, identity and signatures
+        run: |
+          set -euo pipefail
+          output="android/pencarimovie-server/app/build/outputs/apk/${BUILD_TYPE,,}"
+          python3 tools/verify-android-apk.py "$output"/*_universal.apk
+          for apk in "$output"/*.apk; do
+            "$ANDROID_HOME/build-tools/35.0.0/apksigner" verify "$apk"
+            "$ANDROID_HOME/build-tools/35.0.0/aapt" dump badging "$apk" | grep "package: name='com.moviesapamapuh.server'"
+            sha256sum "$apk" > "$apk.sha256"
+          done
+      - uses: actions/upload-artifact@v4
+        with:
+          name: MovieSapaMapuh-Android-${{ env.BUILD_TYPE }}
+          path: |
+            android/pencarimovie-server/app/build/outputs/apk/**/*.apk
+            android/pencarimovie-server/app/build/outputs/apk/**/*.sha256
+            android/pencarimovie-server/app/build/native-provenance.json
+            android/pencarimovie-server/app/build/reports/
+          if-no-files-found: error

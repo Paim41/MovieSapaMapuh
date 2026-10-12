@@ -1,0 +1,458 @@
+[
+  {
+    "path": "assets/web/app.bundle.js",
+    "comparison": "content_differs"
+  },
+  {
+    "path": "assets/web/app.js",
+    "comparison": "content_differs"
+  },
+  {
+    "path": "assets/web/appinfo.json",
+    "comparison": "line_endings_only"
+  },
+  {
+    "path": "assets/web/assets/brand/app_logo_mark.png",
+    "comparison": "identical"
+  },
+  {
+    "path": "assets/web/assets/brand/app_logo_wordmark.png",
+    "comparison": "identical"
+  },
+  {
+    "path": "assets/web/assets/brand/app_logo_wordmark_arctic_blue.png",
+    "comparison": "identical"
+  },
+  {
+    "path": "assets/web/assets/brand/app_logo_wordmark_gold.png",
+    "comparison": "identical"
+  },
+  {
+    "path": "assets/web/assets/brand/app_logo_wordmark_graphite.png",
+    "comparison": "identical"
+  },
+  {
+    "path": "assets/web/assets/brand/app_logo_wordmark_jade.png",
+    "comparison": "identical"
+  },
+  {
+    "path": "assets/web/assets/brand/app_logo_wordmark_rose_gold.png",
+    "comparison": "identical"
+  },
+  {
+    "path": "assets/web/assets/icons/discover_compass.svg",
+    "comparison": "line_endings_only"
+  },
+  {
+    "path": "assets/web/assets/icons/ic_chevron_compact_left.png",
+    "comparison": "identical"
+  },
+  {
+    "path": "assets/web/assets/icons/ic_player_aspect_ratio.svg",
+    "comparison": "line_endings_only"
+  },
+  {
+    "path": "assets/web/assets/icons/ic_player_audio_filled.svg",
+    "comparison": "line_endings_only"
+  },
+  {
+    "path": "assets/web/assets/icons/ic_player_audio_outline.svg",
+    "comparison": "line_endings_only"
+  },
+  {
+    "path": "assets/web/assets/icons/ic_player_episodes.svg",
+    "comparison": "line_endings_only"
+  },
+  {
+    "path": "assets/web/assets/icons/ic_player_pause.svg",
+    "comparison": "line_endings_only"
+  },
+  {
+    "path": "assets/web/assets/icons/ic_player_play.svg",
+    "comparison": "line_endings_only"
+  },
+  {
+    "path": "assets/web/assets/icons/ic_player_skip_next.svg",
+    "comparison": "line_endings_only"
+  },
+  {
+    "path": "assets/web/assets/icons/ic_player_source.svg",
+    "comparison": "line_endings_only"
+  },
+  {
+    "path": "assets/web/assets/icons/ic_player_subtitles.svg",
+    "comparison": "line_endings_only"
+  },
+  {
+    "path": "assets/web/assets/icons/imdb_logo_2016.svg",
+    "comparison": "line_endings_only"
+  },
+  {
+    "path": "assets/web/assets/icons/library_add_plus.svg",
+    "comparison": "line_endings_only"
+  },
+  {
+    "path": "assets/web/assets/icons/mdblist_audience.png",
+    "comparison": "identical"
+  },
+  {
+    "path": "assets/web/assets/icons/mdblist_audience_stale.svg",
+    "comparison": "line_endings_only"
+  },
+  {
+    "path": "assets/web/assets/icons/mdblist_audience_verified_hot.svg",
+    "comparison": "line_endings_only"
+  },
+  {
+    "path": "assets/web/assets/icons/mdblist_letterboxd.svg",
+    "comparison": "line_endings_only"
+  },
+  {
+    "path": "assets/web/assets/icons/mdblist_mal.svg",
+    "comparison": "line_endings_only"
+  },
+  {
+    "path": "assets/web/assets/icons/mdblist_metacritic.png",
+    "comparison": "identical"
+  },
+  {
+    "path": "assets/web/assets/icons/mdblist_tmdb.svg",
+    "comparison": "identical"
+  },
+  {
+    "path": "assets/web/assets/icons/mdblist_tomatoes.svg",
+    "comparison": "line_endings_only"
+  },
+  {
+    "path": "assets/web/assets/icons/mdblist_tomatoes_certified.svg",
+    "comparison": "line_endings_only"
+  },
+  {
+    "path": "assets/web/assets/icons/mdblist_tomatoes_rotten.svg",
+    "comparison": "line_endings_only"
+  },
+  {
+    "path": "assets/web/assets/icons/mdblist_trakt.svg",
+    "comparison": "identical"
+  },
+  {
+    "path": "assets/web/assets/icons/sidebar_home.svg",
+    "comparison": "line_endings_only"
+  },
+  {
+    "path": "assets/web/assets/icons/sidebar_library.svg",
+    "comparison": "line_endings_only"
+  },
+  {
+    "path": "assets/web/assets/icons/sidebar_plugin.svg",
+    "comparison": "identical"
+  },
+  {
+    "path": "assets/web/assets/icons/sidebar_search.svg",
+    "comparison": "line_endings_only"
+  },
+  {
+    "path": "assets/web/assets/icons/sidebar_settings.svg",
+    "comparison": "line_endings_only"
+  },
+  {
+    "path": "assets/web/assets/icons/simkl_tv_glyph.svg",
+    "comparison": "line_endings_only"
+  },
+  {
+    "path": "assets/web/assets/icons/trailer_play_button.svg",
+    "comparison": "line_endings_only"
+  },
+  {
+    "path": "assets/web/assets/icons/trakt_tv_favicon.svg",
+    "comparison": "line_endings_only"
+  },
+  {
+    "path": "assets/web/assets/icons/trakt_tv_glyph.svg",
+    "comparison": "line_endings_only"
+  },
+  {
+    "path": "assets/web/assets/icons/visibility.svg",
+    "comparison": "line_endings_only"
+  },
+  {
+    "path": "assets/web/assets/icons/visibility_off.svg",
+    "comparison": "line_endings_only"
+  },
+  {
+    "path": "assets/web/assets/images/icon.png",
+    "comparison": "identical"
+  },
+  {
+    "path": "assets/web/assets/images/largeIcon.png",
+    "comparison": "identical"
+  },
+  {
+    "path": "assets/web/assets/images/nuviotv.png",
+    "comparison": "identical"
+  },
+  {
+    "path": "assets/web/assets/images/splash.png",
+    "comparison": "identical"
+  },
+  {
+    "path": "assets/web/assets/images/tizenIcon.png",
+    "comparison": "identical"
+  },
+  {
+    "path": "assets/web/assets/libs/ass.min.js",
+    "comparison": "line_endings_only"
+  },
+  {
+    "path": "assets/web/assets/libs/assjs.LICENSE",
+    "comparison": "line_endings_only"
+  },
+  {
+    "path": "assets/web/assets/libs/crypto-js.LICENSE",
+    "comparison": "line_endings_only"
+  },
+  {
+    "path": "assets/web/assets/libs/dash.all.min.js",
+    "comparison": "content_differs"
+  },
+  {
+    "path": "assets/web/assets/libs/dashjs.LICENSE.md",
+    "comparison": "line_endings_only"
+  },
+  {
+    "path": "assets/web/assets/libs/hls.js.LICENSE",
+    "comparison": "line_endings_only"
+  },
+  {
+    "path": "assets/web/assets/libs/hls.min.js",
+    "comparison": "content_differs"
+  },
+  {
+    "path": "assets/web/assets/libs/libbitsub.LICENSE",
+    "comparison": "line_endings_only"
+  },
+  {
+    "path": "assets/web/assets/libs/libbitsub_bg.wasm",
+    "comparison": "identical"
+  },
+  {
+    "path": "assets/web/assets/libs/qrcode-generator.js",
+    "comparison": "line_endings_only"
+  },
+  {
+    "path": "assets/web/assets/libs/quickjs-emscripten.LICENSE",
+    "comparison": "line_endings_only"
+  },
+  {
+    "path": "assets/web/assets/libs/quickjs-emscripten.global.js",
+    "comparison": "content_differs"
+  },
+  {
+    "path": "assets/web/assets/libs/webOSTV.js",
+    "comparison": "identical"
+  },
+  {
+    "path": "assets/web/assets/runtime/legacy-features.js",
+    "comparison": "content_differs"
+  },
+  {
+    "path": "assets/web/assets/runtime/legacy-polyfills.js",
+    "comparison": "apk_only"
+  },
+  {
+    "path": "assets/web/assets/runtime/plugin-worker.js",
+    "comparison": "content_differs"
+  },
+  {
+    "path": "assets/web/boot-guard.js",
+    "comparison": "line_endings_only"
+  },
+  {
+    "path": "assets/web/core-js.bundle.js",
+    "comparison": "content_differs"
+  },
+  {
+    "path": "assets/web/css/bundle.css",
+    "comparison": "line_endings_only"
+  },
+  {
+    "path": "assets/web/index.html",
+    "comparison": "content_differs"
+  },
+  {
+    "path": "assets/web/logo.png",
+    "comparison": "identical"
+  },
+  {
+    "path": "assets/web/nuvio.env.js",
+    "comparison": "line_endings_only"
+  },
+  {
+    "path": "assets/web/res/i18n/ar.json",
+    "comparison": "identical"
+  },
+  {
+    "path": "assets/web/res/i18n/bg.json",
+    "comparison": "identical"
+  },
+  {
+    "path": "assets/web/res/i18n/bs.json",
+    "comparison": "identical"
+  },
+  {
+    "path": "assets/web/res/i18n/cs.json",
+    "comparison": "identical"
+  },
+  {
+    "path": "assets/web/res/i18n/da.json",
+    "comparison": "identical"
+  },
+  {
+    "path": "assets/web/res/i18n/de.json",
+    "comparison": "identical"
+  },
+  {
+    "path": "assets/web/res/i18n/el.json",
+    "comparison": "identical"
+  },
+  {
+    "path": "assets/web/res/i18n/en.json",
+    "comparison": "identical"
+  },
+  {
+    "path": "assets/web/res/i18n/es-419.json",
+    "comparison": "identical"
+  },
+  {
+    "path": "assets/web/res/i18n/es.json",
+    "comparison": "identical"
+  },
+  {
+    "path": "assets/web/res/i18n/fr.json",
+    "comparison": "identical"
+  },
+  {
+    "path": "assets/web/res/i18n/he.json",
+    "comparison": "identical"
+  },
+  {
+    "path": "assets/web/res/i18n/hi.json",
+    "comparison": "identical"
+  },
+  {
+    "path": "assets/web/res/i18n/hu.json",
+    "comparison": "identical"
+  },
+  {
+    "path": "assets/web/res/i18n/id.json",
+    "comparison": "identical"
+  },
+  {
+    "path": "assets/web/res/i18n/it.json",
+    "comparison": "identical"
+  },
+  {
+    "path": "assets/web/res/i18n/ja.json",
+    "comparison": "identical"
+  },
+  {
+    "path": "assets/web/res/i18n/lt.json",
+    "comparison": "identical"
+  },
+  {
+    "path": "assets/web/res/i18n/nl.json",
+    "comparison": "identical"
+  },
+  {
+    "path": "assets/web/res/i18n/no.json",
+    "comparison": "identical"
+  },
+  {
+    "path": "assets/web/res/i18n/pl.json",
+    "comparison": "identical"
+  },
+  {
+    "path": "assets/web/res/i18n/pt-br.json",
+    "comparison": "identical"
+  },
+  {
+    "path": "assets/web/res/i18n/pt-pt.json",
+    "comparison": "identical"
+  },
+  {
+    "path": "assets/web/res/i18n/ro.json",
+    "comparison": "identical"
+  },
+  {
+    "path": "assets/web/res/i18n/ru.json",
+    "comparison": "identical"
+  },
+  {
+    "path": "assets/web/res/i18n/sk.json",
+    "comparison": "identical"
+  },
+  {
+    "path": "assets/web/res/i18n/sl.json",
+    "comparison": "identical"
+  },
+  {
+    "path": "assets/web/res/i18n/sq.json",
+    "comparison": "identical"
+  },
+  {
+    "path": "assets/web/res/i18n/sr-latn.json",
+    "comparison": "identical"
+  },
+  {
+    "path": "assets/web/res/i18n/sv.json",
+    "comparison": "identical"
+  },
+  {
+    "path": "assets/web/res/i18n/ta.json",
+    "comparison": "identical"
+  },
+  {
+    "path": "assets/web/res/i18n/tr.json",
+    "comparison": "identical"
+  },
+  {
+    "path": "assets/web/res/i18n/uk.json",
+    "comparison": "identical"
+  },
+  {
+    "path": "assets/web/res/i18n/vi.json",
+    "comparison": "identical"
+  },
+  {
+    "path": "assets/web/res/i18n/zh-cn.json",
+    "comparison": "identical"
+  },
+  {
+    "path": "assets/web/res/i18n/zh-tw.json",
+    "comparison": "identical"
+  },
+  {
+    "path": "assets/web/res/values/colors.xml",
+    "comparison": "line_endings_only"
+  },
+  {
+    "path": "assets/web/res/values/strings.xml",
+    "comparison": "line_endings_only"
+  },
+  {
+    "path": "assets/web/res/values/themes.xml",
+    "comparison": "line_endings_only"
+  },
+  {
+    "path": "assets/web/stream-theme.css",
+    "comparison": "content_differs"
+  },
+  {
+    "path": "assets/web/styles.css",
+    "comparison": "content_differs"
+  },
+  {
+    "path": "assets/web/youtube-proxy.html",
+    "comparison": "line_endings_only"
+  }
+]

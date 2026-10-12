@@ -1,3 +1,20 @@
+# MovieSapaMapuh — NOIR Crimson
+
+This fork customizes [PencariMovie Server](https://github.com/aiskendi/pencarimovie-server) while retaining its original Kotlin/TDLib Android and PHP server implementations. Work lives on `feature/moviesapamapuh` in [Paim41/pencarimovie-server](https://github.com/Paim41/pencarimovie-server). The original README and upstream credits remain below in full.
+
+The recovered native app uses the supplied MovieSapaMapuh logo, NOIR Crimson presentation, an independent package ID and optional Si Youyou companion in native controls and the served dashboard. All original frontend handlers, translations, static labels and PHP engine files are checked against their respective historical baselines, apart from documented owned-brand substitutions. This is not a claim of complete device or streaming parity.
+
+- [Android recovery and dependency evidence](docs/ANDROID_RECOVERY.md)
+- [Build, Actions artifacts, signing, installation and LAN access](docs/BUILD_ANDROID.md)
+- [Feature-parity checklist](docs/FEATURE_PARITY.md) and [actual test results / limitations](docs/TEST_REPORT.md)
+- [NOIR design system](docs/DESIGN_SYSTEM.md), [branding and updates](docs/BRANDING_CHANGES.md), [Si Youyou controls and sprite mapping](docs/SI_YOUYOU.md)
+
+Local debug APKs are built; hosted Actions execution and physical-phone acceptance remain pending. MovieSapaMapuh coexists with the original app and does not automatically migrate its sessions. Its Update action cannot download an upstream APK; a real fork release feed is not configured yet. Pet settings persist locally and can disable animations/flame effects or hide the companion without changing server operation.
+
+The upstream MIT LICENSE and its README's GPL claim are both preserved; that conflict and third-party/artwork distribution obligations are not silently resolved by rebranding. Official TDLib/OpenSSL notices are bundled in the native app.
+
+---
+
 # 🎬 PencariMovie Server
 
 <p align="center">

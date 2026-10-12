@@ -1,0 +1,30 @@
+{
+  "source": "SiYouyou_Cursor_Assets.zip",
+  "waiting": "native progress where existing operations request it; supplied optional art remains reference-only",
+  "frames": [
+    {
+      "file": "normal.png",
+      "size": [
+        64,
+        64
+      ],
+      "hotspot": [
+        10,
+        33
+      ],
+      "sha256": "872b19d668ab9db323dcdfac4fc0e15ecbd04b8bb3675a478f5de510f363cb23"
+    },
+    {
+      "file": "click.png",
+      "size": [
+        64,
+        64
+      ],
+      "hotspot": [
+        11,
+        40
+      ],
+      "sha256": "ca4a5a3f5b9db55af6ad729db1249336df9920823b0cceb0552c40e3d74e869f"
+    }
+  ]
+}

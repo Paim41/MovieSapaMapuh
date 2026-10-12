@@ -1,0 +1,17 @@
+/* Explicit fine-pointer gating in JS; URL fallbacks remain native if a browser rejects PNG cursors. */
+html.youyou-cursor {
+  --youyou-cursor:url('assets/si-youyou-cursor/normal.png') 10 33;
+  cursor:var(--youyou-cursor), auto;
+}
+html.youyou-cursor-down { --youyou-cursor:url('assets/si-youyou-cursor/click.png') 11 40; }
+html.youyou-cursor body { cursor:var(--youyou-cursor), auto; }
+html.youyou-cursor a[href],html.youyou-cursor button,html.youyou-cursor [role="button"],
+html.youyou-cursor [data-action],html.youyou-cursor .focusable { cursor:var(--youyou-cursor), pointer; }
+/* Explicit functional cursors continue to win on inline styles; editable/player/drag regions stay native. */
+html.youyou-cursor input,html.youyou-cursor textarea,html.youyou-cursor select,
+html.youyou-cursor video,html.youyou-cursor audio,html.youyou-cursor [draggable="true"],
+html.youyou-cursor [draggable="true"] *,html.youyou-cursor [data-native-cursor],html.youyou-cursor [data-native-cursor] *,
+html.youyou-cursor .player-toolbar,html.youyou-cursor .player-toolbar * { cursor:revert; }
+html.youyou-cursor textarea,html.youyou-cursor input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="button"]):not([type="submit"]):not([type="reset"]):not([type="color"]):not([type="file"]),
+html.youyou-cursor [contenteditable="true"],html.youyou-cursor [contenteditable="true"] * { cursor:text; }
+html.youyou-cursor button:disabled,html.youyou-cursor [aria-disabled="true"] { cursor:not-allowed; }

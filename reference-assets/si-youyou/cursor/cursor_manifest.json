@@ -1,0 +1,87 @@
+{
+  "name": "Si Youyou Cursor Pack",
+  "version": "1.0.0",
+  "project": "MovieSapaMapuh",
+  "source_archive": "asset-cursor.zip",
+  "source_canvas_px": [
+    1254,
+    1254
+  ],
+  "recommended_cursor_size_px": 64,
+  "fallback_cursor_size_px": 48,
+  "states": {
+    "normal": {
+      "source": "originals/si_youyou_cursor_normal_left.png",
+      "recommended": true,
+      "runtime": {
+        "48": {
+          "path": "runtime/48/normal.png",
+          "hotspot": {
+            "x": 7,
+            "y": 25
+          }
+        },
+        "64": {
+          "path": "runtime/64/normal.png",
+          "hotspot": {
+            "x": 10,
+            "y": 34
+          }
+        }
+      }
+    },
+    "click": {
+      "source": "originals/si_youyou_cursor_click.png",
+      "recommended": true,
+      "runtime": {
+        "48": {
+          "path": "runtime/48/click.png",
+          "hotspot": {
+            "x": 8,
+            "y": 30
+          }
+        },
+        "64": {
+          "path": "runtime/64/click.png",
+          "hotspot": {
+            "x": 10,
+            "y": 41
+          }
+        }
+      }
+    },
+    "waiting": {
+      "source": "originals/si_youyou_cursor_waiting.png",
+      "recommended": false,
+      "runtime": {
+        "48": {
+          "path": "runtime/48/waiting.png",
+          "hotspot": {
+            "x": 24,
+            "y": 24
+          }
+        },
+        "64": {
+          "path": "runtime/64/waiting.png",
+          "hotspot": {
+            "x": 32,
+            "y": 32
+          }
+        }
+      }
+    }
+  },
+  "other_source_assets": [
+    "originals/si_youyou_cursor_hover_alternative.png",
+    "originals/si_youyou_cursor_down_left_alternative.png",
+    "originals/si_youyou_cursor_mini_alternative.png",
+    "originals/si_youyou_cursor_sparkle_optional.png"
+  ],
+  "notes": [
+    "Hotspot coordinates are initial estimates based on pointing fingertips. Visually validate them in a desktop browser and adjust if needed.",
+    "The click image has a different finger position; state-specific hotspots prevent pointer jump.",
+    "Use only in fine-pointer+hover environments. Do not create any on-screen fake cursor on touchscreen Android.",
+    "No new interactive pet system or Pet Settings. The 4-frame walking loader is an independent existing requirement.",
+    "Original PNGs are preserved byte-for-byte; runtime derivatives are scaled for browser cursor use."
+  ]
+}
