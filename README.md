@@ -23,6 +23,15 @@ A personal customization of [PencariMovie Server](https://github.com/aiskendi/pe
 
 The fork retains the existing Kotlin/TDLib and PHP/FrankenPHP implementations rather than replacing the original streaming engine. It is intended for media the user is authorized to access; it does not include a built-in library of movies or series.
 
+
+<h2 align="center">MovieSapaMapuh — Official Preview</h2>
+<div align="center">
+
+https://github.com/user-attachments/assets/d73c314f-7ea1-48cc-bc8d-01031d5468c0
+
+</div>
+
+
 ## Highlights
 
 - **NOIR Crimson** — dark surfaces, crimson accent (`#F04452`), custom logo and responsive UI.
